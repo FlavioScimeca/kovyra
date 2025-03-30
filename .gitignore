@@ -96,3 +96,5 @@ ios/.env.*.local
 *.mobileprovision
 *.orig.*
 web-build/ 
+
+.yarn
