@@ -1,10 +1,5 @@
 module.exports = {
-  source: [
-    'package.json',
-    'apps/*/package.json',
-    'packages/*/package.json',
-    'server/package.json',
-  ],
+  source: ['package.json', 'apps/*/package.json', 'packages/*/package.json', 'server/package.json'],
 
   semverRanges: ['^', '~'],
   indent: '  ',
