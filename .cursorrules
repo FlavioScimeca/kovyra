@@ -1,0 +1,100 @@
+{
+  "ignore": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.next/**",
+    "**/coverage/**",
+    "**/.turbo/**",
+    "**/tmp/**",
+    "**/.cache/**",
+    "**/.env.*",
+    "**/storybook-static/**",
+    "**/.DS_Store",
+    "**/logs/**",
+    "**/.vercel/**",
+    "**/out/**",
+    "**/.swc/**"
+  ],
+  "fileAssociations": {
+    "*.tsx": "typescriptreact",
+    "*.ts": "typescript",
+    "*.jsx": "javascriptreact",
+    "*.js": "javascript",
+    "*.json": "json",
+    "*.yaml": "yaml",
+    "*.yml": "yaml",
+    "*.md": "markdown",
+    "*.css": "css",
+    "*.scss": "scss",
+    "*.less": "less",
+    "*.graphql": "graphql",
+    "*.prisma": "prisma",
+    "*.env*": "dotenv",
+    "*.sh": "shellscript",
+    "Dockerfile*": "dockerfile"
+  },
+  "search": {
+    "excludePatterns": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/.git/**",
+      "**/coverage/**",
+      "**/.next/**",
+      "**/storybook-static/**",
+      "**/out/**",
+      "**/*.min.js",
+      "**/*.min.css",
+      "**/package-lock.json",
+      "**/yarn.lock",
+      "**/pnpm-lock.yaml"
+    ],
+    "includePatterns": [
+      "**/*.{ts,tsx,js,jsx,mjs,cjs}",
+      "**/*.{json,yaml,yml}",
+      "**/*.{css,scss,less}",
+      "**/*.{md,mdx}",
+      "**/*.{graphql,gql}",
+      "**/*.prisma",
+      "**/Dockerfile*",
+      "**/.env*"
+    ]
+  },
+  "format": {
+    "enable": true,
+    "formatOnSave": true,
+    "formatOnPaste": true,
+    "defaultFormatter": "prettier"
+  },
+  "completion": {
+    "disableInStrings": true,
+    "disableInComments": true,
+    "enableAutoImport": true,
+    "enableSnippets": true
+  },
+  "editor": {
+    "tabSize": 2,
+    "insertSpaces": true,
+    "wordWrap": "on",
+    "rulers": [
+      80,
+      100
+    ],
+    "bracketPairColorization": true,
+    "guides": {
+      "indentation": true,
+      "bracketPairs": true
+    }
+  },
+  "typescript": {
+    "suggest": {
+      "completeFunctionCalls": true,
+      "autoImports": true
+    },
+    "preferences": {
+      "importModuleSpecifier": "shortest",
+      "quoteStyle": "single"
+    }
+  }
+}

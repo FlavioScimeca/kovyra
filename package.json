@@ -1,0 +1,30 @@
+{
+  "name": "kovyra",
+  "private": true,
+  "workspaces": [
+    "./apps/*",
+    "./packages/*",
+    "./server"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean-nodemodules": "find . -name 'node_modules' -type d -not -path './node_modules/*' -exec rm -rf {} +",
+    "clean-dist": "find . -name 'dist' -type d -exec rm -rf {} +",
+    "sync": "syncpack list-mismatches --config ./config/syncpack.config.js",
+    "fix": "syncpack fix-mismatches --config ./config/syncpack.config.js",
+    "lint:versions": "syncpack lint-semver-ranges --config ./config/syncpack.config.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "syncpack": "^11.1.0",
+    "turbo": "^1.11.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "yarn@4.8.1"
+}
