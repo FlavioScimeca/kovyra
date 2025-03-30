@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: kovyra-api-dev
+    build:
+      context: ..
+      dockerfile: server/Dockerfile.dev
+    ports:
+      - '${PORT}:3000'
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=${DATABASE_URL}
+      - DEBUG=*
+    volumes:
+      - ../server:/app/server
+      - node_modules:/app/server/node_modules
+      - ../.yarn:/app/.yarn
+      - ../package.json:/app/package.json
+      - ../yarn.lock:/app/yarn.lock
+      - ../.yarnrc.yml:/app/.yarnrc.yml
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - kovyra-network
+    restart: unless-stopped
+    command: yarn dev
+    healthcheck:
+      test: ['CMD', 'wget', '--no-verbose', '--tries=1', '--spider', 'http://localhost:3000/health']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  db:
+    container_name: kovyra-db-dev
+    image: postgres:16-alpine
+    ports:
+      - '${POSTGRES_PORT}:5432'
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - kovyra-network
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  pgadmin:
+    container_name: kovyra-pgadmin-dev
+    image: dpage/pgadmin4
+    ports:
+      - '5050:80'
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+    depends_on:
+      - db
+    networks:
+      - kovyra-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    name: kovyra-postgres-data-dev
+  node_modules:
+    name: kovyra-node-modules-dev
+
+networks:
+  kovyra-network:
+    name: kovyra-network-dev
+    driver: bridge
