@@ -1,0 +1,91 @@
+version: '3.8'
+
+services:
+  api-test:
+    container_name: kovyra-api-test
+    build:
+      context: ../../..
+      dockerfile: server/docker/testing/Dockerfile
+    environment:
+      - NODE_ENV=test
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db-test:5432/${POSTGRES_DB}
+      - TEST_MODE=true
+    depends_on:
+      db-test:
+        condition: service_healthy
+    networks:
+      - kovyra-test-network
+    volumes:
+      - ../../../server:/app/server
+      - test_node_modules:/app/server/node_modules
+      - ../../../.yarn:/app/.yarn
+      - ../../../package.json:/app/package.json
+      - ../../../yarn.lock:/app/yarn.lock
+      - ../../../.yarnrc.yml:/app/.yarnrc.yml
+    command: yarn test
+
+  db-test:
+    container_name: kovyra-db-test
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    tmpfs:
+      - /var/lib/postgresql/data
+    networks:
+      - kovyra-test-network
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+      interval: 5s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  # For generating coverage reports
+  api-coverage:
+    container_name: kovyra-api-coverage
+    build:
+      context: ../../..
+      dockerfile: server/docker/testing/Dockerfile
+    environment:
+      - NODE_ENV=test
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db-test:5432/${POSTGRES_DB}
+      - TEST_MODE=true
+    depends_on:
+      - db-test
+    networks:
+      - kovyra-test-network
+    volumes:
+      - ../../../server:/app/server
+      - test_node_modules:/app/server/node_modules
+      - ./coverage:/app/server/coverage
+    command: yarn test:cov
+
+  # For running E2E tests
+  api-e2e:
+    container_name: kovyra-api-e2e
+    build:
+      context: ../../..
+      dockerfile: server/docker/testing/Dockerfile
+    environment:
+      - NODE_ENV=test
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db-test:5432/${POSTGRES_DB}
+      - TEST_MODE=true
+    depends_on:
+      - db-test
+    networks:
+      - kovyra-test-network
+    volumes:
+      - ../../../server:/app/server
+      - test_node_modules:/app/server/node_modules
+    command: yarn test:e2e
+
+volumes:
+  test_node_modules:
+    name: kovyra-node-modules-test
+
+networks:
+  kovyra-test-network:
+    name: kovyra-network-test
+    driver: bridge

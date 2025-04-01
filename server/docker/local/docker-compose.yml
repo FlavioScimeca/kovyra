@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # Minimal database setup for local development
+  db:
+    container_name: kovyra-db-local
+    image: postgres:16-alpine
+    ports:
+      - '${POSTGRES_PORT:-5432}:5432'
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - POSTGRES_DB=${POSTGRES_DB:-kovyra}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../../init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - kovyra-local-network
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-kovyra}']
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Adminer - lighter alternative to pgAdmin
+  adminer:
+    container_name: kovyra-adminer-local
+    image: adminer
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+    networks:
+      - kovyra-local-network
+    restart: unless-stopped
+
+  # For testing mail functionality locally
+  mailhog:
+    container_name: kovyra-mailhog-local
+    image: mailhog/mailhog
+    ports:
+      - '1025:1025' # SMTP port
+      - '8025:8025' # Web UI port
+    networks:
+      - kovyra-local-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    name: kovyra-postgres-data-local
+
+networks:
+  kovyra-local-network:
+    name: kovyra-network-local
+    driver: bridge
