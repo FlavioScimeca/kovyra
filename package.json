@@ -17,7 +17,14 @@
     "clean-dist": "find . -name 'dist' -type d -exec rm -rf {} +",
     "sync": "syncpack list-mismatches --config ./config/syncpack.config.js",
     "fix": "syncpack fix-mismatches --config ./config/syncpack.config.js",
-    "lint:versions": "syncpack lint-semver-ranges --config ./config/syncpack.config.js"
+    "lint:versions": "syncpack lint-semver-ranges --config ./config/syncpack.config.js",
+    "web": "yarn workspace @kovyra/web dev --port 3001",
+    "mobile:a": "yarn workspace @kovyra/mobile android",
+    "mobile:i": "yarn workspace @kovyra/mobile ios",
+    "mobile": "yarn workspace @kovyra/mobile start",
+    "prisma:generate": "cd server && npx prisma generate",
+    "prisma:migrate": "cd server && npx prisma migrate dev",
+    "prisma:studio": "cd server && npx prisma studio"
   },
   "devDependencies": {
     "prettier": "^3.4.2",
