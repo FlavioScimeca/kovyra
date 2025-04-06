@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: docker/ci/Dockerfile
+    environment:
+      - NODE_ENV=ci
+      - CI=true
+    volumes:
+      - ../../:/app
+      - /app/node_modules
+    networks:
+      - ci-network
+
+  # Add any additional services needed for testing
+  # For example, if you need a database for tests:
+  # db:
+  #   image: postgres:15-alpine
+  #   environment:
+  #     - POSTGRES_USER=test
+  #     - POSTGRES_PASSWORD=test
+  #     - POSTGRES_DB=test
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - ci-network
+
+networks:
+  ci-network:
+    driver: bridge

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: docker/dev/Dockerfile
+      args:
+        - DOCKER_BUILDKIT=1
+    volumes:
+      - ../../server:/app/server
+      - ../../tsconfig.json:/app/tsconfig.json
+      - ../../nest-cli.json:/app/nest-cli.json
+      - /app/node_modules
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+      - PNPM_HOME=/home/node/.local/share/pnpm
+      - PATH=/home/node/.local/share/pnpm:$PATH
+    user: node
+    command: pnpm run start:dev
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

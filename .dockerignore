@@ -1,0 +1,73 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+dist
+**/dist
+build
+**/build
+.next
+**/.next
+out
+**/out
+
+# Development files
+.git
+.gitignore
+.env
+.env.*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE and editor files
+.idea
+.vscode
+*.swp
+*.swo
+.DS_Store
+
+# Test files
+coverage
+**/coverage
+.nyc_output
+**/.nyc_output
+
+# Documentation
+docs
+**/docs
+*.md
+!README.md
+
+# Temporary files
+.temp
+.tmp
+*.tsbuildinfo
+
+# === Ignore Apps and Packages ===
+apps/
+packages/
+scripts/
+
+# Storybook
+storybook-static
+**/storybook-static
+
+# Mobile specific
+**/ios
+**/android
+**/web-build
+**/.expo
+
+# Cache directories
+.cache
+**/.cache
+.npm
+**/.npm
+.yarn
+**/.yarn
+.pnpm-store
+**/.pnpm-store 

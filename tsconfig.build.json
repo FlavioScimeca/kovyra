@@ -5,6 +5,7 @@
     "test",
     "dist",
     "**/*spec.ts",
-    "config/syncpack.config.cjs"
+    "config/syncpack.config.cjs",
+    "apps"
   ]
 }
