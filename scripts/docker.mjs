@@ -3,13 +3,15 @@ import chalk from 'chalk'; // Import chalk
 import { execSync, spawn } from 'child_process';
 import inquirer from 'inquirer';
 import path from 'path';
+import process from 'process'; // Import process
 import { fileURLToPath } from 'url';
 
 // --- Configuration ---
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
-const DOCKER_COMMAND = 'docker-compose'; // Use space - preferred in newer Docker versions
+const useLinuxCommand = process.argv.includes('--linux');
+const DOCKER_COMMAND = useLinuxCommand ? 'docker compose' : 'docker-compose'; // Use space if --linux flag is present
 const USE_BUILDKIT = true;
 
 const environments = {
@@ -222,9 +224,26 @@ async function main() {
   console.log(chalk.blue('-------------------\n'));
 
   try {
-    const commandToRun = action === 'prune' ? 'docker' : DOCKER_COMMAND;
-    await runCommand(commandToRun, commandArgs, executionCwd);
+    let commandToRun;
+    let finalArgs;
+
+    if (action === 'prune') {
+      // 'docker system prune' is always 'docker' command
+      commandToRun = 'docker';
+      finalArgs = commandArgs;
+    } else if (useLinuxCommand) {
+      // Using 'docker compose'
+      commandToRun = 'docker';
+      finalArgs = ['compose', ...commandArgs];
+    } else {
+      // Using 'docker-compose'
+      commandToRun = 'docker-compose';
+      finalArgs = commandArgs;
+    }
+
+    await runCommand(commandToRun, finalArgs, executionCwd);
   } catch (error) {
+    // Error is already logged in runCommand
     process.exit(1);
   }
 }

@@ -1,0 +1,7 @@
+{
+  "name": "@kovyra/app",
+  "private": true,
+  "scripts": {
+    "dev": "tamagui-scripts dev"
+  }
+}
