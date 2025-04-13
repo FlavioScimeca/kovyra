@@ -9,19 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@kovyra/app": "workspace:*",
+    "@kovyra/ui": "workspace:*",
+    "@kovyra/theme": "workspace:*",
+    "@tamagui/next-plugin": "^1.125.34",
+    "@tamagui/next-theme": "^1.125.34",
+    "next": "15.2.4",
+    "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^10.0.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "next": "15.2.4"
+    "react-native": "0.79.0-rc.4",
+    "react-native-web": "~0.20.0",
+    "tamagui": "^1.125.34"
   },
   "devDependencies": {
-    "typescript": "~5.3.3",
+    "@eslint/eslintrc": "^3.2.0",
+    "@tailwindcss/postcss": "^4.1.1",
     "@types/node": "^22.10.7",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
-    "@tailwindcss/postcss": "^4.1.1",
-    "tailwindcss": "^4.1.1",
     "eslint": "^9.21.0",
     "eslint-config-next": "15.2.4",
-    "@eslint/eslintrc": "^3.2.0"
+    "tailwindcss": "^4.1.1",
+    "typescript": "~5.3.3"
   }
 }
