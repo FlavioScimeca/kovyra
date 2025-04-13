@@ -9,6 +9,7 @@ module.exports = (api) => {
           root: ['../..'],
           alias: {
             // define aliases to shorten the import paths
+            app: '../../packages/app',
             '@kovyra/ui': '../../packages/ui',
           },
           extensions: ['.js', '.jsx', '.tsx', '.ios.js', '.android.js'],
@@ -16,19 +17,19 @@ module.exports = (api) => {
       ],
       // if you want reanimated support
       // 'react-native-reanimated/plugin',
-      // ...(process.env.EAS_BUILD_PLATFORM === 'android'
-      //   ? []
-      //   : [
-      //       [
-      //         '@tamagui/babel-plugin',
-      //         {
-      //           components: ['@kovyra/ui', 'tamagui'],
-      //           config: '../../packages/theme/src/tamagui.config.ts',
-      //           logTimings: true,
-      //           disableExtraction: process.env.NODE_ENV === 'development',
-      //         },
-      //       ],
-      //     ]),
+      ...(process.env.EAS_BUILD_PLATFORM === 'android'
+        ? []
+        : [
+            [
+              '@tamagui/babel-plugin',
+              {
+                components: ['@kovyra/ui', 'tamagui'],
+                config: '../../packages/theme/src/tamagui.config.ts',
+                logTimings: true,
+                disableExtraction: process.env.NODE_ENV === 'development',
+              },
+            ],
+          ]),
     ],
   };
 };
