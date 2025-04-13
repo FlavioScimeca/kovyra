@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { NextTamaguiProvider } from '../components/providers/TamaguiWebProvider';
 
 export const metadata: Metadata = {
   title: 'Kovyra',
@@ -16,7 +15,8 @@ export default function RootLayout({
     // You can use `suppressHydrationWarning` to avoid the warning about mismatched content during hydration in dev mode
     <html lang="en" suppressHydrationWarning>
       <body>
-        <NextTamaguiProvider>{children}</NextTamaguiProvider>
+        {/* <NextTamaguiProvider>{children}</NextTamaguiProvider> */}
+        {children}
       </body>
     </html>
   );
