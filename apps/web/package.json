@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@kovyra/app": "workspace:*",
-    "@kovyra/ui": "workspace:*",
     "@kovyra/theme": "workspace:*",
+    "@kovyra/ui": "workspace:*",
+    "@tamagui/config": "^1.125.34",
     "@tamagui/next-plugin": "^1.125.34",
     "@tamagui/next-theme": "^1.125.34",
     "next": "15.2.4",
