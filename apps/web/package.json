@@ -1,37 +1,35 @@
 {
   "name": "@kovyra/web",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@kovyra/app": "workspace:*",
     "@kovyra/theme": "workspace:*",
     "@kovyra/ui": "workspace:*",
-    "@tamagui/config": "^1.125.34",
-    "@tamagui/vite-plugin": "^1.125.35",
+    "@tamagui/next-theme": "1.126.0",
+    "next": "15.3.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.0",
     "react-native-web": "~0.20.0",
-    "tamagui": "^1.125.34"
+    "tamagui": "^1.126.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.18.0",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.1",
-    "@vitejs/plugin-react-swc": "^3.8.0",
+    "@eslint/eslintrc": "^3.2.0",
+    "@tamagui/next-plugin": "1.126.0",
+    "@types/node": "^22.10.7",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.14.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
+    "eslint-config-next": "15.3.0",
+    "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^10.0.1",
+    "typescript": "~5.8.3"
   }
 }

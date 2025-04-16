@@ -611,9 +611,9 @@ var require_cjs4 = __commonJS({
   }
 });
 
-// ../../node_modules/@tamagui/helpers/node_modules/@tamagui/simple-hash/dist/cjs/index.cjs
+// ../../node_modules/@tamagui/simple-hash/dist/cjs/index.cjs
 var require_cjs5 = __commonJS({
-  "../../node_modules/@tamagui/helpers/node_modules/@tamagui/simple-hash/dist/cjs/index.cjs"(exports2, module2) {
+  "../../node_modules/@tamagui/simple-hash/dist/cjs/index.cjs"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -1993,14 +1993,14 @@ var require_Collection = __commonJS({
     module2.exports = __toCommonJS2(Collection_exports);
     var import_compose_refs27 = require_cjs12();
     var import_constants56 = require_cjs6();
-    var import_core65 = require("@tamagui/core");
+    var import_core67 = require("@tamagui/core");
     var import_react55 = __toESM2(require("react"));
     var import_jsx_runtime74 = require("react/jsx-runtime");
     function createCollection2(name2) {
       const {
         Provider: CollectionProviderImpl,
         useStyledContext: useCollectionContext
-      } = (0, import_core65.createStyledContext)({
+      } = (0, import_core67.createStyledContext)({
         collectionRef: {
           current: null
         },
@@ -2023,7 +2023,7 @@ var require_Collection = __commonJS({
           __scopeCollection,
           children
         } = props, context2 = useCollectionContext(__scopeCollection), composedRefs = (0, import_compose_refs27.useComposedRefs)(forwardedRef, context2.collectionRef);
-        return /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(import_core65.Slot, {
+        return /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(import_core67.Slot, {
           ref: composedRefs,
           children
         });
@@ -2038,7 +2038,7 @@ var require_Collection = __commonJS({
         return import_react55.default.useEffect(() => (context2.itemMap.set(ref, {
           ref,
           ...itemData
-        }), () => void context2.itemMap.delete(ref))), /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(import_core65.Slot, {
+        }), () => void context2.itemMap.delete(ref))), /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(import_core67.Slot, {
           [ITEM_DATA_ATTR]: "",
           ref: composedRefs,
           children
@@ -2119,12 +2119,12 @@ var require_getElevation = __commonJS({
       getSizedElevation: /* @__PURE__ */ __name(() => getSizedElevation2, "getSizedElevation")
     });
     module2.exports = __toCommonJS2(getElevation_exports);
-    var import_core65 = require("@tamagui/core");
+    var import_core67 = require("@tamagui/core");
     var getElevation2 = /* @__PURE__ */ __name((size5, extras) => {
       if (!size5) return;
       const {
         tokens: tokens2
-      } = extras, token = tokens2.size[size5], sizeNum = (0, import_core65.isVariable)(token) ? +token.val : size5;
+      } = extras, token = tokens2.size[size5], sizeNum = (0, import_core67.isVariable)(token) ? +token.val : size5;
       return getSizedElevation2(sizeNum, extras);
     }, "getElevation");
     var getSizedElevation2 = /* @__PURE__ */ __name((val, {
@@ -2133,7 +2133,7 @@ var require_getElevation = __commonJS({
     }) => {
       let num = 0;
       if (val === true) {
-        const val2 = (0, import_core65.getVariableValue)(tokens2.size.true);
+        const val2 = (0, import_core67.getVariableValue)(tokens2.size.true);
         typeof val2 == "number" ? num = val2 : num = 10;
       } else num = +val;
       if (num === 0) return;
@@ -2145,7 +2145,7 @@ var require_getElevation = __commonJS({
           height,
           width: 0
         },
-        ...import_core65.isAndroid ? {
+        ...import_core67.isAndroid ? {
           elevationAndroid: 2 * height
         } : {}
       };
@@ -2184,7 +2184,7 @@ var require_Stacks = __commonJS({
       fullscreenStyle: /* @__PURE__ */ __name(() => fullscreenStyle2, "fullscreenStyle")
     });
     module2.exports = __toCommonJS2(Stacks_exports);
-    var import_core65 = require("@tamagui/core");
+    var import_core67 = require("@tamagui/core");
     var import_getElevation3 = require_getElevation();
     var fullscreenStyle2 = {
       position: "absolute",
@@ -2209,17 +2209,17 @@ var require_Stacks = __commonJS({
       },
       inset: getInset2
     };
-    var YStack2 = (0, import_core65.styled)(import_core65.View, {
+    var YStack2 = (0, import_core67.styled)(import_core67.View, {
       flexDirection: "column",
       variants: variants2
     });
     YStack2.displayName = "YStack";
-    var XStack2 = (0, import_core65.styled)(import_core65.View, {
+    var XStack2 = (0, import_core67.styled)(import_core67.View, {
       flexDirection: "row",
       variants: variants2
     });
     XStack2.displayName = "XStack";
-    var ZStack2 = (0, import_core65.styled)(YStack2, {
+    var ZStack2 = (0, import_core67.styled)(YStack2, {
       position: "relative"
     }, {
       neverFlatten: true,
@@ -2507,11 +2507,11 @@ var require_SizableStack = __commonJS({
       SizableStack: /* @__PURE__ */ __name(() => SizableStack2, "SizableStack")
     });
     module2.exports = __toCommonJS2(SizableStack_exports);
-    var import_core65 = require("@tamagui/core");
+    var import_core67 = require("@tamagui/core");
     var import_get_button_sized6 = require_cjs15();
     var import_Stacks3 = require_Stacks();
     var import_variants3 = require_variants();
-    var SizableStack2 = (0, import_core65.styled)(import_Stacks3.XStack, {
+    var SizableStack2 = (0, import_core67.styled)(import_Stacks3.XStack, {
       name: "SizableStack",
       variants: {
         unstyled: {
@@ -2566,7 +2566,7 @@ var require_ThemeableStack = __commonJS({
       themeableVariants: /* @__PURE__ */ __name(() => themeableVariants2, "themeableVariants")
     });
     module2.exports = __toCommonJS2(ThemeableStack_exports);
-    var import_core65 = require("@tamagui/core");
+    var import_core67 = require("@tamagui/core");
     var import_Stacks3 = require_Stacks();
     var import_variants3 = require_variants();
     var chromelessStyle2 = {
@@ -2606,7 +2606,7 @@ var require_ThemeableStack = __commonJS({
         }
       }
     };
-    var ThemeableStack2 = (0, import_core65.styled)(import_Stacks3.YStack, {
+    var ThemeableStack2 = (0, import_core67.styled)(import_Stacks3.YStack, {
       variants: themeableVariants2
     });
   }
@@ -2714,7 +2714,7 @@ var require_cjs17 = __commonJS({
     });
     module2.exports = __toCommonJS2(index_exports);
     var import_constants56 = require_cjs6();
-    var import_core65 = require("@tamagui/core");
+    var import_core67 = require("@tamagui/core");
     var getFontSized2 = /* @__PURE__ */ __name((sizeTokenIn = "$true", {
       font,
       fontFamily,
@@ -2733,7 +2733,7 @@ var require_cjs17 = __commonJS({
     var cache3 = /* @__PURE__ */ new WeakMap();
     function getDefaultSizeToken2(font) {
       if (typeof font == "object" && cache3.has(font)) return cache3.get(font);
-      const sizeTokens = "$true" in font.size ? font.size : (0, import_core65.getTokens)().size, sizeDefault = sizeTokens.$true, sizeDefaultSpecific = sizeDefault ? Object.keys(sizeTokens).find((x) => x !== "$true" && sizeTokens[x].val === sizeDefault.val) : null;
+      const sizeTokens = "$true" in font.size ? font.size : (0, import_core67.getTokens)().size, sizeDefault = sizeTokens.$true, sizeDefaultSpecific = sizeDefault ? Object.keys(sizeTokens).find((x) => x !== "$true" && sizeTokens[x].val === sizeDefault.val) : null;
       return !sizeDefault || !sizeDefaultSpecific ? (process.env.NODE_ENV === "development" && console.warn(`No default size is set in your tokens for the "true" key, fonts will be inconsistent.
 
       Fix this by having consistent tokens across fonts and sizes and setting a true key for your size tokens, or
@@ -26809,8 +26809,8 @@ __export(src_exports, {
   CheckboxIndicatorFrame: () => CheckboxIndicatorFrame,
   CheckboxStyledContext: () => CheckboxStyledContext,
   Circle: () => Circle,
-  ComponentContext: () => import_core57.ComponentContext,
-  Configuration: () => import_core57.Configuration,
+  ComponentContext: () => import_core59.ComponentContext,
+  Configuration: () => import_core59.Configuration,
   CustomToast: () => CustomToast,
   Dialog: () => Dialog,
   DialogClose: () => DialogClose,
@@ -26825,7 +26825,7 @@ __export(src_exports, {
   DialogWarningProvider: () => DialogWarningProvider,
   EnsureFlexed: () => EnsureFlexed,
   Fieldset: () => Fieldset,
-  FontLanguage: () => import_core57.FontLanguage,
+  FontLanguage: () => import_core59.FontLanguage,
   Footer: () => Footer,
   Form: () => Form2,
   FormFrame: () => FormFrame,
@@ -26920,10 +26920,10 @@ __export(src_exports, {
   SliderTrackActive: () => SliderTrackActive,
   SliderTrackActiveFrame: () => SliderTrackActiveFrame,
   SliderTrackFrame: () => SliderTrackFrame,
-  Spacer: () => import_core57.Spacer,
+  Spacer: () => import_core59.Spacer,
   Spinner: () => Spinner,
   Square: () => Square,
-  Stack: () => import_core57.Stack,
+  Stack: () => import_core59.Stack,
   StyleObjectIdentifier: () => StyleObjectIdentifier,
   StyleObjectProperty: () => StyleObjectProperty,
   StyleObjectPseudo: () => StyleObjectPseudo,
@@ -26934,12 +26934,13 @@ __export(src_exports, {
   SwitchFrame: () => SwitchFrame,
   SwitchStyledContext: () => SwitchStyledContext,
   SwitchThumb: () => SwitchThumb,
-  Tabs: () => Tabs2,
+  Tabs: () => Tabs,
+  TabsProvider: () => TabsProvider,
   TamaguiProvider: () => TamaguiProvider,
   Text: () => Text4,
   TextArea: () => TextArea,
   TextAreaFrame: () => TextAreaFrame,
-  Theme: () => import_core57.Theme,
+  Theme: () => import_core59.Theme,
   ThemeableStack: () => ThemeableStack,
   Thumb: () => Thumb,
   Toast: () => Toast,
@@ -26953,8 +26954,8 @@ __export(src_exports, {
   USE_NATIVE_PORTAL: () => USE_NATIVE_PORTAL,
   UiButton: () => UiButton,
   UiStack: () => UiStack,
-  Unspaced: () => import_core57.Unspaced,
-  View: () => import_core57.View,
+  Unspaced: () => import_core59.Unspaced,
+  View: () => import_core59.View,
   VisuallyHidden: () => VisuallyHidden,
   XGroup: () => XGroup,
   XStack: () => XStack,
@@ -26973,11 +26974,11 @@ __export(src_exports, {
   createAlertDialogScope: () => createAlertDialogScope,
   createAvatarScope: () => createAvatarScope,
   createCheckbox: () => createCheckbox,
-  createComponent: () => import_core57.createComponent,
+  createComponent: () => import_core59.createComponent,
   createContext: () => createContext6,
   createContextScope: () => createContextScope,
   createDialogScope: () => createDialogScope,
-  createFont: () => import_core57.createFont,
+  createFont: () => import_core59.createFont,
   createMedia: () => createMedia,
   createProgressScope: () => createProgressScope,
   createRadioGroup: () => createRadioGroup,
@@ -26987,69 +26988,70 @@ __export(src_exports, {
   createSelectScope: () => createSelectScope,
   createSheet: () => createSheet,
   createSheetScope: () => createSheetScope,
-  createShorthands: () => import_core57.createShorthands,
-  createStyledContext: () => import_core57.createStyledContext,
+  createShorthands: () => import_core59.createShorthands,
+  createStyledContext: () => import_core59.createStyledContext,
   createSwitch: () => createSwitch,
+  createTabs: () => createTabs,
   createTamagui: () => createTamagui,
-  createTheme: () => import_core57.createTheme,
-  createTokens: () => import_core57.createTokens,
-  createVariable: () => import_core57.createVariable,
+  createTheme: () => import_core59.createTheme,
+  createTokens: () => import_core59.createTokens,
+  createVariable: () => import_core59.createVariable,
   debounce: () => debounce,
   defaultStyles: () => defaultStyles,
   fullscreenStyle: () => fullscreenStyle,
-  getCSSStylesAtomic: () => import_core57.getCSSStylesAtomic,
-  getConfig: () => import_core57.getConfig,
+  getCSSStylesAtomic: () => import_core59.getCSSStylesAtomic,
+  getConfig: () => import_core59.getConfig,
   getFontSize: () => getFontSize,
   getFontSizeToken: () => getFontSizeToken,
   getFontSizeVariable: () => getFontSizeVariable,
-  getMedia: () => import_core57.getMedia,
+  getMedia: () => import_core59.getMedia,
   getNativeSheet: () => getNativeSheet,
   getShapeSize: () => getShapeSize,
-  getThemes: () => import_core57.getThemes,
-  getToken: () => import_core57.getToken,
-  getTokenValue: () => import_core57.getTokenValue,
-  getTokens: () => import_core57.getTokens,
-  getVariable: () => import_core57.getVariable,
-  getVariableName: () => import_core57.getVariableName,
-  getVariableValue: () => import_core57.getVariableValue,
-  insertFont: () => import_core57.insertFont,
-  isChrome: () => import_core57.isChrome,
-  isClient: () => import_core57.isClient,
+  getThemes: () => import_core59.getThemes,
+  getToken: () => import_core59.getToken,
+  getTokenValue: () => import_core59.getTokenValue,
+  getTokens: () => import_core59.getTokens,
+  getVariable: () => import_core59.getVariable,
+  getVariableName: () => import_core59.getVariableName,
+  getVariableValue: () => import_core59.getVariableValue,
+  insertFont: () => import_core59.insertFont,
+  isChrome: () => import_core59.isChrome,
+  isClient: () => import_core59.isClient,
   isPresent: () => isPresent,
-  isServer: () => import_core57.isServer,
+  isServer: () => import_core59.isServer,
   isServerSide: () => isServerSide,
-  isTamaguiComponent: () => import_core57.isTamaguiComponent,
-  isTamaguiElement: () => import_core57.isTamaguiElement,
-  isTouchable: () => import_core57.isTouchable,
-  isVariable: () => import_core57.isVariable,
-  isWeb: () => import_core57.isWeb,
-  isWebTouchable: () => import_core57.isWebTouchable,
-  matchMedia: () => import_core57.matchMedia,
-  mediaObjectToString: () => import_core57.mediaObjectToString,
-  mediaQueryConfig: () => import_core57.mediaQueryConfig,
-  mediaState: () => import_core57.mediaState,
+  isTamaguiComponent: () => import_core59.isTamaguiComponent,
+  isTamaguiElement: () => import_core59.isTamaguiElement,
+  isTouchable: () => import_core59.isTouchable,
+  isVariable: () => import_core59.isVariable,
+  isWeb: () => import_core59.isWeb,
+  isWebTouchable: () => import_core59.isWebTouchable,
+  matchMedia: () => import_core59.matchMedia,
+  mediaObjectToString: () => import_core59.mediaObjectToString,
+  mediaQueryConfig: () => import_core59.mediaQueryConfig,
+  mediaState: () => import_core59.mediaState,
   mutateThemes: () => mutateThemes,
   portalListeners: () => portalListeners,
   prevent: () => prevent,
   replaceTheme: () => replaceTheme,
   resolveViewZIndex: () => resolveViewZIndex,
-  setConfig: () => import_core57.setConfig,
+  setConfig: () => import_core59.setConfig,
   setRef: () => setRef,
-  setupDev: () => import_core57.setupDev,
+  setupDev: () => import_core59.setupDev,
   setupNativeSheet: () => setupNativeSheet,
   setupPopper: () => setupPopper,
-  setupReactNative: () => import_core57.setupReactNative,
+  setupReactNative: () => import_core59.setupReactNative,
   shouldRenderNativePlatform: () => shouldRenderNativePlatform,
   simpleHash: () => simpleHash,
-  spacedChildren: () => import_core57.spacedChildren,
+  spacedChildren: () => import_core59.spacedChildren,
   stylePropsAll: () => stylePropsAll,
   stylePropsText: () => stylePropsText,
   stylePropsTextOnly: () => stylePropsTextOnly,
   stylePropsTransform: () => stylePropsTransform,
   stylePropsUnitless: () => stylePropsUnitless,
   stylePropsView: () => stylePropsView,
-  styled: () => import_core57.styled,
-  themeable: () => import_core57.themeable,
+  styled: () => import_core59.styled,
+  themeable: () => import_core59.themeable,
   themeableVariants: () => themeableVariants,
   tokenCategories: () => tokenCategories,
   updateTheme: () => updateTheme,
@@ -27057,50 +27059,50 @@ __export(src_exports, {
   useAdaptIsActive: () => useAdaptIsActive,
   useButton: () => useButton,
   useComposedRefs: () => useComposedRefs,
-  useConfiguration: () => import_core57.useConfiguration,
+  useConfiguration: () => import_core59.useConfiguration,
   useControllableState: () => useControllableState,
   useCurrentColor: () => useCurrentColor,
   useDebounce: () => useDebounce,
   useDebounceValue: () => useDebounceValue,
-  useDidFinishSSR: () => import_core57.useDidFinishSSR,
-  useEvent: () => import_core57.useEvent,
+  useDidFinishSSR: () => import_core59.useDidFinishSSR,
+  useEvent: () => import_core59.useEvent,
   useFloatingContext: () => useFloatingContext,
   useForceUpdate: () => useForceUpdate,
   useFormContext: () => useFormContext,
-  useGet: () => import_core57.useGet,
+  useGet: () => import_core59.useGet,
   useGetThemedIcon: () => useGetThemedIcon,
   useGroupItem: () => useGroupItem,
   useInputProps: () => useInputProps,
   useIsPresent: () => useIsPresent,
-  useIsTouchDevice: () => import_core57.useIsTouchDevice,
-  useIsomorphicLayoutEffect: () => import_core57.useIsomorphicLayoutEffect,
+  useIsTouchDevice: () => import_core59.useIsTouchDevice,
+  useIsomorphicLayoutEffect: () => import_core59.useIsomorphicLayoutEffect,
   useLabelContext: () => useLabelContext,
   useListItem: () => useListItem,
-  useMedia: () => import_core57.useMedia,
+  useMedia: () => import_core59.useMedia,
   usePopoverContext: () => usePopoverContext,
   usePopperContext: () => usePopperContext,
   usePortal: () => usePortal,
   usePresence: () => usePresence,
-  useProps: () => import_core57.useProps,
-  usePropsAndStyle: () => import_core57.usePropsAndStyle,
+  useProps: () => import_core59.useProps,
+  usePropsAndStyle: () => import_core59.usePropsAndStyle,
   useSelectContext: () => useSelectContext,
   useSelectItemParentContext: () => useSelectItemParentContext,
   useSheet: () => useSheet,
   useSheetController: () => useSheetController,
   useSheetOffscreenSize: () => useSheetOffscreenSize,
   useSheetOpenState: () => useSheetOpenState,
-  useStyle: () => import_core57.useStyle,
+  useStyle: () => import_core59.useStyle,
   useTabsContext: () => useTabsContext,
-  useTheme: () => import_core57.useTheme,
-  useThemeName: () => import_core57.useThemeName,
+  useTheme: () => import_core59.useTheme,
+  useThemeName: () => import_core59.useThemeName,
   useToast: () => useToast,
   useToastController: () => useToastController,
   useToastState: () => useToastState,
   useWindowDimensions: () => useWindowDimensions,
   validPseudoKeys: () => validPseudoKeys,
   validStyles: () => validStyles,
-  variableToString: () => import_core57.variableToString,
-  withStaticProperties: () => import_core57.withStaticProperties,
+  variableToString: () => import_core59.variableToString,
+  withStaticProperties: () => import_core59.withStaticProperties,
   wrapChildrenInText: () => wrapChildrenInText
 });
 module.exports = __toCommonJS(src_exports);
@@ -28788,6 +28790,27 @@ var breakpoints = {
   "2xs": 340
 };
 var media = {
+  maxXs: {
+    maxWidth: breakpoints.xs
+  },
+  max2xs: {
+    maxWidth: breakpoints["2xs"]
+  },
+  maxSm: {
+    maxWidth: breakpoints.sm
+  },
+  maxMd: {
+    maxWidth: breakpoints.md
+  },
+  maxLg: {
+    maxWidth: breakpoints.lg
+  },
+  maxXl: {
+    maxWidth: breakpoints.xl
+  },
+  max2Xl: {
+    maxWidth: breakpoints["2xl"]
+  },
   // for site
   "2xl": {
     minWidth: breakpoints["2xl"]
@@ -29017,8 +29040,8 @@ __export(esm_exports2, {
   CheckboxIndicatorFrame: () => CheckboxIndicatorFrame,
   CheckboxStyledContext: () => CheckboxStyledContext,
   Circle: () => Circle,
-  ComponentContext: () => import_core57.ComponentContext,
-  Configuration: () => import_core57.Configuration,
+  ComponentContext: () => import_core59.ComponentContext,
+  Configuration: () => import_core59.Configuration,
   Dialog: () => Dialog,
   DialogClose: () => DialogClose,
   DialogContent: () => DialogContent,
@@ -29032,7 +29055,7 @@ __export(esm_exports2, {
   DialogWarningProvider: () => DialogWarningProvider,
   EnsureFlexed: () => EnsureFlexed,
   Fieldset: () => Fieldset,
-  FontLanguage: () => import_core57.FontLanguage,
+  FontLanguage: () => import_core59.FontLanguage,
   Footer: () => Footer,
   Form: () => Form2,
   FormFrame: () => FormFrame,
@@ -29127,10 +29150,10 @@ __export(esm_exports2, {
   SliderTrackActive: () => SliderTrackActive,
   SliderTrackActiveFrame: () => SliderTrackActiveFrame,
   SliderTrackFrame: () => SliderTrackFrame,
-  Spacer: () => import_core57.Spacer,
+  Spacer: () => import_core59.Spacer,
   Spinner: () => Spinner,
   Square: () => Square,
-  Stack: () => import_core57.Stack,
+  Stack: () => import_core59.Stack,
   StyleObjectIdentifier: () => StyleObjectIdentifier,
   StyleObjectProperty: () => StyleObjectProperty,
   StyleObjectPseudo: () => StyleObjectPseudo,
@@ -29141,12 +29164,13 @@ __export(esm_exports2, {
   SwitchFrame: () => SwitchFrame,
   SwitchStyledContext: () => SwitchStyledContext,
   SwitchThumb: () => SwitchThumb,
-  Tabs: () => Tabs2,
+  Tabs: () => Tabs,
+  TabsProvider: () => TabsProvider,
   TamaguiProvider: () => TamaguiProvider,
   Text: () => Text4,
   TextArea: () => TextArea,
   TextAreaFrame: () => TextAreaFrame,
-  Theme: () => import_core57.Theme,
+  Theme: () => import_core59.Theme,
   ThemeableStack: () => ThemeableStack,
   Thumb: () => Thumb,
   ToggleGroup: () => ToggleGroup,
@@ -29155,8 +29179,8 @@ __export(esm_exports2, {
   TooltipSimple: () => TooltipSimple,
   Track: () => Track,
   USE_NATIVE_PORTAL: () => USE_NATIVE_PORTAL,
-  Unspaced: () => import_core57.Unspaced,
-  View: () => import_core57.View,
+  Unspaced: () => import_core59.Unspaced,
+  View: () => import_core59.View,
   VisuallyHidden: () => VisuallyHidden,
   XGroup: () => XGroup,
   XStack: () => XStack,
@@ -29174,11 +29198,11 @@ __export(esm_exports2, {
   createAlertDialogScope: () => createAlertDialogScope,
   createAvatarScope: () => createAvatarScope,
   createCheckbox: () => createCheckbox,
-  createComponent: () => import_core57.createComponent,
+  createComponent: () => import_core59.createComponent,
   createContext: () => createContext6,
   createContextScope: () => createContextScope,
   createDialogScope: () => createDialogScope,
-  createFont: () => import_core57.createFont,
+  createFont: () => import_core59.createFont,
   createMedia: () => createMedia,
   createProgressScope: () => createProgressScope,
   createRadioGroup: () => createRadioGroup,
@@ -29188,69 +29212,70 @@ __export(esm_exports2, {
   createSelectScope: () => createSelectScope,
   createSheet: () => createSheet,
   createSheetScope: () => createSheetScope,
-  createShorthands: () => import_core57.createShorthands,
-  createStyledContext: () => import_core57.createStyledContext,
+  createShorthands: () => import_core59.createShorthands,
+  createStyledContext: () => import_core59.createStyledContext,
   createSwitch: () => createSwitch,
+  createTabs: () => createTabs,
   createTamagui: () => createTamagui,
-  createTheme: () => import_core57.createTheme,
-  createTokens: () => import_core57.createTokens,
-  createVariable: () => import_core57.createVariable,
+  createTheme: () => import_core59.createTheme,
+  createTokens: () => import_core59.createTokens,
+  createVariable: () => import_core59.createVariable,
   debounce: () => debounce,
   defaultStyles: () => defaultStyles,
   fullscreenStyle: () => fullscreenStyle,
-  getCSSStylesAtomic: () => import_core57.getCSSStylesAtomic,
-  getConfig: () => import_core57.getConfig,
+  getCSSStylesAtomic: () => import_core59.getCSSStylesAtomic,
+  getConfig: () => import_core59.getConfig,
   getFontSize: () => getFontSize,
   getFontSizeToken: () => getFontSizeToken,
   getFontSizeVariable: () => getFontSizeVariable,
-  getMedia: () => import_core57.getMedia,
+  getMedia: () => import_core59.getMedia,
   getNativeSheet: () => getNativeSheet,
   getShapeSize: () => getShapeSize,
-  getThemes: () => import_core57.getThemes,
-  getToken: () => import_core57.getToken,
-  getTokenValue: () => import_core57.getTokenValue,
-  getTokens: () => import_core57.getTokens,
-  getVariable: () => import_core57.getVariable,
-  getVariableName: () => import_core57.getVariableName,
-  getVariableValue: () => import_core57.getVariableValue,
-  insertFont: () => import_core57.insertFont,
-  isChrome: () => import_core57.isChrome,
-  isClient: () => import_core57.isClient,
+  getThemes: () => import_core59.getThemes,
+  getToken: () => import_core59.getToken,
+  getTokenValue: () => import_core59.getTokenValue,
+  getTokens: () => import_core59.getTokens,
+  getVariable: () => import_core59.getVariable,
+  getVariableName: () => import_core59.getVariableName,
+  getVariableValue: () => import_core59.getVariableValue,
+  insertFont: () => import_core59.insertFont,
+  isChrome: () => import_core59.isChrome,
+  isClient: () => import_core59.isClient,
   isPresent: () => isPresent,
-  isServer: () => import_core57.isServer,
+  isServer: () => import_core59.isServer,
   isServerSide: () => isServerSide,
-  isTamaguiComponent: () => import_core57.isTamaguiComponent,
-  isTamaguiElement: () => import_core57.isTamaguiElement,
-  isTouchable: () => import_core57.isTouchable,
-  isVariable: () => import_core57.isVariable,
-  isWeb: () => import_core57.isWeb,
-  isWebTouchable: () => import_core57.isWebTouchable,
-  matchMedia: () => import_core57.matchMedia,
-  mediaObjectToString: () => import_core57.mediaObjectToString,
-  mediaQueryConfig: () => import_core57.mediaQueryConfig,
-  mediaState: () => import_core57.mediaState,
+  isTamaguiComponent: () => import_core59.isTamaguiComponent,
+  isTamaguiElement: () => import_core59.isTamaguiElement,
+  isTouchable: () => import_core59.isTouchable,
+  isVariable: () => import_core59.isVariable,
+  isWeb: () => import_core59.isWeb,
+  isWebTouchable: () => import_core59.isWebTouchable,
+  matchMedia: () => import_core59.matchMedia,
+  mediaObjectToString: () => import_core59.mediaObjectToString,
+  mediaQueryConfig: () => import_core59.mediaQueryConfig,
+  mediaState: () => import_core59.mediaState,
   mutateThemes: () => mutateThemes,
   portalListeners: () => portalListeners,
   prevent: () => prevent,
   replaceTheme: () => replaceTheme,
   resolveViewZIndex: () => resolveViewZIndex,
-  setConfig: () => import_core57.setConfig,
+  setConfig: () => import_core59.setConfig,
   setRef: () => setRef,
-  setupDev: () => import_core57.setupDev,
+  setupDev: () => import_core59.setupDev,
   setupNativeSheet: () => setupNativeSheet,
   setupPopper: () => setupPopper,
-  setupReactNative: () => import_core57.setupReactNative,
+  setupReactNative: () => import_core59.setupReactNative,
   shouldRenderNativePlatform: () => shouldRenderNativePlatform,
   simpleHash: () => simpleHash,
-  spacedChildren: () => import_core57.spacedChildren,
+  spacedChildren: () => import_core59.spacedChildren,
   stylePropsAll: () => stylePropsAll,
   stylePropsText: () => stylePropsText,
   stylePropsTextOnly: () => stylePropsTextOnly,
   stylePropsTransform: () => stylePropsTransform,
   stylePropsUnitless: () => stylePropsUnitless,
   stylePropsView: () => stylePropsView,
-  styled: () => import_core57.styled,
-  themeable: () => import_core57.themeable,
+  styled: () => import_core59.styled,
+  themeable: () => import_core59.themeable,
   themeableVariants: () => themeableVariants,
   tokenCategories: () => tokenCategories,
   updateTheme: () => updateTheme,
@@ -29258,47 +29283,47 @@ __export(esm_exports2, {
   useAdaptIsActive: () => useAdaptIsActive,
   useButton: () => useButton,
   useComposedRefs: () => useComposedRefs,
-  useConfiguration: () => import_core57.useConfiguration,
+  useConfiguration: () => import_core59.useConfiguration,
   useControllableState: () => useControllableState,
   useCurrentColor: () => useCurrentColor,
   useDebounce: () => useDebounce,
   useDebounceValue: () => useDebounceValue,
-  useDidFinishSSR: () => import_core57.useDidFinishSSR,
-  useEvent: () => import_core57.useEvent,
+  useDidFinishSSR: () => import_core59.useDidFinishSSR,
+  useEvent: () => import_core59.useEvent,
   useFloatingContext: () => useFloatingContext,
   useForceUpdate: () => useForceUpdate,
   useFormContext: () => useFormContext,
-  useGet: () => import_core57.useGet,
+  useGet: () => import_core59.useGet,
   useGetThemedIcon: () => useGetThemedIcon,
   useGroupItem: () => useGroupItem,
   useInputProps: () => useInputProps,
   useIsPresent: () => useIsPresent,
-  useIsTouchDevice: () => import_core57.useIsTouchDevice,
-  useIsomorphicLayoutEffect: () => import_core57.useIsomorphicLayoutEffect,
+  useIsTouchDevice: () => import_core59.useIsTouchDevice,
+  useIsomorphicLayoutEffect: () => import_core59.useIsomorphicLayoutEffect,
   useLabelContext: () => useLabelContext,
   useListItem: () => useListItem,
-  useMedia: () => import_core57.useMedia,
+  useMedia: () => import_core59.useMedia,
   usePopoverContext: () => usePopoverContext,
   usePopperContext: () => usePopperContext,
   usePortal: () => usePortal,
   usePresence: () => usePresence,
-  useProps: () => import_core57.useProps,
-  usePropsAndStyle: () => import_core57.usePropsAndStyle,
+  useProps: () => import_core59.useProps,
+  usePropsAndStyle: () => import_core59.usePropsAndStyle,
   useSelectContext: () => useSelectContext,
   useSelectItemParentContext: () => useSelectItemParentContext,
   useSheet: () => useSheet,
   useSheetController: () => useSheetController,
   useSheetOffscreenSize: () => useSheetOffscreenSize,
   useSheetOpenState: () => useSheetOpenState,
-  useStyle: () => import_core57.useStyle,
+  useStyle: () => import_core59.useStyle,
   useTabsContext: () => useTabsContext,
-  useTheme: () => import_core57.useTheme,
-  useThemeName: () => import_core57.useThemeName,
+  useTheme: () => import_core59.useTheme,
+  useThemeName: () => import_core59.useThemeName,
   useWindowDimensions: () => useWindowDimensions,
   validPseudoKeys: () => validPseudoKeys,
   validStyles: () => validStyles,
-  variableToString: () => import_core57.variableToString,
-  withStaticProperties: () => import_core57.withStaticProperties,
+  variableToString: () => import_core59.variableToString,
+  withStaticProperties: () => import_core59.withStaticProperties,
   wrapChildrenInText: () => wrapChildrenInText
 });
 __reExport(esm_exports2, __toESM(require_cjs20(), 1));
@@ -29375,7 +29400,7 @@ var StackZIndexContext = /* @__PURE__ */ __name(({
 // ../../node_modules/@tamagui/adapt/dist/esm/Adapt.mjs
 var import_core6 = require("@tamagui/core");
 
-// ../../node_modules/@tamagui/helpers/node_modules/@tamagui/simple-hash/dist/esm/index.mjs
+// ../../node_modules/@tamagui/simple-hash/dist/esm/index.mjs
 var cache = /* @__PURE__ */ new Map();
 var cacheSize = 0;
 var simpleHash = /* @__PURE__ */ __name((strIn, hashMin = 10) => {
@@ -32528,7 +32553,7 @@ var DialogContentImpl = React30.forwardRef((props, forwardedRef) => {
       onFocusOutside,
       onInteractOutside,
       ref: composedRefs,
-      onDismiss: /* @__PURE__ */ __name(() => context2.onOpenChange(false), "onDismiss"),
+      onDismiss: /* @__PURE__ */ __name(() => context2?.onOpenChange?.(false), "onDismiss"),
       children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(FocusScope, {
         loop: true,
         enabled: context2.open,
@@ -40566,7 +40591,7 @@ var PopoverClose = React48.forwardRef(function(props, forwardedRef) {
     ...rest,
     ref: forwardedRef,
     componentName: "PopoverClose",
-    onPress: composeEventHandlers(props.onPress, () => context2.onOpenChange(false, "press"))
+    onPress: composeEventHandlers(props.onPress, () => context2?.onOpenChange?.(false, "press"))
   });
 });
 var PopoverArrow = PopperArrow.styleable(function(props, forwardedRef) {
@@ -43464,39 +43489,18 @@ var Switch = createSwitch({
   Thumb: SwitchThumb
 });
 
-// ../../node_modules/@tamagui/tabs/dist/esm/Tabs.mjs
+// ../../node_modules/@tamagui/tabs/dist/esm/createTabs.mjs
 var import_web17 = require("@tamagui/core");
 var React67 = __toESM(require("react"), 1);
-var import_jsx_runtime55 = require("react/jsx-runtime");
-var TABS_CONTEXT = "TabsContext";
-var TAB_LIST_NAME = "TabsList";
-var TabsList = React67.forwardRef((props, forwardedRef) => {
-  const {
-    __scopeTabs,
-    loop = true,
-    children,
-    ...listProps
-  } = props, context2 = useTabsContext(__scopeTabs);
-  return /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(RovingFocusGroup, {
-    __scopeRovingFocusGroup: __scopeTabs || TABS_CONTEXT,
-    orientation: context2.orientation,
-    dir: context2.dir,
-    loop,
-    asChild: true,
-    children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(Group, {
-      role: "tablist",
-      componentName: TAB_LIST_NAME,
-      "aria-orientation": context2.orientation,
-      ref: forwardedRef,
-      orientation: context2.orientation,
-      ...listProps,
-      children
-    })
-  });
+
+// ../../node_modules/@tamagui/tabs/dist/esm/Tabs.mjs
+var import_core46 = require("@tamagui/core");
+var TABS_NAME = "Tabs";
+var DefaultTabsFrame = (0, import_core46.styled)(SizableStack, {
+  name: TABS_NAME
 });
-TabsList.displayName = TAB_LIST_NAME;
 var TRIGGER_NAME5 = "TabsTrigger";
-var TabsTriggerFrame = (0, import_web17.styled)(ThemeableStack, {
+var DefaultTabsTabFrame = (0, import_core46.styled)(ThemeableStack, {
   name: TRIGGER_NAME5,
   tag: "button",
   variants: {
@@ -43544,169 +43548,202 @@ var TabsTriggerFrame = (0, import_web17.styled)(ThemeableStack, {
     unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
-var TabsTrigger = TabsTriggerFrame.styleable((props, forwardedRef) => {
-  const {
-    __scopeTabs,
-    value,
-    disabled = false,
-    onInteraction,
-    disableActiveTheme,
-    ...triggerProps
-  } = props, context2 = useTabsContext(__scopeTabs), triggerId = makeTriggerId(context2.baseId, value), contentId = makeContentId(context2.baseId, value), isSelected = value === context2.value, [layout, setLayout] = React67.useState(null), triggerRef = React67.useRef(null), groupItemProps = useGroupItem({
-    disabled: !!disabled
-  });
-  return React67.useEffect(() => (context2.registerTrigger(), () => context2.unregisterTrigger()), []), React67.useEffect(() => {
-    if (!triggerRef.current || !isWeb) return;
-    function getTriggerSize() {
-      triggerRef.current && setLayout({
-        width: triggerRef.current.offsetWidth,
-        height: triggerRef.current.offsetHeight,
-        x: triggerRef.current.offsetLeft,
-        y: triggerRef.current.offsetTop
-      });
-    }
-    __name(getTriggerSize, "getTriggerSize");
-    getTriggerSize();
-    const observer = new ResizeObserver(getTriggerSize);
-    return observer.observe(triggerRef.current), () => {
-      triggerRef.current && observer.unobserve(triggerRef.current);
-    };
-  }, [context2.triggersCount]), React67.useEffect(() => {
-    isSelected && layout && onInteraction?.("select", layout);
-  }, [isSelected, value, layout]), /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(import_web17.Theme, {
-    name: isSelected && !disableActiveTheme ? "active" : null,
-    children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(RovingFocusGroup.Item, {
-      __scopeRovingFocusGroup: __scopeTabs || TABS_CONTEXT,
-      asChild: true,
-      focusable: !disabled,
-      active: isSelected,
-      children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsTriggerFrame, {
-        onLayout: /* @__PURE__ */ __name((event) => {
-          isWeb || setLayout(event.nativeEvent.layout);
-        }, "onLayout"),
-        onHoverIn: composeEventHandlers(props.onHoverIn, () => {
-          layout && onInteraction?.("hover", layout);
-        }),
-        onHoverOut: composeEventHandlers(props.onHoverOut, () => {
-          onInteraction?.("hover", null);
-        }),
-        role: "tab",
-        "aria-selected": isSelected,
-        "aria-controls": contentId,
-        "data-state": isSelected ? "active" : "inactive",
-        "data-disabled": disabled ? "" : void 0,
-        disabled,
-        id: triggerId,
-        ...!props.unstyled && {
-          size: context2.size
-        },
-        ...isSelected && {
-          forceStyle: "focus"
-        },
-        ...groupItemProps,
-        ...triggerProps,
-        ref: composeRefs(forwardedRef, triggerRef),
-        onPress: composeEventHandlers(props.onPress ?? void 0, (event) => {
-          const webChecks = !isWeb || event.button === 0 && event.ctrlKey === false;
-          !disabled && !isSelected && webChecks ? context2.onChange(value) : event.preventDefault();
-        }),
-        ...isWeb && {
-          type: "button",
-          onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
-            [" ", "Enter"].includes(event.key) && (context2.onChange(value), event.preventDefault());
-          }),
-          onFocus: composeEventHandlers(props.onFocus, (event) => {
-            layout && onInteraction?.("focus", layout);
-            const isAutomaticActivation = context2.activationMode !== "manual";
-            !isSelected && !disabled && isAutomaticActivation && context2.onChange(value);
-          }),
-          onBlur: composeEventHandlers(props.onFocus, () => {
-            onInteraction?.("focus", null);
-          })
-        }
-      })
-    })
-  });
-});
-TabsTrigger.displayName = TRIGGER_NAME5;
 var CONTENT_NAME4 = "TabsContent";
-var TabsContentFrame = (0, import_web17.styled)(ThemeableStack, {
+var DefaultTabsContentFrame = (0, import_core46.styled)(ThemeableStack, {
   name: CONTENT_NAME4
 });
-var TabsContent = TabsContentFrame.styleable(function(props, forwardedRef) {
-  const {
-    __scopeTabs,
-    value,
-    forceMount,
-    children,
-    ...contentProps
-  } = props, context2 = useTabsContext(__scopeTabs), isSelected = value === context2.value, show = forceMount || isSelected, triggerId = makeTriggerId(context2.baseId, value), contentId = makeContentId(context2.baseId, value);
-  return show ? /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsContentFrame, {
-    "data-state": isSelected ? "active" : "inactive",
-    "data-orientation": context2.orientation,
-    role: "tabpanel",
-    "aria-labelledby": triggerId,
-    hidden: !show,
-    id: contentId,
-    tabIndex: 0,
-    ...contentProps,
-    ref: forwardedRef,
-    children
-  }, value) : null;
-});
-var TABS_NAME = "Tabs";
+
+// ../../node_modules/@tamagui/tabs/dist/esm/StyledContext.mjs
+var import_core47 = require("@tamagui/core");
 var {
   Provider: TabsProvider,
   useStyledContext: useTabsContext
-} = (0, import_web17.createStyledContext)();
-var TabsFrame = (0, import_web17.styled)(SizableStack, {
-  name: TABS_NAME
-});
-var TabsComponent = TabsFrame.styleable(function(props, forwardedRef) {
+} = (0, import_core47.createStyledContext)();
+
+// ../../node_modules/@tamagui/tabs/dist/esm/createTabs.mjs
+var import_jsx_runtime55 = require("react/jsx-runtime");
+function createTabs(createProps) {
   const {
-    __scopeTabs,
-    value: valueProp,
-    onValueChange,
-    defaultValue: defaultValue2,
-    orientation = "horizontal",
-    dir,
-    activationMode = "automatic",
-    size: size5 = "$true",
-    ...tabsProps
-  } = props, direction = useDirection(dir), [value, setValue] = useControllableState({
-    prop: valueProp,
-    onChange: onValueChange,
-    defaultProp: defaultValue2 ?? ""
-  }), [triggersCount, setTriggersCount] = React67.useState(0), registerTrigger = (0, import_web17.useEvent)(() => setTriggersCount((v) => v + 1)), unregisterTrigger = (0, import_web17.useEvent)(() => setTriggersCount((v) => v - 1));
-  return /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsProvider, {
-    scope: __scopeTabs,
-    baseId: React67.useId(),
-    value,
-    onChange: setValue,
-    orientation,
-    dir: direction,
-    activationMode,
-    size: size5,
-    registerTrigger,
-    triggersCount,
-    unregisterTrigger,
-    children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsFrame, {
-      direction,
-      "data-orientation": orientation,
-      ...tabsProps,
-      ref: forwardedRef
-    })
+    ContentFrame = DefaultTabsContentFrame,
+    TabFrame = DefaultTabsTabFrame,
+    TabsFrame = DefaultTabsFrame
+  } = createProps, TABS_CONTEXT = "TabsContext", TAB_LIST_NAME = "TabsList", TabsList = React67.forwardRef((props, forwardedRef) => {
+    const {
+      __scopeTabs,
+      loop = true,
+      children,
+      ...listProps
+    } = props, context2 = useTabsContext(__scopeTabs);
+    return /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(RovingFocusGroup, {
+      __scopeRovingFocusGroup: __scopeTabs || TABS_CONTEXT,
+      orientation: context2.orientation,
+      dir: context2.dir,
+      loop,
+      asChild: true,
+      children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(Group, {
+        role: "tablist",
+        componentName: TAB_LIST_NAME,
+        "aria-orientation": context2.orientation,
+        ref: forwardedRef,
+        orientation: context2.orientation,
+        ...listProps,
+        children
+      })
+    });
   });
-});
-var Tabs2 = withStaticProperties(TabsComponent, {
-  List: TabsList,
-  /**
-   * @deprecated Use Tabs.Tab instead
-   */
-  Trigger: TabsTrigger,
-  Tab: TabsTrigger,
-  Content: TabsContent
-});
+  TabsList.displayName = TAB_LIST_NAME;
+  const TRIGGER_NAME6 = "TabsTrigger", TabsTrigger = TabFrame.styleable((props, forwardedRef) => {
+    const {
+      __scopeTabs,
+      value,
+      disabled = false,
+      onInteraction,
+      disableActiveTheme,
+      ...triggerProps
+    } = props, context2 = useTabsContext(__scopeTabs), triggerId = makeTriggerId(context2.baseId, value), contentId = makeContentId(context2.baseId, value), isSelected = value === context2.value, [layout, setLayout] = React67.useState(null), triggerRef = React67.useRef(null), groupItemProps = useGroupItem({
+      disabled: !!disabled
+    });
+    return React67.useEffect(() => (context2.registerTrigger(), () => context2.unregisterTrigger()), []), React67.useEffect(() => {
+      if (!triggerRef.current || !isWeb) return;
+      function getTriggerSize() {
+        triggerRef.current && setLayout({
+          width: triggerRef.current.offsetWidth,
+          height: triggerRef.current.offsetHeight,
+          x: triggerRef.current.offsetLeft,
+          y: triggerRef.current.offsetTop
+        });
+      }
+      __name(getTriggerSize, "getTriggerSize");
+      getTriggerSize();
+      const observer = new ResizeObserver(getTriggerSize);
+      return observer.observe(triggerRef.current), () => {
+        triggerRef.current && observer.unobserve(triggerRef.current);
+      };
+    }, [context2.triggersCount]), React67.useEffect(() => {
+      isSelected && layout && onInteraction?.("select", layout);
+    }, [isSelected, value, layout]), /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(import_web17.Theme, {
+      name: isSelected && !disableActiveTheme ? "active" : null,
+      children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(RovingFocusGroup.Item, {
+        __scopeRovingFocusGroup: __scopeTabs || TABS_CONTEXT,
+        asChild: true,
+        focusable: !disabled,
+        active: isSelected,
+        children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabFrame, {
+          onLayout: /* @__PURE__ */ __name((event) => {
+            isWeb || setLayout(event.nativeEvent.layout);
+          }, "onLayout"),
+          onHoverIn: composeEventHandlers(props.onHoverIn, () => {
+            layout && onInteraction?.("hover", layout);
+          }),
+          onHoverOut: composeEventHandlers(props.onHoverOut, () => {
+            onInteraction?.("hover", null);
+          }),
+          role: "tab",
+          "aria-selected": isSelected,
+          "aria-controls": contentId,
+          "data-state": isSelected ? "active" : "inactive",
+          "data-disabled": disabled ? "" : void 0,
+          disabled,
+          id: triggerId,
+          ...!props.unstyled && {
+            size: context2.size
+          },
+          ...isSelected && {
+            forceStyle: "focus"
+          },
+          ...groupItemProps,
+          ...triggerProps,
+          ref: composeRefs(forwardedRef, triggerRef),
+          onPress: composeEventHandlers(props.onPress ?? void 0, (event) => {
+            const webChecks = !isWeb || event.button === 0 && event.ctrlKey === false;
+            !disabled && !isSelected && webChecks ? context2.onChange(value) : event.preventDefault();
+          }),
+          ...isWeb && {
+            type: "button",
+            onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
+              [" ", "Enter"].includes(event.key) && (context2.onChange(value), event.preventDefault());
+            }),
+            onFocus: composeEventHandlers(props.onFocus, (event) => {
+              layout && onInteraction?.("focus", layout);
+              const isAutomaticActivation = context2.activationMode !== "manual";
+              !isSelected && !disabled && isAutomaticActivation && context2.onChange(value);
+            }),
+            onBlur: composeEventHandlers(props.onFocus, () => {
+              onInteraction?.("focus", null);
+            })
+          }
+        })
+      })
+    });
+  });
+  TabsTrigger.displayName = TRIGGER_NAME6;
+  const TabsContent = ContentFrame.styleable(function(props, forwardedRef) {
+    const {
+      __scopeTabs,
+      value,
+      forceMount,
+      children,
+      ...contentProps
+    } = props, context2 = useTabsContext(__scopeTabs), isSelected = value === context2.value, show = forceMount || isSelected, triggerId = makeTriggerId(context2.baseId, value), contentId = makeContentId(context2.baseId, value);
+    return show ? /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(ContentFrame, {
+      "data-state": isSelected ? "active" : "inactive",
+      "data-orientation": context2.orientation,
+      role: "tabpanel",
+      "aria-labelledby": triggerId,
+      hidden: !show,
+      id: contentId,
+      tabIndex: 0,
+      ...contentProps,
+      ref: forwardedRef,
+      children
+    }, value) : null;
+  }), TabsComponent = TabsFrame.styleable(function(props, forwardedRef) {
+    const {
+      __scopeTabs,
+      value: valueProp,
+      onValueChange,
+      defaultValue: defaultValue2,
+      orientation = "horizontal",
+      dir,
+      activationMode = "automatic",
+      size: size5 = "$true",
+      ...tabsProps
+    } = props, direction = useDirection(dir), [value, setValue] = useControllableState({
+      prop: valueProp,
+      onChange: onValueChange,
+      defaultProp: defaultValue2 ?? ""
+    }), [triggersCount, setTriggersCount] = React67.useState(0), registerTrigger = (0, import_web17.useEvent)(() => setTriggersCount((v) => v + 1)), unregisterTrigger = (0, import_web17.useEvent)(() => setTriggersCount((v) => v - 1));
+    return /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsProvider, {
+      scope: __scopeTabs,
+      baseId: React67.useId(),
+      value,
+      onChange: setValue,
+      orientation,
+      dir: direction,
+      activationMode,
+      size: size5,
+      registerTrigger,
+      triggersCount,
+      unregisterTrigger,
+      children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsFrame, {
+        direction,
+        "data-orientation": orientation,
+        ...tabsProps,
+        ref: forwardedRef
+      })
+    });
+  });
+  return withStaticProperties(TabsComponent, {
+    List: TabsList,
+    /**
+     * @deprecated Use Tabs.Tab instead
+     */
+    Trigger: TabsTrigger,
+    Tab: TabsTrigger,
+    Content: TabsContent
+  });
+}
+__name(createTabs, "createTabs");
 function makeTriggerId(baseId, value) {
   return `${baseId}-trigger-${value}`;
 }
@@ -43715,6 +43752,13 @@ function makeContentId(baseId, value) {
   return `${baseId}-content-${value}`;
 }
 __name(makeContentId, "makeContentId");
+
+// ../../node_modules/@tamagui/tabs/dist/esm/index.mjs
+var Tabs = createTabs({
+  ContentFrame: DefaultTabsContentFrame,
+  TabFrame: DefaultTabsTabFrame,
+  TabsFrame: DefaultTabsFrame
+});
 
 // ../../node_modules/@tamagui/theme/dist/esm/_mutateTheme.mjs
 var import_web18 = require("@tamagui/core");
@@ -44186,7 +44230,7 @@ var ToggleGroupImpl = ToggleGroupImplElementFrame.extractable(import_react48.def
 }));
 
 // ../../node_modules/@tamagui/tooltip/dist/esm/Tooltip.mjs
-var import_core46 = require("@tamagui/core");
+var import_core48 = require("@tamagui/core");
 var React70 = __toESM(require("react"), 1);
 var import_jsx_runtime58 = require("react/jsx-runtime");
 var TOOLTIP_SCOPE = "tooltip";
@@ -44261,7 +44305,7 @@ var TooltipComponent = React70.forwardRef(function(props, ref) {
     prop: openProp,
     defaultProp: false,
     onChange: onOpenChangeProp
-  }), id = props.groupId, onOpenChange = (0, import_core46.useEvent)((open2) => {
+  }), id = props.groupId, onOpenChange = (0, import_core48.useEvent)((open2) => {
     open2 && setCurrentId(id), setOpen(open2);
   });
   React70.useEffect(() => {
@@ -44486,9 +44530,9 @@ var VisuallyHidden = (0, import_web21.styled)(import_web21.Text, {
 VisuallyHidden.isVisuallyHidden = true;
 
 // ../../node_modules/tamagui/dist/esm/createTamagui.mjs
-var import_core47 = require("@tamagui/core");
-var createTamagui = process.env.NODE_ENV !== "development" ? import_core47.createTamagui : (conf) => {
-  const sizeTokenKeys = ["$true"], hasKeys = /* @__PURE__ */ __name((expectedKeys, obj) => expectedKeys.every((k) => typeof obj[k] < "u"), "hasKeys"), tamaguiConfig = (0, import_core47.createTamagui)(conf);
+var import_core49 = require("@tamagui/core");
+var createTamagui = process.env.NODE_ENV !== "development" ? import_core49.createTamagui : (conf) => {
+  const sizeTokenKeys = ["$true"], hasKeys = /* @__PURE__ */ __name((expectedKeys, obj) => expectedKeys.every((k) => typeof obj[k] < "u"), "hasKeys"), tamaguiConfig = (0, import_core49.createTamagui)(conf);
   for (const name2 of ["size", "space"]) {
     const tokenSet = tamaguiConfig.tokensParsed[name2];
     if (!tokenSet) throw new Error(`Expected tokens for "${name2}" in ${Object.keys(tamaguiConfig.tokensParsed).join(", ")}`);
@@ -44529,12 +44573,12 @@ Expected a subset of: ${expected.join(", ")}
 };
 
 // ../../node_modules/tamagui/dist/esm/views/TamaguiProvider.mjs
-var import_core48 = require("@tamagui/core");
+var import_core50 = require("@tamagui/core");
 var import_jsx_runtime60 = require("react/jsx-runtime");
 var TamaguiProvider = /* @__PURE__ */ __name(({
   children,
   ...props
-}) => /* @__PURE__ */ (0, import_jsx_runtime60.jsx)(import_core48.TamaguiProvider, {
+}) => /* @__PURE__ */ (0, import_jsx_runtime60.jsx)(import_core50.TamaguiProvider, {
   ...props,
   children: /* @__PURE__ */ (0, import_jsx_runtime60.jsx)(ZIndexStackContext.Provider, {
     value: 1,
@@ -44546,10 +44590,10 @@ var TamaguiProvider = /* @__PURE__ */ __name(({
 }), "TamaguiProvider");
 
 // ../../node_modules/tamagui/dist/esm/views/Anchor.mjs
-var import_core49 = require("@tamagui/core");
+var import_core51 = require("@tamagui/core");
 var import_react_native_web10 = __toESM(require_cjs21(), 1);
 var import_jsx_runtime61 = require("react/jsx-runtime");
-var AnchorFrame = (0, import_core49.styled)(SizableText, {
+var AnchorFrame = (0, import_core51.styled)(SizableText, {
   name: "Anchor",
   tag: "a",
   accessibilityRole: "link"
@@ -44572,8 +44616,8 @@ var Anchor = AnchorFrame.styleable(({
 }));
 
 // ../../node_modules/tamagui/dist/esm/views/EnsureFlexed.mjs
-var import_core50 = require("@tamagui/core");
-var EnsureFlexed = (0, import_core50.styled)(import_core50.Text, {
+var import_core52 = require("@tamagui/core");
+var EnsureFlexed = (0, import_core52.styled)(import_core52.Text, {
   opacity: 0,
   lineHeight: 0,
   height: 0,
@@ -44585,8 +44629,8 @@ var EnsureFlexed = (0, import_core50.styled)(import_core50.Text, {
 EnsureFlexed.isVisuallyHidden = true;
 
 // ../../node_modules/tamagui/dist/esm/views/Fieldset.mjs
-var import_core51 = require("@tamagui/core");
-var Fieldset = (0, import_core51.styled)(YStack, {
+var import_core53 = require("@tamagui/core");
+var Fieldset = (0, import_core53.styled)(YStack, {
   name: "Fieldset",
   tag: "fieldset",
   variants: {
@@ -44601,18 +44645,18 @@ var Fieldset = (0, import_core51.styled)(YStack, {
 
 // ../../node_modules/tamagui/dist/esm/views/Input.mjs
 var import_react51 = __toESM(require("react"), 1);
-var import_core53 = require("@tamagui/core");
+var import_core55 = require("@tamagui/core");
 var import_react_native_web11 = __toESM(require_cjs21(), 1);
 
 // ../../node_modules/tamagui/dist/esm/helpers/inputHelpers.mjs
-var import_core52 = require("@tamagui/core");
+var import_core54 = require("@tamagui/core");
 var inputSizeVariant = /* @__PURE__ */ __name((val = "$true", extras) => {
   if (extras.props.multiline || extras.props.numberOfLines > 1) return textAreaSizeVariant(val, extras);
   const buttonStyles = getButtonSized(val, extras), paddingHorizontal = getSpace(val, {
     shift: -1,
     bounds: [2]
   }), fontStyle = getFontSized(val, extras);
-  return !import_core52.isWeb && fontStyle && delete fontStyle.lineHeight, {
+  return !import_core54.isWeb && fontStyle && delete fontStyle.lineHeight, {
     ...fontStyle,
     ...buttonStyles,
     paddingHorizontal
@@ -44621,7 +44665,7 @@ var inputSizeVariant = /* @__PURE__ */ __name((val = "$true", extras) => {
 var textAreaSizeVariant = /* @__PURE__ */ __name((val = "$true", extras) => {
   const {
     props
-  } = extras, buttonStyles = getButtonSized(val, extras), fontStyle = getFontSized(val, extras), lines = props.rows ?? props.numberOfLines, height = typeof lines == "number" ? lines * (0, import_core52.getVariableValue)(fontStyle.lineHeight) : "auto", paddingVertical = getSpace(val, {
+  } = extras, buttonStyles = getButtonSized(val, extras), fontStyle = getFontSized(val, extras), lines = props.rows ?? props.numberOfLines, height = typeof lines == "number" ? lines * (0, import_core54.getVariableValue)(fontStyle.lineHeight) : "auto", paddingVertical = getSpace(val, {
     shift: -2,
     bounds: [2]
   }), paddingHorizontal = getSpace(val, {
@@ -44666,7 +44710,7 @@ var defaultStyles = {
     outlineStyle: "solid"
   }
 };
-var InputFrame = (0, import_core53.styled)(import_react_native_web11.TextInput, {
+var InputFrame = (0, import_core55.styled)(import_react_native_web11.TextInput, {
   name: "Input",
   variants: {
     unstyled: {
@@ -44690,13 +44734,13 @@ var InputFrame = (0, import_core53.styled)(import_react_native_web11.TextInput, 
   }
 });
 var Input = InputFrame.styleable((propsIn, forwardedRef) => {
-  const ref = import_react51.default.useRef(null), composedRefs = (0, import_core53.useComposedRefs)(forwardedRef, ref), props = useInputProps(propsIn, composedRefs);
+  const ref = import_react51.default.useRef(null), composedRefs = (0, import_core55.useComposedRefs)(forwardedRef, ref), props = useInputProps(propsIn, composedRefs);
   return /* @__PURE__ */ (0, import_jsx_runtime62.jsx)(InputFrame, {
     ...props
   });
 });
 function useInputProps(props, ref) {
-  const theme = (0, import_core53.useTheme)(), focusableProps = useFocusable({
+  const theme = (0, import_core55.useTheme)(), focusableProps = useFocusable({
     props,
     ref,
     isInput: true
@@ -44715,18 +44759,18 @@ function useInputProps(props, ref) {
 __name(useInputProps, "useInputProps");
 
 // ../../node_modules/tamagui/dist/esm/views/Spinner.mjs
-var import_core54 = require("@tamagui/core");
+var import_core56 = require("@tamagui/core");
 var React74 = __toESM(require("react"), 1);
 var import_react_native_web12 = __toESM(require_cjs21(), 1);
 var import_jsx_runtime63 = require("react/jsx-runtime");
-var Spinner = YStack.extractable((0, import_core54.themeable)(React74.forwardRef((props, ref) => {
+var Spinner = YStack.extractable((0, import_core56.themeable)(React74.forwardRef((props, ref) => {
   const {
     size: size5,
     color: colorProp,
     ...stackProps
-  } = props, theme = (0, import_core54.useTheme)();
+  } = props, theme = (0, import_core56.useTheme)();
   let color = colorProp;
-  return color && color[0] === "$" && (color = (0, import_core54.variableToString)(theme[color])), /* @__PURE__ */ (0, import_jsx_runtime63.jsx)(YStack, {
+  return color && color[0] === "$" && (color = (0, import_core56.variableToString)(theme[color])), /* @__PURE__ */ (0, import_jsx_runtime63.jsx)(YStack, {
     ref,
     ...stackProps,
     children: /* @__PURE__ */ (0, import_jsx_runtime63.jsx)(import_react_native_web12.ActivityIndicator, {
@@ -44740,9 +44784,9 @@ var Spinner = YStack.extractable((0, import_core54.themeable)(React74.forwardRef
 
 // ../../node_modules/tamagui/dist/esm/views/TextArea.mjs
 var import_react52 = __toESM(require("react"), 1);
-var import_core55 = require("@tamagui/core");
+var import_core57 = require("@tamagui/core");
 var import_jsx_runtime64 = require("react/jsx-runtime");
-var TextAreaFrame = (0, import_core55.styled)(InputFrame, {
+var TextAreaFrame = (0, import_core57.styled)(InputFrame, {
   name: "TextArea",
   multiline: true,
   // this attribute fixes firefox newline issue
@@ -44763,7 +44807,7 @@ var TextAreaFrame = (0, import_core55.styled)(InputFrame, {
   }
 });
 var TextArea = TextAreaFrame.styleable((propsIn, forwardedRef) => {
-  const ref = import_react52.default.useRef(null), composedRefs = (0, import_core55.useComposedRefs)(forwardedRef, ref), props = useInputProps(propsIn, composedRefs), linesProp = {
+  const ref = import_react52.default.useRef(null), composedRefs = (0, import_core57.useComposedRefs)(forwardedRef, ref), props = useInputProps(propsIn, composedRefs), linesProp = {
     // web uses rows now, but native not caught up :/
     [isWeb ? "rows" : "numberOfLines"]: propsIn.unstyled ? void 0 : 4
   };
@@ -44774,8 +44818,8 @@ var TextArea = TextAreaFrame.styleable((propsIn, forwardedRef) => {
 });
 
 // ../../node_modules/tamagui/dist/esm/views/Text.mjs
-var import_core56 = require("@tamagui/core");
-var Text4 = (0, import_core56.styled)(import_core56.Text, {
+var import_core58 = require("@tamagui/core");
+var Text4 = (0, import_core58.styled)(import_core58.Text, {
   variants: {
     unstyled: {
       false: {
@@ -44789,7 +44833,7 @@ var Text4 = (0, import_core56.styled)(import_core56.Text, {
 });
 
 // ../../node_modules/tamagui/dist/esm/index.mjs
-var import_core57 = require("@tamagui/core");
+var import_core59 = require("@tamagui/core");
 
 // ../../node_modules/@tamagui/animations-react-native/dist/esm/createAnimations.mjs
 var import_web22 = require("@tamagui/core");
@@ -45097,7 +45141,7 @@ var animations = createAnimations2({
 });
 
 // ../../node_modules/@tamagui/font-inter/dist/esm/index.mjs
-var import_core58 = require("@tamagui/core");
+var import_core60 = require("@tamagui/core");
 var createInterFont = /* @__PURE__ */ __name((font = {}, {
   sizeLineHeight = /* @__PURE__ */ __name((size5) => size5 + 10, "sizeLineHeight"),
   sizeSize = /* @__PURE__ */ __name((size5) => size5 * 1, "sizeSize")
@@ -45106,9 +45150,9 @@ var createInterFont = /* @__PURE__ */ __name((font = {}, {
     ...defaultSizes2,
     ...font.size
   }).map(([k, v]) => [k, sizeSize(+v)]));
-  return (0, import_core58.createFont)({
-    family: import_core58.isWeb ? 'Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' : "Inter",
-    lineHeight: Object.fromEntries(Object.entries(size5).map(([k, v]) => [k, sizeLineHeight((0, import_core58.getVariableValue)(v))])),
+  return (0, import_core60.createFont)({
+    family: import_core60.isWeb ? 'Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' : "Inter",
+    lineHeight: Object.fromEntries(Object.entries(size5).map(([k, v]) => [k, sizeLineHeight((0, import_core60.getVariableValue)(v))])),
     weight: {
       4: "300"
     },
@@ -45195,7 +45239,7 @@ var config = createTamagui({
 });
 
 // ../../node_modules/@tamagui/toast/dist/esm/Toast.mjs
-var import_core64 = require("@tamagui/core");
+var import_core66 = require("@tamagui/core");
 var React82 = __toESM(require("react"), 1);
 
 // ../../node_modules/@tamagui/toast/dist/esm/constants.mjs
@@ -45203,16 +45247,16 @@ var TOAST_NAME = "Toast";
 var TOAST_CONTEXT = "Toast";
 
 // ../../node_modules/@tamagui/toast/dist/esm/ToastAnnounce.mjs
-var import_core61 = require("@tamagui/core");
+var import_core63 = require("@tamagui/core");
 var React79 = __toESM(require("react"), 1);
 
 // ../../node_modules/@tamagui/toast/dist/esm/ToastProvider.mjs
-var import_core60 = require("@tamagui/core");
+var import_core62 = require("@tamagui/core");
 var React78 = __toESM(require("react"), 1);
 
 // ../../node_modules/@tamagui/toast/dist/esm/ToastImperative.mjs
 var import_react54 = __toESM(require("react"), 1);
-var import_core59 = require("@tamagui/core");
+var import_core61 = require("@tamagui/core");
 var import_react_native_web14 = __toESM(require_cjs21(), 1);
 
 // ../../node_modules/@tamagui/toast/dist/esm/createNativeToast.mjs
@@ -45250,7 +45294,7 @@ var ToastImperativeProvider = /* @__PURE__ */ __name(({
   options
 }) => {
   const counterRef = import_react54.default.useRef(0), [toast, setToast] = import_react54.default.useState(null), [lastNativeToastRef, setLastNativeToastRef] = import_react54.default.useState(null), show = import_react54.default.useCallback((title, showOptions) => {
-    const native = showOptions?.native ?? options.native, isWebNative = Array.isArray(native) ? native.includes("web") : native === "web", isMobileNative = Array.isArray(native) ? native.includes("mobile") : native === "mobile", isAndroidNative = isMobileNative || (Array.isArray(native) ? native.includes("android") : native === "android"), isIosNative = isMobileNative || (Array.isArray(native) ? native.includes("ios") : native === "ios"), isHandledNatively = native === true || import_core59.isWeb && isWebNative || !import_core59.isWeb && isMobileNative || import_react_native_web14.Platform.OS === "android" && isAndroidNative || import_react_native_web14.Platform.OS === "ios" && isIosNative;
+    const native = showOptions?.native ?? options.native, isWebNative = Array.isArray(native) ? native.includes("web") : native === "web", isMobileNative = Array.isArray(native) ? native.includes("mobile") : native === "mobile", isAndroidNative = isMobileNative || (Array.isArray(native) ? native.includes("android") : native === "android"), isIosNative = isMobileNative || (Array.isArray(native) ? native.includes("ios") : native === "ios"), isHandledNatively = native === true || import_core61.isWeb && isWebNative || !import_core61.isWeb && isMobileNative || import_react_native_web14.Platform.OS === "android" && isAndroidNative || import_react_native_web14.Platform.OS === "ios" && isIosNative;
     if (isHandledNatively) {
       const nativeToastResult = createNativeToast(title, showOptions ?? {});
       typeof nativeToastResult == "object" && nativeToastResult.nativeToastRef && setLastNativeToastRef(nativeToastResult.nativeToastRef);
@@ -45287,7 +45331,7 @@ var [Collection2, useCollection2] = createCollection("Toast");
 var {
   Provider: ToastProviderProvider,
   useStyledContext: useToastProviderContext
-} = (0, import_core60.createStyledContext)();
+} = (0, import_core62.createStyledContext)();
 var ToastProvider = /* @__PURE__ */ __name((props) => {
   const {
     __scopeToast,
@@ -45375,7 +45419,7 @@ ToastProvider.displayName = PROVIDER_NAME;
 
 // ../../node_modules/@tamagui/toast/dist/esm/ToastAnnounce.mjs
 var import_jsx_runtime67 = require("react/jsx-runtime");
-var ToastAnnounceExcludeFrame = (0, import_core61.styled)(import_core61.Stack, {
+var ToastAnnounceExcludeFrame = (0, import_core63.styled)(import_core63.Stack, {
   name: "ToastAnnounceExclude"
 });
 var ToastAnnounceExclude = React79.forwardRef((props, forwardedRef) => {
@@ -45407,7 +45451,7 @@ var ToastAnnounce = /* @__PURE__ */ __name((props) => {
     asChild: true,
     children: /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(VisuallyHidden, {
       ...announceProps,
-      children: renderAnnounceText && /* @__PURE__ */ (0, import_jsx_runtime67.jsxs)(import_core61.Text, {
+      children: renderAnnounceText && /* @__PURE__ */ (0, import_jsx_runtime67.jsxs)(import_core63.Text, {
         children: [context2.label, " ", children]
       })
     })
@@ -45415,7 +45459,7 @@ var ToastAnnounce = /* @__PURE__ */ __name((props) => {
 }, "ToastAnnounce");
 function useNextFrame(callback = () => {
 }) {
-  const fn = (0, import_core61.useEvent)(callback);
+  const fn = (0, import_core63.useEvent)(callback);
   useIsomorphicLayoutEffect(() => {
     let raf1 = 0, raf2 = 0;
     return raf1 = requestAnimationFrame(() => {
@@ -45428,12 +45472,12 @@ function useNextFrame(callback = () => {
 __name(useNextFrame, "useNextFrame");
 
 // ../../node_modules/@tamagui/toast/dist/esm/ToastImpl.mjs
-var import_core63 = require("@tamagui/core");
+var import_core65 = require("@tamagui/core");
 var React81 = __toESM(require("react"), 1);
 var import_react_native_web16 = __toESM(require_cjs21(), 1);
 
 // ../../node_modules/@tamagui/toast/dist/esm/ToastViewport.mjs
-var import_core62 = require("@tamagui/core");
+var import_core64 = require("@tamagui/core");
 var React80 = __toESM(require("react"), 1);
 
 // ../../node_modules/@tamagui/toast/dist/esm/ToastPortal.mjs
@@ -45460,7 +45504,7 @@ var VIEWPORT_NAME2 = "ToastViewport";
 var VIEWPORT_DEFAULT_HOTKEY = ["F8"];
 var VIEWPORT_PAUSE = "toast.viewportPause";
 var VIEWPORT_RESUME = "toast.viewportResume";
-var ToastViewportWrapperFrame = (0, import_core62.styled)(YStack, {
+var ToastViewportWrapperFrame = (0, import_core64.styled)(YStack, {
   name: "ViewportWrapper",
   variants: {
     unstyled: {
@@ -45481,7 +45525,7 @@ var ToastViewportWrapperFrame = (0, import_core62.styled)(YStack, {
     unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
-var ToastViewportFrame = (0, import_core62.styled)(YStack, {
+var ToastViewportFrame = (0, import_core64.styled)(YStack, {
   name: VIEWPORT_NAME2,
   variants: {
     unstyled: {
@@ -45669,7 +45713,7 @@ __name(getTabbableCandidates2, "getTabbableCandidates");
 
 // ../../node_modules/@tamagui/toast/dist/esm/ToastImpl.mjs
 var import_jsx_runtime70 = require("react/jsx-runtime");
-var ToastImplFrame = (0, import_core63.styled)(ThemeableStack, {
+var ToastImplFrame = (0, import_core65.styled)(ThemeableStack, {
   name: "ToastImpl",
   focusable: true,
   variants: {
@@ -45696,7 +45740,7 @@ var ToastImplFrame = (0, import_core63.styled)(ThemeableStack, {
 var {
   Provider: ToastInteractiveProvider,
   useStyledContext: useToastInteractiveContext
-} = (0, import_core63.createStyledContext)({
+} = (0, import_core65.createStyledContext)({
   onClose() {
   }
 });
@@ -45719,7 +45763,7 @@ var ToastImpl = React81.forwardRef((props, forwardedRef) => {
   } = props, isPresent2 = useIsPresent(), context2 = useToastProviderContext(__scopeToast), [node, setNode] = React81.useState(null), composedRefs = useComposedRefs(forwardedRef, setNode), duration = durationProp || context2.duration, closeTimerStartTimeRef = React81.useRef(0), closeTimerRemainingTimeRef = React81.useRef(duration), closeTimerRef = React81.useRef(0), {
     onToastAdd,
     onToastRemove
-  } = context2, viewport = React81.useMemo(() => context2.viewports[viewportName], [context2.viewports, viewportName]), handleClose = (0, import_core63.useEvent)(() => {
+  } = context2, viewport = React81.useMemo(() => context2.viewports[viewportName], [context2.viewports, viewportName]), handleClose = (0, import_core65.useEvent)(() => {
     isPresent2 && (isWeb && node?.contains(document.activeElement) && viewport?.focus(), onClose());
   }), startTimer = React81.useCallback((duration2) => {
     !duration2 || duration2 === Number.POSITIVE_INFINITY || (clearTimeout(closeTimerRef.current), closeTimerStartTimeRef.current = (/* @__PURE__ */ new Date()).getTime(), closeTimerRef.current = setTimeout(handleClose, duration2));
@@ -45738,12 +45782,12 @@ var ToastImpl = React81.forwardRef((props, forwardedRef) => {
   }, [open, duration, context2.isClosePausedRef, startTimer]), React81.useEffect(() => (onToastAdd(), () => onToastRemove()), [onToastAdd, onToastRemove]);
   const announceTextContent = React81.useMemo(() => isWeb && node ? getAnnounceTextContent(node) : null, [node]), isHorizontalSwipe = ["left", "right", "horizontal"].includes(context2.swipeDirection), {
     animationDriver
-  } = (0, import_core63.useConfiguration)();
+  } = (0, import_core65.useConfiguration)();
   if (!animationDriver) throw new Error("Must set animations in tamagui.config.ts");
   const {
     useAnimatedNumber: useAnimatedNumber2,
     useAnimatedNumberStyle: useAnimatedNumberStyle2
-  } = animationDriver, animatedNumber = useAnimatedNumber2(0), AnimatedView2 = animationDriver.NumberView ?? animationDriver.View ?? import_core63.Stack, animatedStyles = useAnimatedNumberStyle2(animatedNumber, (val) => {
+  } = animationDriver, animatedNumber = useAnimatedNumber2(0), AnimatedView2 = animationDriver.NumberView ?? animationDriver.View ?? import_core65.Stack, animatedStyles = useAnimatedNumberStyle2(animatedNumber, (val) => {
     "worklet";
     return {
       transform: [isHorizontalSwipe ? {
@@ -45780,7 +45824,7 @@ var ToastImpl = React81.forwardRef((props, forwardedRef) => {
         type: "spring"
       }));
     }, "onPanResponderEnd")
-  }), [handlePause, handleResume]), themeName = (0, import_core63.useThemeName)();
+  }), [handlePause, handleResume]), themeName = (0, import_core65.useThemeName)();
   return /* @__PURE__ */ (0, import_jsx_runtime70.jsxs)(import_jsx_runtime70.Fragment, {
     children: [announceTextContent && /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(ToastAnnounce, {
       __scopeToast,
@@ -45799,7 +45843,7 @@ var ToastImpl = React81.forwardRef((props, forwardedRef) => {
           onEscapeKeyDown: composeEventHandlers(onEscapeKeyDown, () => {
             context2.isFocusedToastEscapeKeyDownRef.current || handleClose(), context2.isFocusedToastEscapeKeyDownRef.current = false;
           }),
-          children: /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(import_core63.Theme, {
+          children: /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(import_core65.Theme, {
             forceClassName: true,
             name: themeName,
             children: /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(AnimatedView2, {
@@ -45884,7 +45928,7 @@ var getGestureDistance = /* @__PURE__ */ __name((dir, {
 // ../../node_modules/@tamagui/toast/dist/esm/Toast.mjs
 var import_jsx_runtime71 = require("react/jsx-runtime");
 var TITLE_NAME2 = "ToastTitle";
-var ToastTitle = (0, import_core64.styled)(SizableText, {
+var ToastTitle = (0, import_core66.styled)(SizableText, {
   name: TITLE_NAME2,
   variants: {
     unstyled: {
@@ -45900,7 +45944,7 @@ var ToastTitle = (0, import_core64.styled)(SizableText, {
 });
 ToastTitle.displayName = TITLE_NAME2;
 var DESCRIPTION_NAME3 = "ToastDescription";
-var ToastDescription = (0, import_core64.styled)(SizableText, {
+var ToastDescription = (0, import_core66.styled)(SizableText, {
   name: DESCRIPTION_NAME3,
   variants: {
     unstyled: {
@@ -45937,7 +45981,7 @@ ToastAction.propTypes = {
 };
 ToastAction.displayName = ACTION_NAME2;
 var CLOSE_NAME2 = "ToastClose";
-var ToastCloseFrame = (0, import_core64.styled)(ThemeableStack, {
+var ToastCloseFrame = (0, import_core66.styled)(ThemeableStack, {
   name: CLOSE_NAME2,
   tag: "button"
 });
@@ -45969,7 +46013,7 @@ var ToastComponent = ToastImplFrame.styleable((props, forwardedRef) => {
     defaultProp: defaultOpen ?? true,
     onChange: onOpenChange,
     strategy: "most-recent-wins"
-  }), id = React82.useId(), onPause = (0, import_core64.useEvent)(props.onPause), onResume = (0, import_core64.useEvent)(props.onResume);
+  }), id = React82.useId(), onPause = (0, import_core66.useEvent)(props.onPause), onResume = (0, import_core66.useEvent)(props.onResume);
   return forceMount || open ? /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(ToastImpl, {
     id,
     open,
@@ -45995,7 +46039,7 @@ var Toast = withStaticProperties(ToastComponent, {
 __reExport(src_exports, esm_exports2, module.exports);
 
 // ../../packages/ui/src/base/Button.tsx
-var UiButton = (0, import_core57.styled)(Button2, {
+var UiButton = (0, import_core59.styled)(Button2, {
   name: "UiButton",
   background: "$background",
   variants: {
@@ -46008,7 +46052,7 @@ var UiButton = (0, import_core57.styled)(Button2, {
 });
 
 // ../../packages/ui/src/base/Stack.tsx
-var UiStack = (0, import_core57.styled)(YStack, {
+var UiStack = (0, import_core59.styled)(YStack, {
   name: "UiStack",
   background: "$background",
   variants: {
@@ -46531,6 +46575,7 @@ var CustomToast = /* @__PURE__ */ __name(() => {
   SwitchStyledContext,
   SwitchThumb,
   Tabs,
+  TabsProvider,
   TamaguiProvider,
   Text,
   TextArea,
@@ -46586,6 +46631,7 @@ var CustomToast = /* @__PURE__ */ __name(() => {
   createShorthands,
   createStyledContext,
   createSwitch,
+  createTabs,
   createTamagui,
   createTheme,
   createTokens,

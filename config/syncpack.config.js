@@ -1,3 +1,5 @@
+/** @type {import('@syncpack/config').SyncpackConfig} */
+
 module.exports = {
   source: [
     'package.json',
@@ -17,4 +19,12 @@ module.exports = {
     'scripts',
   ],
   sortFirst: ['name', 'version', 'private', 'description', 'author', 'license'],
+  versionGroups: [
+    {
+      label: 'Completely ignore internal @kovyra packages',
+      packages: ['**'],
+      dependencies: ['@kovyra/ui', '@kovyra/theme', '@kovyra/app'],
+      isIgnored: true,
+    },
+  ],
 };

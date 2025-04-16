@@ -611,9 +611,9 @@ var require_cjs4 = __commonJS({
   }
 });
 
-// ../../node_modules/@tamagui/helpers/node_modules/@tamagui/simple-hash/dist/cjs/index.cjs
+// ../../node_modules/@tamagui/simple-hash/dist/cjs/index.cjs
 var require_cjs5 = __commonJS({
-  "../../node_modules/@tamagui/helpers/node_modules/@tamagui/simple-hash/dist/cjs/index.cjs"(exports2, module2) {
+  "../../node_modules/@tamagui/simple-hash/dist/cjs/index.cjs"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -1993,14 +1993,14 @@ var require_Collection = __commonJS({
     module2.exports = __toCommonJS2(Collection_exports);
     var import_compose_refs25 = require_cjs12();
     var import_constants47 = require_cjs6();
-    var import_core57 = require("@tamagui/core");
+    var import_core59 = require("@tamagui/core");
     var import_react52 = __toESM2(require("react"));
     var import_jsx_runtime65 = require("react/jsx-runtime");
     function createCollection2(name) {
       const {
         Provider: CollectionProviderImpl,
         useStyledContext: useCollectionContext
-      } = (0, import_core57.createStyledContext)({
+      } = (0, import_core59.createStyledContext)({
         collectionRef: {
           current: null
         },
@@ -2023,7 +2023,7 @@ var require_Collection = __commonJS({
           __scopeCollection,
           children
         } = props, context2 = useCollectionContext(__scopeCollection), composedRefs = (0, import_compose_refs25.useComposedRefs)(forwardedRef, context2.collectionRef);
-        return /* @__PURE__ */ (0, import_jsx_runtime65.jsx)(import_core57.Slot, {
+        return /* @__PURE__ */ (0, import_jsx_runtime65.jsx)(import_core59.Slot, {
           ref: composedRefs,
           children
         });
@@ -2038,7 +2038,7 @@ var require_Collection = __commonJS({
         return import_react52.default.useEffect(() => (context2.itemMap.set(ref, {
           ref,
           ...itemData
-        }), () => void context2.itemMap.delete(ref))), /* @__PURE__ */ (0, import_jsx_runtime65.jsx)(import_core57.Slot, {
+        }), () => void context2.itemMap.delete(ref))), /* @__PURE__ */ (0, import_jsx_runtime65.jsx)(import_core59.Slot, {
           [ITEM_DATA_ATTR]: "",
           ref: composedRefs,
           children
@@ -2119,12 +2119,12 @@ var require_getElevation = __commonJS({
       getSizedElevation: /* @__PURE__ */ __name(() => getSizedElevation2, "getSizedElevation")
     });
     module2.exports = __toCommonJS2(getElevation_exports);
-    var import_core57 = require("@tamagui/core");
+    var import_core59 = require("@tamagui/core");
     var getElevation2 = /* @__PURE__ */ __name((size4, extras) => {
       if (!size4) return;
       const {
         tokens
-      } = extras, token = tokens.size[size4], sizeNum = (0, import_core57.isVariable)(token) ? +token.val : size4;
+      } = extras, token = tokens.size[size4], sizeNum = (0, import_core59.isVariable)(token) ? +token.val : size4;
       return getSizedElevation2(sizeNum, extras);
     }, "getElevation");
     var getSizedElevation2 = /* @__PURE__ */ __name((val, {
@@ -2133,7 +2133,7 @@ var require_getElevation = __commonJS({
     }) => {
       let num = 0;
       if (val === true) {
-        const val2 = (0, import_core57.getVariableValue)(tokens.size.true);
+        const val2 = (0, import_core59.getVariableValue)(tokens.size.true);
         typeof val2 == "number" ? num = val2 : num = 10;
       } else num = +val;
       if (num === 0) return;
@@ -2145,7 +2145,7 @@ var require_getElevation = __commonJS({
           height,
           width: 0
         },
-        ...import_core57.isAndroid ? {
+        ...import_core59.isAndroid ? {
           elevationAndroid: 2 * height
         } : {}
       };
@@ -2184,7 +2184,7 @@ var require_Stacks = __commonJS({
       fullscreenStyle: /* @__PURE__ */ __name(() => fullscreenStyle2, "fullscreenStyle")
     });
     module2.exports = __toCommonJS2(Stacks_exports);
-    var import_core57 = require("@tamagui/core");
+    var import_core59 = require("@tamagui/core");
     var import_getElevation3 = require_getElevation();
     var fullscreenStyle2 = {
       position: "absolute",
@@ -2209,17 +2209,17 @@ var require_Stacks = __commonJS({
       },
       inset: getInset2
     };
-    var YStack2 = (0, import_core57.styled)(import_core57.View, {
+    var YStack2 = (0, import_core59.styled)(import_core59.View, {
       flexDirection: "column",
       variants: variants2
     });
     YStack2.displayName = "YStack";
-    var XStack2 = (0, import_core57.styled)(import_core57.View, {
+    var XStack2 = (0, import_core59.styled)(import_core59.View, {
       flexDirection: "row",
       variants: variants2
     });
     XStack2.displayName = "XStack";
-    var ZStack2 = (0, import_core57.styled)(YStack2, {
+    var ZStack2 = (0, import_core59.styled)(YStack2, {
       position: "relative"
     }, {
       neverFlatten: true,
@@ -2507,11 +2507,11 @@ var require_SizableStack = __commonJS({
       SizableStack: /* @__PURE__ */ __name(() => SizableStack2, "SizableStack")
     });
     module2.exports = __toCommonJS2(SizableStack_exports);
-    var import_core57 = require("@tamagui/core");
+    var import_core59 = require("@tamagui/core");
     var import_get_button_sized6 = require_cjs15();
     var import_Stacks3 = require_Stacks();
     var import_variants3 = require_variants();
-    var SizableStack2 = (0, import_core57.styled)(import_Stacks3.XStack, {
+    var SizableStack2 = (0, import_core59.styled)(import_Stacks3.XStack, {
       name: "SizableStack",
       variants: {
         unstyled: {
@@ -2566,7 +2566,7 @@ var require_ThemeableStack = __commonJS({
       themeableVariants: /* @__PURE__ */ __name(() => themeableVariants2, "themeableVariants")
     });
     module2.exports = __toCommonJS2(ThemeableStack_exports);
-    var import_core57 = require("@tamagui/core");
+    var import_core59 = require("@tamagui/core");
     var import_Stacks3 = require_Stacks();
     var import_variants3 = require_variants();
     var chromelessStyle2 = {
@@ -2606,7 +2606,7 @@ var require_ThemeableStack = __commonJS({
         }
       }
     };
-    var ThemeableStack2 = (0, import_core57.styled)(import_Stacks3.YStack, {
+    var ThemeableStack2 = (0, import_core59.styled)(import_Stacks3.YStack, {
       variants: themeableVariants2
     });
   }
@@ -2714,7 +2714,7 @@ var require_cjs17 = __commonJS({
     });
     module2.exports = __toCommonJS2(index_exports);
     var import_constants47 = require_cjs6();
-    var import_core57 = require("@tamagui/core");
+    var import_core59 = require("@tamagui/core");
     var getFontSized2 = /* @__PURE__ */ __name((sizeTokenIn = "$true", {
       font,
       fontFamily,
@@ -2733,7 +2733,7 @@ var require_cjs17 = __commonJS({
     var cache3 = /* @__PURE__ */ new WeakMap();
     function getDefaultSizeToken2(font) {
       if (typeof font == "object" && cache3.has(font)) return cache3.get(font);
-      const sizeTokens = "$true" in font.size ? font.size : (0, import_core57.getTokens)().size, sizeDefault = sizeTokens.$true, sizeDefaultSpecific = sizeDefault ? Object.keys(sizeTokens).find((x) => x !== "$true" && sizeTokens[x].val === sizeDefault.val) : null;
+      const sizeTokens = "$true" in font.size ? font.size : (0, import_core59.getTokens)().size, sizeDefault = sizeTokens.$true, sizeDefaultSpecific = sizeDefault ? Object.keys(sizeTokens).find((x) => x !== "$true" && sizeTokens[x].val === sizeDefault.val) : null;
       return !sizeDefault || !sizeDefaultSpecific ? (process.env.NODE_ENV === "development" && console.warn(`No default size is set in your tokens for the "true" key, fonts will be inconsistent.
 
       Fix this by having consistent tokens across fonts and sizes and setting a true key for your size tokens, or
@@ -26809,8 +26809,8 @@ __export(esm_exports, {
   CheckboxIndicatorFrame: () => CheckboxIndicatorFrame,
   CheckboxStyledContext: () => CheckboxStyledContext,
   Circle: () => Circle,
-  ComponentContext: () => import_core56.ComponentContext,
-  Configuration: () => import_core56.Configuration,
+  ComponentContext: () => import_core58.ComponentContext,
+  Configuration: () => import_core58.Configuration,
   Dialog: () => Dialog,
   DialogClose: () => DialogClose,
   DialogContent: () => DialogContent,
@@ -26824,7 +26824,7 @@ __export(esm_exports, {
   DialogWarningProvider: () => DialogWarningProvider,
   EnsureFlexed: () => EnsureFlexed,
   Fieldset: () => Fieldset,
-  FontLanguage: () => import_core56.FontLanguage,
+  FontLanguage: () => import_core58.FontLanguage,
   Footer: () => Footer,
   Form: () => Form2,
   FormFrame: () => FormFrame,
@@ -26919,10 +26919,10 @@ __export(esm_exports, {
   SliderTrackActive: () => SliderTrackActive,
   SliderTrackActiveFrame: () => SliderTrackActiveFrame,
   SliderTrackFrame: () => SliderTrackFrame,
-  Spacer: () => import_core56.Spacer,
+  Spacer: () => import_core58.Spacer,
   Spinner: () => Spinner,
   Square: () => Square,
-  Stack: () => import_core56.Stack,
+  Stack: () => import_core58.Stack,
   StyleObjectIdentifier: () => StyleObjectIdentifier,
   StyleObjectProperty: () => StyleObjectProperty,
   StyleObjectPseudo: () => StyleObjectPseudo,
@@ -26933,12 +26933,13 @@ __export(esm_exports, {
   SwitchFrame: () => SwitchFrame,
   SwitchStyledContext: () => SwitchStyledContext,
   SwitchThumb: () => SwitchThumb,
-  Tabs: () => Tabs2,
+  Tabs: () => Tabs,
+  TabsProvider: () => TabsProvider,
   TamaguiProvider: () => TamaguiProvider,
   Text: () => Text4,
   TextArea: () => TextArea,
   TextAreaFrame: () => TextAreaFrame,
-  Theme: () => import_core56.Theme,
+  Theme: () => import_core58.Theme,
   ThemeableStack: () => ThemeableStack,
   Thumb: () => Thumb,
   ToggleGroup: () => ToggleGroup,
@@ -26947,8 +26948,8 @@ __export(esm_exports, {
   TooltipSimple: () => TooltipSimple,
   Track: () => Track,
   USE_NATIVE_PORTAL: () => USE_NATIVE_PORTAL,
-  Unspaced: () => import_core56.Unspaced,
-  View: () => import_core56.View,
+  Unspaced: () => import_core58.Unspaced,
+  View: () => import_core58.View,
   VisuallyHidden: () => VisuallyHidden,
   XGroup: () => XGroup,
   XStack: () => XStack,
@@ -26966,11 +26967,11 @@ __export(esm_exports, {
   createAlertDialogScope: () => createAlertDialogScope,
   createAvatarScope: () => createAvatarScope,
   createCheckbox: () => createCheckbox,
-  createComponent: () => import_core56.createComponent,
+  createComponent: () => import_core58.createComponent,
   createContext: () => createContext5,
   createContextScope: () => createContextScope,
   createDialogScope: () => createDialogScope,
-  createFont: () => import_core56.createFont,
+  createFont: () => import_core58.createFont,
   createMedia: () => createMedia,
   createProgressScope: () => createProgressScope,
   createRadioGroup: () => createRadioGroup,
@@ -26980,69 +26981,70 @@ __export(esm_exports, {
   createSelectScope: () => createSelectScope,
   createSheet: () => createSheet,
   createSheetScope: () => createSheetScope,
-  createShorthands: () => import_core56.createShorthands,
-  createStyledContext: () => import_core56.createStyledContext,
+  createShorthands: () => import_core58.createShorthands,
+  createStyledContext: () => import_core58.createStyledContext,
   createSwitch: () => createSwitch,
+  createTabs: () => createTabs,
   createTamagui: () => createTamagui,
-  createTheme: () => import_core56.createTheme,
-  createTokens: () => import_core56.createTokens,
-  createVariable: () => import_core56.createVariable,
+  createTheme: () => import_core58.createTheme,
+  createTokens: () => import_core58.createTokens,
+  createVariable: () => import_core58.createVariable,
   debounce: () => debounce,
   defaultStyles: () => defaultStyles,
   fullscreenStyle: () => fullscreenStyle,
-  getCSSStylesAtomic: () => import_core56.getCSSStylesAtomic,
-  getConfig: () => import_core56.getConfig,
+  getCSSStylesAtomic: () => import_core58.getCSSStylesAtomic,
+  getConfig: () => import_core58.getConfig,
   getFontSize: () => getFontSize,
   getFontSizeToken: () => getFontSizeToken,
   getFontSizeVariable: () => getFontSizeVariable,
-  getMedia: () => import_core56.getMedia,
+  getMedia: () => import_core58.getMedia,
   getNativeSheet: () => getNativeSheet,
   getShapeSize: () => getShapeSize,
-  getThemes: () => import_core56.getThemes,
-  getToken: () => import_core56.getToken,
-  getTokenValue: () => import_core56.getTokenValue,
-  getTokens: () => import_core56.getTokens,
-  getVariable: () => import_core56.getVariable,
-  getVariableName: () => import_core56.getVariableName,
-  getVariableValue: () => import_core56.getVariableValue,
-  insertFont: () => import_core56.insertFont,
-  isChrome: () => import_core56.isChrome,
-  isClient: () => import_core56.isClient,
+  getThemes: () => import_core58.getThemes,
+  getToken: () => import_core58.getToken,
+  getTokenValue: () => import_core58.getTokenValue,
+  getTokens: () => import_core58.getTokens,
+  getVariable: () => import_core58.getVariable,
+  getVariableName: () => import_core58.getVariableName,
+  getVariableValue: () => import_core58.getVariableValue,
+  insertFont: () => import_core58.insertFont,
+  isChrome: () => import_core58.isChrome,
+  isClient: () => import_core58.isClient,
   isPresent: () => isPresent,
-  isServer: () => import_core56.isServer,
+  isServer: () => import_core58.isServer,
   isServerSide: () => isServerSide,
-  isTamaguiComponent: () => import_core56.isTamaguiComponent,
-  isTamaguiElement: () => import_core56.isTamaguiElement,
-  isTouchable: () => import_core56.isTouchable,
-  isVariable: () => import_core56.isVariable,
-  isWeb: () => import_core56.isWeb,
-  isWebTouchable: () => import_core56.isWebTouchable,
-  matchMedia: () => import_core56.matchMedia,
-  mediaObjectToString: () => import_core56.mediaObjectToString,
-  mediaQueryConfig: () => import_core56.mediaQueryConfig,
-  mediaState: () => import_core56.mediaState,
+  isTamaguiComponent: () => import_core58.isTamaguiComponent,
+  isTamaguiElement: () => import_core58.isTamaguiElement,
+  isTouchable: () => import_core58.isTouchable,
+  isVariable: () => import_core58.isVariable,
+  isWeb: () => import_core58.isWeb,
+  isWebTouchable: () => import_core58.isWebTouchable,
+  matchMedia: () => import_core58.matchMedia,
+  mediaObjectToString: () => import_core58.mediaObjectToString,
+  mediaQueryConfig: () => import_core58.mediaQueryConfig,
+  mediaState: () => import_core58.mediaState,
   mutateThemes: () => mutateThemes,
   portalListeners: () => portalListeners,
   prevent: () => prevent,
   replaceTheme: () => replaceTheme,
   resolveViewZIndex: () => resolveViewZIndex,
-  setConfig: () => import_core56.setConfig,
+  setConfig: () => import_core58.setConfig,
   setRef: () => setRef,
-  setupDev: () => import_core56.setupDev,
+  setupDev: () => import_core58.setupDev,
   setupNativeSheet: () => setupNativeSheet,
   setupPopper: () => setupPopper,
-  setupReactNative: () => import_core56.setupReactNative,
+  setupReactNative: () => import_core58.setupReactNative,
   shouldRenderNativePlatform: () => shouldRenderNativePlatform,
   simpleHash: () => simpleHash,
-  spacedChildren: () => import_core56.spacedChildren,
+  spacedChildren: () => import_core58.spacedChildren,
   stylePropsAll: () => stylePropsAll,
   stylePropsText: () => stylePropsText,
   stylePropsTextOnly: () => stylePropsTextOnly,
   stylePropsTransform: () => stylePropsTransform,
   stylePropsUnitless: () => stylePropsUnitless,
   stylePropsView: () => stylePropsView,
-  styled: () => import_core56.styled,
-  themeable: () => import_core56.themeable,
+  styled: () => import_core58.styled,
+  themeable: () => import_core58.themeable,
   themeableVariants: () => themeableVariants,
   tokenCategories: () => tokenCategories,
   updateTheme: () => updateTheme,
@@ -27050,47 +27052,47 @@ __export(esm_exports, {
   useAdaptIsActive: () => useAdaptIsActive,
   useButton: () => useButton,
   useComposedRefs: () => useComposedRefs,
-  useConfiguration: () => import_core56.useConfiguration,
+  useConfiguration: () => import_core58.useConfiguration,
   useControllableState: () => useControllableState,
   useCurrentColor: () => useCurrentColor,
   useDebounce: () => useDebounce,
   useDebounceValue: () => useDebounceValue,
-  useDidFinishSSR: () => import_core56.useDidFinishSSR,
-  useEvent: () => import_core56.useEvent,
+  useDidFinishSSR: () => import_core58.useDidFinishSSR,
+  useEvent: () => import_core58.useEvent,
   useFloatingContext: () => useFloatingContext,
   useForceUpdate: () => useForceUpdate,
   useFormContext: () => useFormContext,
-  useGet: () => import_core56.useGet,
+  useGet: () => import_core58.useGet,
   useGetThemedIcon: () => useGetThemedIcon,
   useGroupItem: () => useGroupItem,
   useInputProps: () => useInputProps,
   useIsPresent: () => useIsPresent,
-  useIsTouchDevice: () => import_core56.useIsTouchDevice,
-  useIsomorphicLayoutEffect: () => import_core56.useIsomorphicLayoutEffect,
+  useIsTouchDevice: () => import_core58.useIsTouchDevice,
+  useIsomorphicLayoutEffect: () => import_core58.useIsomorphicLayoutEffect,
   useLabelContext: () => useLabelContext,
   useListItem: () => useListItem,
-  useMedia: () => import_core56.useMedia,
+  useMedia: () => import_core58.useMedia,
   usePopoverContext: () => usePopoverContext,
   usePopperContext: () => usePopperContext,
   usePortal: () => usePortal,
   usePresence: () => usePresence,
-  useProps: () => import_core56.useProps,
-  usePropsAndStyle: () => import_core56.usePropsAndStyle,
+  useProps: () => import_core58.useProps,
+  usePropsAndStyle: () => import_core58.usePropsAndStyle,
   useSelectContext: () => useSelectContext,
   useSelectItemParentContext: () => useSelectItemParentContext,
   useSheet: () => useSheet,
   useSheetController: () => useSheetController,
   useSheetOffscreenSize: () => useSheetOffscreenSize,
   useSheetOpenState: () => useSheetOpenState,
-  useStyle: () => import_core56.useStyle,
+  useStyle: () => import_core58.useStyle,
   useTabsContext: () => useTabsContext,
-  useTheme: () => import_core56.useTheme,
-  useThemeName: () => import_core56.useThemeName,
+  useTheme: () => import_core58.useTheme,
+  useThemeName: () => import_core58.useThemeName,
   useWindowDimensions: () => useWindowDimensions,
   validPseudoKeys: () => validPseudoKeys,
   validStyles: () => validStyles,
-  variableToString: () => import_core56.variableToString,
-  withStaticProperties: () => import_core56.withStaticProperties,
+  variableToString: () => import_core58.variableToString,
+  withStaticProperties: () => import_core58.withStaticProperties,
   wrapChildrenInText: () => wrapChildrenInText
 });
 module.exports = __toCommonJS(esm_exports);
@@ -27182,7 +27184,7 @@ var currentPlatform = "web";
 // ../../node_modules/@tamagui/adapt/dist/esm/Adapt.mjs
 var import_core5 = require("@tamagui/core");
 
-// ../../node_modules/@tamagui/helpers/node_modules/@tamagui/simple-hash/dist/esm/index.mjs
+// ../../node_modules/@tamagui/simple-hash/dist/esm/index.mjs
 var cache = /* @__PURE__ */ new Map();
 var cacheSize = 0;
 var simpleHash = /* @__PURE__ */ __name((strIn, hashMin = 10) => {
@@ -30367,7 +30369,7 @@ var DialogContentImpl = React29.forwardRef((props, forwardedRef) => {
       onFocusOutside,
       onInteractOutside,
       ref: composedRefs,
-      onDismiss: /* @__PURE__ */ __name(() => context2.onOpenChange(false), "onDismiss"),
+      onDismiss: /* @__PURE__ */ __name(() => context2?.onOpenChange?.(false), "onDismiss"),
       children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(FocusScope, {
         loop: true,
         enabled: context2.open,
@@ -38405,7 +38407,7 @@ var PopoverClose = React47.forwardRef(function(props, forwardedRef) {
     ...rest,
     ref: forwardedRef,
     componentName: "PopoverClose",
-    onPress: composeEventHandlers(props.onPress, () => context2.onOpenChange(false, "press"))
+    onPress: composeEventHandlers(props.onPress, () => context2?.onOpenChange?.(false, "press"))
   });
 });
 var PopoverArrow = PopperArrow.styleable(function(props, forwardedRef) {
@@ -41303,39 +41305,18 @@ var Switch = createSwitch({
   Thumb: SwitchThumb
 });
 
-// ../../node_modules/@tamagui/tabs/dist/esm/Tabs.mjs
+// ../../node_modules/@tamagui/tabs/dist/esm/createTabs.mjs
 var import_web16 = require("@tamagui/core");
 var React66 = __toESM(require("react"), 1);
-var import_jsx_runtime55 = require("react/jsx-runtime");
-var TABS_CONTEXT = "TabsContext";
-var TAB_LIST_NAME = "TabsList";
-var TabsList = React66.forwardRef((props, forwardedRef) => {
-  const {
-    __scopeTabs,
-    loop = true,
-    children,
-    ...listProps
-  } = props, context2 = useTabsContext(__scopeTabs);
-  return /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(RovingFocusGroup, {
-    __scopeRovingFocusGroup: __scopeTabs || TABS_CONTEXT,
-    orientation: context2.orientation,
-    dir: context2.dir,
-    loop,
-    asChild: true,
-    children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(Group, {
-      role: "tablist",
-      componentName: TAB_LIST_NAME,
-      "aria-orientation": context2.orientation,
-      ref: forwardedRef,
-      orientation: context2.orientation,
-      ...listProps,
-      children
-    })
-  });
+
+// ../../node_modules/@tamagui/tabs/dist/esm/Tabs.mjs
+var import_core45 = require("@tamagui/core");
+var TABS_NAME = "Tabs";
+var DefaultTabsFrame = (0, import_core45.styled)(SizableStack, {
+  name: TABS_NAME
 });
-TabsList.displayName = TAB_LIST_NAME;
 var TRIGGER_NAME5 = "TabsTrigger";
-var TabsTriggerFrame = (0, import_web16.styled)(ThemeableStack, {
+var DefaultTabsTabFrame = (0, import_core45.styled)(ThemeableStack, {
   name: TRIGGER_NAME5,
   tag: "button",
   variants: {
@@ -41383,169 +41364,202 @@ var TabsTriggerFrame = (0, import_web16.styled)(ThemeableStack, {
     unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
-var TabsTrigger = TabsTriggerFrame.styleable((props, forwardedRef) => {
-  const {
-    __scopeTabs,
-    value,
-    disabled = false,
-    onInteraction,
-    disableActiveTheme,
-    ...triggerProps
-  } = props, context2 = useTabsContext(__scopeTabs), triggerId = makeTriggerId(context2.baseId, value), contentId = makeContentId(context2.baseId, value), isSelected = value === context2.value, [layout, setLayout] = React66.useState(null), triggerRef = React66.useRef(null), groupItemProps = useGroupItem({
-    disabled: !!disabled
-  });
-  return React66.useEffect(() => (context2.registerTrigger(), () => context2.unregisterTrigger()), []), React66.useEffect(() => {
-    if (!triggerRef.current || !isWeb) return;
-    function getTriggerSize() {
-      triggerRef.current && setLayout({
-        width: triggerRef.current.offsetWidth,
-        height: triggerRef.current.offsetHeight,
-        x: triggerRef.current.offsetLeft,
-        y: triggerRef.current.offsetTop
-      });
-    }
-    __name(getTriggerSize, "getTriggerSize");
-    getTriggerSize();
-    const observer = new ResizeObserver(getTriggerSize);
-    return observer.observe(triggerRef.current), () => {
-      triggerRef.current && observer.unobserve(triggerRef.current);
-    };
-  }, [context2.triggersCount]), React66.useEffect(() => {
-    isSelected && layout && onInteraction?.("select", layout);
-  }, [isSelected, value, layout]), /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(import_web16.Theme, {
-    name: isSelected && !disableActiveTheme ? "active" : null,
-    children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(RovingFocusGroup.Item, {
-      __scopeRovingFocusGroup: __scopeTabs || TABS_CONTEXT,
-      asChild: true,
-      focusable: !disabled,
-      active: isSelected,
-      children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsTriggerFrame, {
-        onLayout: /* @__PURE__ */ __name((event) => {
-          isWeb || setLayout(event.nativeEvent.layout);
-        }, "onLayout"),
-        onHoverIn: composeEventHandlers(props.onHoverIn, () => {
-          layout && onInteraction?.("hover", layout);
-        }),
-        onHoverOut: composeEventHandlers(props.onHoverOut, () => {
-          onInteraction?.("hover", null);
-        }),
-        role: "tab",
-        "aria-selected": isSelected,
-        "aria-controls": contentId,
-        "data-state": isSelected ? "active" : "inactive",
-        "data-disabled": disabled ? "" : void 0,
-        disabled,
-        id: triggerId,
-        ...!props.unstyled && {
-          size: context2.size
-        },
-        ...isSelected && {
-          forceStyle: "focus"
-        },
-        ...groupItemProps,
-        ...triggerProps,
-        ref: composeRefs(forwardedRef, triggerRef),
-        onPress: composeEventHandlers(props.onPress ?? void 0, (event) => {
-          const webChecks = !isWeb || event.button === 0 && event.ctrlKey === false;
-          !disabled && !isSelected && webChecks ? context2.onChange(value) : event.preventDefault();
-        }),
-        ...isWeb && {
-          type: "button",
-          onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
-            [" ", "Enter"].includes(event.key) && (context2.onChange(value), event.preventDefault());
-          }),
-          onFocus: composeEventHandlers(props.onFocus, (event) => {
-            layout && onInteraction?.("focus", layout);
-            const isAutomaticActivation = context2.activationMode !== "manual";
-            !isSelected && !disabled && isAutomaticActivation && context2.onChange(value);
-          }),
-          onBlur: composeEventHandlers(props.onFocus, () => {
-            onInteraction?.("focus", null);
-          })
-        }
-      })
-    })
-  });
-});
-TabsTrigger.displayName = TRIGGER_NAME5;
 var CONTENT_NAME4 = "TabsContent";
-var TabsContentFrame = (0, import_web16.styled)(ThemeableStack, {
+var DefaultTabsContentFrame = (0, import_core45.styled)(ThemeableStack, {
   name: CONTENT_NAME4
 });
-var TabsContent = TabsContentFrame.styleable(function(props, forwardedRef) {
-  const {
-    __scopeTabs,
-    value,
-    forceMount,
-    children,
-    ...contentProps
-  } = props, context2 = useTabsContext(__scopeTabs), isSelected = value === context2.value, show = forceMount || isSelected, triggerId = makeTriggerId(context2.baseId, value), contentId = makeContentId(context2.baseId, value);
-  return show ? /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsContentFrame, {
-    "data-state": isSelected ? "active" : "inactive",
-    "data-orientation": context2.orientation,
-    role: "tabpanel",
-    "aria-labelledby": triggerId,
-    hidden: !show,
-    id: contentId,
-    tabIndex: 0,
-    ...contentProps,
-    ref: forwardedRef,
-    children
-  }, value) : null;
-});
-var TABS_NAME = "Tabs";
+
+// ../../node_modules/@tamagui/tabs/dist/esm/StyledContext.mjs
+var import_core46 = require("@tamagui/core");
 var {
   Provider: TabsProvider,
   useStyledContext: useTabsContext
-} = (0, import_web16.createStyledContext)();
-var TabsFrame = (0, import_web16.styled)(SizableStack, {
-  name: TABS_NAME
-});
-var TabsComponent = TabsFrame.styleable(function(props, forwardedRef) {
+} = (0, import_core46.createStyledContext)();
+
+// ../../node_modules/@tamagui/tabs/dist/esm/createTabs.mjs
+var import_jsx_runtime55 = require("react/jsx-runtime");
+function createTabs(createProps) {
   const {
-    __scopeTabs,
-    value: valueProp,
-    onValueChange,
-    defaultValue: defaultValue2,
-    orientation = "horizontal",
-    dir,
-    activationMode = "automatic",
-    size: size4 = "$true",
-    ...tabsProps
-  } = props, direction = useDirection(dir), [value, setValue] = useControllableState({
-    prop: valueProp,
-    onChange: onValueChange,
-    defaultProp: defaultValue2 ?? ""
-  }), [triggersCount, setTriggersCount] = React66.useState(0), registerTrigger = (0, import_web16.useEvent)(() => setTriggersCount((v) => v + 1)), unregisterTrigger = (0, import_web16.useEvent)(() => setTriggersCount((v) => v - 1));
-  return /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsProvider, {
-    scope: __scopeTabs,
-    baseId: React66.useId(),
-    value,
-    onChange: setValue,
-    orientation,
-    dir: direction,
-    activationMode,
-    size: size4,
-    registerTrigger,
-    triggersCount,
-    unregisterTrigger,
-    children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsFrame, {
-      direction,
-      "data-orientation": orientation,
-      ...tabsProps,
-      ref: forwardedRef
-    })
+    ContentFrame = DefaultTabsContentFrame,
+    TabFrame = DefaultTabsTabFrame,
+    TabsFrame = DefaultTabsFrame
+  } = createProps, TABS_CONTEXT = "TabsContext", TAB_LIST_NAME = "TabsList", TabsList = React66.forwardRef((props, forwardedRef) => {
+    const {
+      __scopeTabs,
+      loop = true,
+      children,
+      ...listProps
+    } = props, context2 = useTabsContext(__scopeTabs);
+    return /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(RovingFocusGroup, {
+      __scopeRovingFocusGroup: __scopeTabs || TABS_CONTEXT,
+      orientation: context2.orientation,
+      dir: context2.dir,
+      loop,
+      asChild: true,
+      children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(Group, {
+        role: "tablist",
+        componentName: TAB_LIST_NAME,
+        "aria-orientation": context2.orientation,
+        ref: forwardedRef,
+        orientation: context2.orientation,
+        ...listProps,
+        children
+      })
+    });
   });
-});
-var Tabs2 = withStaticProperties(TabsComponent, {
-  List: TabsList,
-  /**
-   * @deprecated Use Tabs.Tab instead
-   */
-  Trigger: TabsTrigger,
-  Tab: TabsTrigger,
-  Content: TabsContent
-});
+  TabsList.displayName = TAB_LIST_NAME;
+  const TRIGGER_NAME6 = "TabsTrigger", TabsTrigger = TabFrame.styleable((props, forwardedRef) => {
+    const {
+      __scopeTabs,
+      value,
+      disabled = false,
+      onInteraction,
+      disableActiveTheme,
+      ...triggerProps
+    } = props, context2 = useTabsContext(__scopeTabs), triggerId = makeTriggerId(context2.baseId, value), contentId = makeContentId(context2.baseId, value), isSelected = value === context2.value, [layout, setLayout] = React66.useState(null), triggerRef = React66.useRef(null), groupItemProps = useGroupItem({
+      disabled: !!disabled
+    });
+    return React66.useEffect(() => (context2.registerTrigger(), () => context2.unregisterTrigger()), []), React66.useEffect(() => {
+      if (!triggerRef.current || !isWeb) return;
+      function getTriggerSize() {
+        triggerRef.current && setLayout({
+          width: triggerRef.current.offsetWidth,
+          height: triggerRef.current.offsetHeight,
+          x: triggerRef.current.offsetLeft,
+          y: triggerRef.current.offsetTop
+        });
+      }
+      __name(getTriggerSize, "getTriggerSize");
+      getTriggerSize();
+      const observer = new ResizeObserver(getTriggerSize);
+      return observer.observe(triggerRef.current), () => {
+        triggerRef.current && observer.unobserve(triggerRef.current);
+      };
+    }, [context2.triggersCount]), React66.useEffect(() => {
+      isSelected && layout && onInteraction?.("select", layout);
+    }, [isSelected, value, layout]), /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(import_web16.Theme, {
+      name: isSelected && !disableActiveTheme ? "active" : null,
+      children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(RovingFocusGroup.Item, {
+        __scopeRovingFocusGroup: __scopeTabs || TABS_CONTEXT,
+        asChild: true,
+        focusable: !disabled,
+        active: isSelected,
+        children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabFrame, {
+          onLayout: /* @__PURE__ */ __name((event) => {
+            isWeb || setLayout(event.nativeEvent.layout);
+          }, "onLayout"),
+          onHoverIn: composeEventHandlers(props.onHoverIn, () => {
+            layout && onInteraction?.("hover", layout);
+          }),
+          onHoverOut: composeEventHandlers(props.onHoverOut, () => {
+            onInteraction?.("hover", null);
+          }),
+          role: "tab",
+          "aria-selected": isSelected,
+          "aria-controls": contentId,
+          "data-state": isSelected ? "active" : "inactive",
+          "data-disabled": disabled ? "" : void 0,
+          disabled,
+          id: triggerId,
+          ...!props.unstyled && {
+            size: context2.size
+          },
+          ...isSelected && {
+            forceStyle: "focus"
+          },
+          ...groupItemProps,
+          ...triggerProps,
+          ref: composeRefs(forwardedRef, triggerRef),
+          onPress: composeEventHandlers(props.onPress ?? void 0, (event) => {
+            const webChecks = !isWeb || event.button === 0 && event.ctrlKey === false;
+            !disabled && !isSelected && webChecks ? context2.onChange(value) : event.preventDefault();
+          }),
+          ...isWeb && {
+            type: "button",
+            onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
+              [" ", "Enter"].includes(event.key) && (context2.onChange(value), event.preventDefault());
+            }),
+            onFocus: composeEventHandlers(props.onFocus, (event) => {
+              layout && onInteraction?.("focus", layout);
+              const isAutomaticActivation = context2.activationMode !== "manual";
+              !isSelected && !disabled && isAutomaticActivation && context2.onChange(value);
+            }),
+            onBlur: composeEventHandlers(props.onFocus, () => {
+              onInteraction?.("focus", null);
+            })
+          }
+        })
+      })
+    });
+  });
+  TabsTrigger.displayName = TRIGGER_NAME6;
+  const TabsContent = ContentFrame.styleable(function(props, forwardedRef) {
+    const {
+      __scopeTabs,
+      value,
+      forceMount,
+      children,
+      ...contentProps
+    } = props, context2 = useTabsContext(__scopeTabs), isSelected = value === context2.value, show = forceMount || isSelected, triggerId = makeTriggerId(context2.baseId, value), contentId = makeContentId(context2.baseId, value);
+    return show ? /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(ContentFrame, {
+      "data-state": isSelected ? "active" : "inactive",
+      "data-orientation": context2.orientation,
+      role: "tabpanel",
+      "aria-labelledby": triggerId,
+      hidden: !show,
+      id: contentId,
+      tabIndex: 0,
+      ...contentProps,
+      ref: forwardedRef,
+      children
+    }, value) : null;
+  }), TabsComponent = TabsFrame.styleable(function(props, forwardedRef) {
+    const {
+      __scopeTabs,
+      value: valueProp,
+      onValueChange,
+      defaultValue: defaultValue2,
+      orientation = "horizontal",
+      dir,
+      activationMode = "automatic",
+      size: size4 = "$true",
+      ...tabsProps
+    } = props, direction = useDirection(dir), [value, setValue] = useControllableState({
+      prop: valueProp,
+      onChange: onValueChange,
+      defaultProp: defaultValue2 ?? ""
+    }), [triggersCount, setTriggersCount] = React66.useState(0), registerTrigger = (0, import_web16.useEvent)(() => setTriggersCount((v) => v + 1)), unregisterTrigger = (0, import_web16.useEvent)(() => setTriggersCount((v) => v - 1));
+    return /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsProvider, {
+      scope: __scopeTabs,
+      baseId: React66.useId(),
+      value,
+      onChange: setValue,
+      orientation,
+      dir: direction,
+      activationMode,
+      size: size4,
+      registerTrigger,
+      triggersCount,
+      unregisterTrigger,
+      children: /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(TabsFrame, {
+        direction,
+        "data-orientation": orientation,
+        ...tabsProps,
+        ref: forwardedRef
+      })
+    });
+  });
+  return withStaticProperties(TabsComponent, {
+    List: TabsList,
+    /**
+     * @deprecated Use Tabs.Tab instead
+     */
+    Trigger: TabsTrigger,
+    Tab: TabsTrigger,
+    Content: TabsContent
+  });
+}
+__name(createTabs, "createTabs");
 function makeTriggerId(baseId, value) {
   return `${baseId}-trigger-${value}`;
 }
@@ -41554,6 +41568,13 @@ function makeContentId(baseId, value) {
   return `${baseId}-content-${value}`;
 }
 __name(makeContentId, "makeContentId");
+
+// ../../node_modules/@tamagui/tabs/dist/esm/index.mjs
+var Tabs = createTabs({
+  ContentFrame: DefaultTabsContentFrame,
+  TabFrame: DefaultTabsTabFrame,
+  TabsFrame: DefaultTabsFrame
+});
 
 // ../../node_modules/@tamagui/theme/dist/esm/_mutateTheme.mjs
 var import_web17 = require("@tamagui/core");
@@ -42025,7 +42046,7 @@ var ToggleGroupImpl = ToggleGroupImplElementFrame.extractable(import_react47.def
 }));
 
 // ../../node_modules/@tamagui/tooltip/dist/esm/Tooltip.mjs
-var import_core45 = require("@tamagui/core");
+var import_core47 = require("@tamagui/core");
 var React69 = __toESM(require("react"), 1);
 var import_jsx_runtime58 = require("react/jsx-runtime");
 var TOOLTIP_SCOPE = "tooltip";
@@ -42100,7 +42121,7 @@ var TooltipComponent = React69.forwardRef(function(props, ref) {
     prop: openProp,
     defaultProp: false,
     onChange: onOpenChangeProp
-  }), id = props.groupId, onOpenChange = (0, import_core45.useEvent)((open2) => {
+  }), id = props.groupId, onOpenChange = (0, import_core47.useEvent)((open2) => {
     open2 && setCurrentId(id), setOpen(open2);
   });
   React69.useEffect(() => {
@@ -42325,9 +42346,9 @@ var VisuallyHidden = (0, import_web20.styled)(import_web20.Text, {
 VisuallyHidden.isVisuallyHidden = true;
 
 // ../../node_modules/tamagui/dist/esm/createTamagui.mjs
-var import_core46 = require("@tamagui/core");
-var createTamagui = process.env.NODE_ENV !== "development" ? import_core46.createTamagui : (conf) => {
-  const sizeTokenKeys = ["$true"], hasKeys = /* @__PURE__ */ __name((expectedKeys, obj) => expectedKeys.every((k) => typeof obj[k] < "u"), "hasKeys"), tamaguiConfig = (0, import_core46.createTamagui)(conf);
+var import_core48 = require("@tamagui/core");
+var createTamagui = process.env.NODE_ENV !== "development" ? import_core48.createTamagui : (conf) => {
+  const sizeTokenKeys = ["$true"], hasKeys = /* @__PURE__ */ __name((expectedKeys, obj) => expectedKeys.every((k) => typeof obj[k] < "u"), "hasKeys"), tamaguiConfig = (0, import_core48.createTamagui)(conf);
   for (const name of ["size", "space"]) {
     const tokenSet = tamaguiConfig.tokensParsed[name];
     if (!tokenSet) throw new Error(`Expected tokens for "${name}" in ${Object.keys(tamaguiConfig.tokensParsed).join(", ")}`);
@@ -42368,12 +42389,12 @@ Expected a subset of: ${expected.join(", ")}
 };
 
 // ../../node_modules/tamagui/dist/esm/views/TamaguiProvider.mjs
-var import_core47 = require("@tamagui/core");
+var import_core49 = require("@tamagui/core");
 var import_jsx_runtime60 = require("react/jsx-runtime");
 var TamaguiProvider = /* @__PURE__ */ __name(({
   children,
   ...props
-}) => /* @__PURE__ */ (0, import_jsx_runtime60.jsx)(import_core47.TamaguiProvider, {
+}) => /* @__PURE__ */ (0, import_jsx_runtime60.jsx)(import_core49.TamaguiProvider, {
   ...props,
   children: /* @__PURE__ */ (0, import_jsx_runtime60.jsx)(ZIndexStackContext.Provider, {
     value: 1,
@@ -42385,10 +42406,10 @@ var TamaguiProvider = /* @__PURE__ */ __name(({
 }), "TamaguiProvider");
 
 // ../../node_modules/tamagui/dist/esm/views/Anchor.mjs
-var import_core48 = require("@tamagui/core");
+var import_core50 = require("@tamagui/core");
 var import_react_native_web10 = __toESM(require_cjs21(), 1);
 var import_jsx_runtime61 = require("react/jsx-runtime");
-var AnchorFrame = (0, import_core48.styled)(SizableText, {
+var AnchorFrame = (0, import_core50.styled)(SizableText, {
   name: "Anchor",
   tag: "a",
   accessibilityRole: "link"
@@ -42411,8 +42432,8 @@ var Anchor = AnchorFrame.styleable(({
 }));
 
 // ../../node_modules/tamagui/dist/esm/views/EnsureFlexed.mjs
-var import_core49 = require("@tamagui/core");
-var EnsureFlexed = (0, import_core49.styled)(import_core49.Text, {
+var import_core51 = require("@tamagui/core");
+var EnsureFlexed = (0, import_core51.styled)(import_core51.Text, {
   opacity: 0,
   lineHeight: 0,
   height: 0,
@@ -42424,8 +42445,8 @@ var EnsureFlexed = (0, import_core49.styled)(import_core49.Text, {
 EnsureFlexed.isVisuallyHidden = true;
 
 // ../../node_modules/tamagui/dist/esm/views/Fieldset.mjs
-var import_core50 = require("@tamagui/core");
-var Fieldset = (0, import_core50.styled)(YStack, {
+var import_core52 = require("@tamagui/core");
+var Fieldset = (0, import_core52.styled)(YStack, {
   name: "Fieldset",
   tag: "fieldset",
   variants: {
@@ -42440,18 +42461,18 @@ var Fieldset = (0, import_core50.styled)(YStack, {
 
 // ../../node_modules/tamagui/dist/esm/views/Input.mjs
 var import_react50 = __toESM(require("react"), 1);
-var import_core52 = require("@tamagui/core");
+var import_core54 = require("@tamagui/core");
 var import_react_native_web11 = __toESM(require_cjs21(), 1);
 
 // ../../node_modules/tamagui/dist/esm/helpers/inputHelpers.mjs
-var import_core51 = require("@tamagui/core");
+var import_core53 = require("@tamagui/core");
 var inputSizeVariant = /* @__PURE__ */ __name((val = "$true", extras) => {
   if (extras.props.multiline || extras.props.numberOfLines > 1) return textAreaSizeVariant(val, extras);
   const buttonStyles = getButtonSized(val, extras), paddingHorizontal = getSpace(val, {
     shift: -1,
     bounds: [2]
   }), fontStyle = getFontSized(val, extras);
-  return !import_core51.isWeb && fontStyle && delete fontStyle.lineHeight, {
+  return !import_core53.isWeb && fontStyle && delete fontStyle.lineHeight, {
     ...fontStyle,
     ...buttonStyles,
     paddingHorizontal
@@ -42460,7 +42481,7 @@ var inputSizeVariant = /* @__PURE__ */ __name((val = "$true", extras) => {
 var textAreaSizeVariant = /* @__PURE__ */ __name((val = "$true", extras) => {
   const {
     props
-  } = extras, buttonStyles = getButtonSized(val, extras), fontStyle = getFontSized(val, extras), lines = props.rows ?? props.numberOfLines, height = typeof lines == "number" ? lines * (0, import_core51.getVariableValue)(fontStyle.lineHeight) : "auto", paddingVertical = getSpace(val, {
+  } = extras, buttonStyles = getButtonSized(val, extras), fontStyle = getFontSized(val, extras), lines = props.rows ?? props.numberOfLines, height = typeof lines == "number" ? lines * (0, import_core53.getVariableValue)(fontStyle.lineHeight) : "auto", paddingVertical = getSpace(val, {
     shift: -2,
     bounds: [2]
   }), paddingHorizontal = getSpace(val, {
@@ -42505,7 +42526,7 @@ var defaultStyles = {
     outlineStyle: "solid"
   }
 };
-var InputFrame = (0, import_core52.styled)(import_react_native_web11.TextInput, {
+var InputFrame = (0, import_core54.styled)(import_react_native_web11.TextInput, {
   name: "Input",
   variants: {
     unstyled: {
@@ -42529,13 +42550,13 @@ var InputFrame = (0, import_core52.styled)(import_react_native_web11.TextInput, 
   }
 });
 var Input = InputFrame.styleable((propsIn, forwardedRef) => {
-  const ref = import_react50.default.useRef(null), composedRefs = (0, import_core52.useComposedRefs)(forwardedRef, ref), props = useInputProps(propsIn, composedRefs);
+  const ref = import_react50.default.useRef(null), composedRefs = (0, import_core54.useComposedRefs)(forwardedRef, ref), props = useInputProps(propsIn, composedRefs);
   return /* @__PURE__ */ (0, import_jsx_runtime62.jsx)(InputFrame, {
     ...props
   });
 });
 function useInputProps(props, ref) {
-  const theme = (0, import_core52.useTheme)(), focusableProps = useFocusable({
+  const theme = (0, import_core54.useTheme)(), focusableProps = useFocusable({
     props,
     ref,
     isInput: true
@@ -42554,18 +42575,18 @@ function useInputProps(props, ref) {
 __name(useInputProps, "useInputProps");
 
 // ../../node_modules/tamagui/dist/esm/views/Spinner.mjs
-var import_core53 = require("@tamagui/core");
+var import_core55 = require("@tamagui/core");
 var React73 = __toESM(require("react"), 1);
 var import_react_native_web12 = __toESM(require_cjs21(), 1);
 var import_jsx_runtime63 = require("react/jsx-runtime");
-var Spinner = YStack.extractable((0, import_core53.themeable)(React73.forwardRef((props, ref) => {
+var Spinner = YStack.extractable((0, import_core55.themeable)(React73.forwardRef((props, ref) => {
   const {
     size: size4,
     color: colorProp,
     ...stackProps
-  } = props, theme = (0, import_core53.useTheme)();
+  } = props, theme = (0, import_core55.useTheme)();
   let color = colorProp;
-  return color && color[0] === "$" && (color = (0, import_core53.variableToString)(theme[color])), /* @__PURE__ */ (0, import_jsx_runtime63.jsx)(YStack, {
+  return color && color[0] === "$" && (color = (0, import_core55.variableToString)(theme[color])), /* @__PURE__ */ (0, import_jsx_runtime63.jsx)(YStack, {
     ref,
     ...stackProps,
     children: /* @__PURE__ */ (0, import_jsx_runtime63.jsx)(import_react_native_web12.ActivityIndicator, {
@@ -42579,9 +42600,9 @@ var Spinner = YStack.extractable((0, import_core53.themeable)(React73.forwardRef
 
 // ../../node_modules/tamagui/dist/esm/views/TextArea.mjs
 var import_react51 = __toESM(require("react"), 1);
-var import_core54 = require("@tamagui/core");
+var import_core56 = require("@tamagui/core");
 var import_jsx_runtime64 = require("react/jsx-runtime");
-var TextAreaFrame = (0, import_core54.styled)(InputFrame, {
+var TextAreaFrame = (0, import_core56.styled)(InputFrame, {
   name: "TextArea",
   multiline: true,
   // this attribute fixes firefox newline issue
@@ -42602,7 +42623,7 @@ var TextAreaFrame = (0, import_core54.styled)(InputFrame, {
   }
 });
 var TextArea = TextAreaFrame.styleable((propsIn, forwardedRef) => {
-  const ref = import_react51.default.useRef(null), composedRefs = (0, import_core54.useComposedRefs)(forwardedRef, ref), props = useInputProps(propsIn, composedRefs), linesProp = {
+  const ref = import_react51.default.useRef(null), composedRefs = (0, import_core56.useComposedRefs)(forwardedRef, ref), props = useInputProps(propsIn, composedRefs), linesProp = {
     // web uses rows now, but native not caught up :/
     [isWeb ? "rows" : "numberOfLines"]: propsIn.unstyled ? void 0 : 4
   };
@@ -42613,8 +42634,8 @@ var TextArea = TextAreaFrame.styleable((propsIn, forwardedRef) => {
 });
 
 // ../../node_modules/tamagui/dist/esm/views/Text.mjs
-var import_core55 = require("@tamagui/core");
-var Text4 = (0, import_core55.styled)(import_core55.Text, {
+var import_core57 = require("@tamagui/core");
+var Text4 = (0, import_core57.styled)(import_core57.Text, {
   variants: {
     unstyled: {
       false: {
@@ -42628,7 +42649,7 @@ var Text4 = (0, import_core55.styled)(import_core55.Text, {
 });
 
 // ../../node_modules/tamagui/dist/esm/index.mjs
-var import_core56 = require("@tamagui/core");
+var import_core58 = require("@tamagui/core");
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   ACTIONS,
@@ -42797,6 +42818,7 @@ var import_core56 = require("@tamagui/core");
   SwitchStyledContext,
   SwitchThumb,
   Tabs,
+  TabsProvider,
   TamaguiProvider,
   Text,
   TextArea,
@@ -42846,6 +42868,7 @@ var import_core56 = require("@tamagui/core");
   createShorthands,
   createStyledContext,
   createSwitch,
+  createTabs,
   createTamagui,
   createTheme,
   createTokens,
