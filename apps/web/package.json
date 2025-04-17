@@ -12,17 +12,17 @@
     "@kovyra/app": "workspace:*",
     "@kovyra/theme": "workspace:*",
     "@kovyra/ui": "workspace:*",
-    "@tamagui/next-theme": "1.126.0",
+    "@tamagui/next-theme": "1.126.1",
     "next": "15.3.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.0",
     "react-native-web": "~0.20.0",
-    "tamagui": "^1.126.0"
+    "tamagui": "^1.126.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
-    "@tamagui/next-plugin": "1.126.0",
+    "@tamagui/next-plugin": "1.126.1",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
