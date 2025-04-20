@@ -1,0 +1,330 @@
+---
+title: Migration Examples
+description: Step-by-step examples for creating and managing database migrations
+---
+
+# Migration Examples
+
+This page provides concrete examples for working with TypeORM migrations in the Kovyra application.
+
+## Example 1: Adding a New Field to an Entity
+
+This example shows the complete process of adding a new field to an existing entity and creating a migration.
+
+### Step 1: Modify the Entity
+
+First, update the entity file (e.g., `user.entity.ts`) to add the new field:
+
+```typescript
+@Entity('users')
+export class User {
+  // Existing fields...
+
+  @Column({ nullable: true })
+  avatar: string; // Add a new column for user avatar
+}
+```
+
+### Step 2: Generate the Migration
+
+Run the migration generation command:
+
+```bash
+pnpm run migration:generate server/migrations/AddAvatarToUser
+```
+
+This will create a new migration file with a timestamp, for example: `1745162345678-AddAvatarToUser.ts`.
+
+### Step 3: Examine the Generated Migration
+
+The migration file should look something like this:
+
+```typescript
+import { MigrationInterface, QueryRunner } from 'typeorm';
+
+export class AddAvatarToUser1745162345678 implements MigrationInterface {
+  name = 'AddAvatarToUser1745162345678';
+
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(
+      `ALTER TABLE "users" ADD "avatar" character varying`,
+    );
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`ALTER TABLE "users" DROP COLUMN "avatar"`);
+  }
+}
+```
+
+### Step 4: Run the Migration
+
+Apply the migration to the database:
+
+```bash
+pnpm run migration:run
+```
+
+Output should show that the migration was executed successfully:
+
+```
+Migration AddAvatarToUser1745162345678 has been executed successfully.
+```
+
+### Step 5: Verify the Changes
+
+Check the database schema using TablePlus or psql to confirm that the `avatar` column has been added to the `users` table.
+
+## Example 2: Creating a New Entity with Relations
+
+This example shows how to create a new entity with relations and generate the corresponding migration.
+
+### Step 1: Create the Entity
+
+Create a new file `server/entities/post.entity.ts`:
+
+```typescript
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
+import { User } from './user.entity';
+
+@Entity('posts')
+export class Post {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column()
+  title: string;
+
+  @Column('text')
+  content: string;
+
+  @Column({ default: false })
+  published: boolean;
+
+  @ManyToOne(() => User, (user) => user.posts)
+  author: User;
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+}
+```
+
+### Step 2: Update the User Entity to Include the Relation
+
+Modify `server/entities/user.entity.ts` to add the reverse relation:
+
+```typescript
+import { Post } from './post.entity';
+// ... other imports
+
+@Entity('users')
+export class User {
+  // Existing fields...
+
+  @OneToMany(() => Post, (post) => post.author)
+  posts: Post[];
+}
+```
+
+### Step 3: Generate the Migration
+
+Run the migration generation command:
+
+```bash
+pnpm run migration:generate server/migrations/CreatePostEntity
+```
+
+### Step 4: Examine the Generated Migration
+
+The migration file will be more complex, creating the new table and establishing the foreign key relationship:
+
+```typescript
+import { MigrationInterface, QueryRunner } from 'typeorm';
+
+export class CreatePostEntity1745162456789 implements MigrationInterface {
+  name = 'CreatePostEntity1745162456789';
+
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(
+      `CREATE TABLE "posts" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "title" character varying NOT NULL, "content" text NOT NULL, "published" boolean NOT NULL DEFAULT false, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), "authorId" uuid, CONSTRAINT "PK_2829ac61eff60fcec60d7274b9e" PRIMARY KEY ("id"))`,
+    );
+    await queryRunner.query(
+      `ALTER TABLE "posts" ADD CONSTRAINT "FK_c5a322ad12a7bf95460c958e80e" FOREIGN KEY ("authorId") REFERENCES "users"("id") ON DELETE NO ACTION ON UPDATE NO ACTION`,
+    );
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(
+      `ALTER TABLE "posts" DROP CONSTRAINT "FK_c5a322ad12a7bf95460c958e80e"`,
+    );
+    await queryRunner.query(`DROP TABLE "posts"`);
+  }
+}
+```
+
+### Step 5: Run the Migration
+
+Apply the migration to the database:
+
+```bash
+pnpm run migration:run
+```
+
+## Example 3: Modifying an Existing Column
+
+This example shows how to modify an existing column's properties.
+
+### Step 1: Update the Entity
+
+Modify the entity file to change the column definition:
+
+```typescript
+@Entity('users')
+export class User {
+  // Other fields...
+
+  @Column({ length: 100, default: 'Anonymous' }) // Changed from just @Column()
+  firstName: string;
+}
+```
+
+### Step 2: Generate the Migration
+
+```bash
+pnpm run migration:generate server/migrations/ModifyFirstNameColumn
+```
+
+### Step 3: Examine the Generated Migration
+
+```typescript
+import { MigrationInterface, QueryRunner } from 'typeorm';
+
+export class ModifyFirstNameColumn1745162567890 implements MigrationInterface {
+  name = 'ModifyFirstNameColumn1745162567890';
+
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(
+      `ALTER TABLE "users" ALTER COLUMN "firstName" SET DEFAULT 'Anonymous'`,
+    );
+    await queryRunner.query(
+      `ALTER TABLE "users" ALTER COLUMN "firstName" TYPE character varying(100)`,
+    );
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(
+      `ALTER TABLE "users" ALTER COLUMN "firstName" TYPE character varying`,
+    );
+    await queryRunner.query(
+      `ALTER TABLE "users" ALTER COLUMN "firstName" DROP DEFAULT`,
+    );
+  }
+}
+```
+
+### Step 4: Run the Migration
+
+```bash
+pnpm run migration:run
+```
+
+## Example 4: Working with Custom Migrations
+
+Sometimes you need to write custom migrations that do more than just schema changes.
+
+### Step 1: Create a Custom Migration
+
+Create a new TypeScript file in the migrations directory:
+
+```typescript
+import { MigrationInterface, QueryRunner } from 'typeorm';
+
+export class PopulateDefaultRoles1745162678901 implements MigrationInterface {
+  name = 'PopulateDefaultRoles1745162678901';
+
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    // Insert default roles
+    await queryRunner.query(`
+            INSERT INTO roles (name, description)
+            VALUES 
+                ('admin', 'Administrator with full access'),
+                ('user', 'Regular user with limited access'),
+                ('guest', 'Guest user with read-only access')
+        `);
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    // Remove the default roles
+    await queryRunner.query(`
+            DELETE FROM roles 
+            WHERE name IN ('admin', 'user', 'guest')
+        `);
+  }
+}
+```
+
+### Step 2: Run the Migration
+
+```bash
+pnpm run migration:run
+```
+
+## Example 5: Troubleshooting Migrations
+
+### Fixing a Failed Migration
+
+If a migration fails, you'll need to fix the issue and try again. Here's how to handle common scenarios:
+
+#### Scenario: Migration Partially Applied
+
+If a migration fails in the middle of execution, the database might be in an inconsistent state. You have two options:
+
+1. Manually fix the database to match the state before the migration, then try again
+2. Manually complete the migration using SQL commands
+
+#### Example: Fixing a Failed Migration
+
+Let's say your migration failed because a column couldn't be created due to a constraint violation. Here's how to fix it:
+
+1. Check the error message to understand the issue
+2. Connect to the database with TablePlus
+3. If needed, manually drop the partially created structures
+4. Fix the migration file or entity definition
+5. Run the migration again
+
+#### Common Migration Errors and Solutions
+
+- **Duplicate column/constraint**: The column or constraint already exists. Fix by checking if it exists before creating.
+- **Foreign key constraint violation**: Referenced table or column doesn't exist. Fix by creating the referenced table first.
+- **Type conversion error**: Cannot convert existing data to new type. Fix by adding a transformation step or using a compatible type.
+
+### Rolling Back Migrations
+
+To revert the most recent migration:
+
+```bash
+pnpm run migration:revert
+```
+
+If you need to revert multiple migrations, you'll need to run the command multiple times.
+
+## Best Practices from Real-World Examples
+
+1. **Keep migrations small and focused** - Each migration should do one thing.
+2. **Test migrations thoroughly** - Run them in development before applying to production.
+3. **Include data migrations when needed** - Sometimes you need to transform data, not just schema.
+4. **Always include down migrations** - Make sure you can roll back changes if needed.
+5. **Use descriptive migration names** - The name should clearly indicate what the migration does.
+6. **Consider performance impact** - Large tables might require special handling to avoid downtime.
+7. **Version control your migrations** - Never modify a migration that has been committed.
+8. **Backup before migrating** - Always back up your database before running migrations in production.

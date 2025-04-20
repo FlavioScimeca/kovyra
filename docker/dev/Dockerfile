@@ -20,14 +20,14 @@ RUN corepack enable
 COPY --chown=node:node package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc* tsconfig*.json nest-cli.json ./ ./ 
 COPY --chown=node:node server/ ./server/
 
-# Install ONLY root dependencies
+# Install root dependencies including TypeORM and other required packages
 RUN pnpm install --filter . 
 
 # Ensure the node user owns the entire application directory after installs
 RUN chown -R node:node /app
 
-# Expose the port NestJS runs on (default 3000)
-EXPOSE 3000
+# Expose the port NestJS runs on
+EXPOSE 4001
 
 # Set user to non-root
 USER node

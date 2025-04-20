@@ -1,0 +1,126 @@
+---
+title: User Management
+description: Documentation for user entity and operations
+---
+
+# User Management
+
+This section covers the `User` entity and related operations in the Kovyra API.
+
+## User Entity
+
+The `User` entity is defined in `server/entities/user.entity.ts` and represents a user in the system.
+
+```typescript
+@Entity('users')
+export class User {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column({ unique: true })
+  email: string;
+
+  @Column()
+  firstName: string;
+
+  @Column()
+  lastName: string;
+
+  @Column({ nullable: true })
+  nickname: string;
+
+  @Column({ select: false })
+  password: string;
+
+  @Column({ default: true })
+  isActive: boolean;
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+}
+```
+
+### Properties
+
+| Property  | Type    | Description                              | Constraints             |
+| --------- | ------- | ---------------------------------------- | ----------------------- |
+| id        | string  | Unique identifier (UUID)                 | Primary key, generated  |
+| email     | string  | User's email address                     | Unique                  |
+| firstName | string  | User's first name                        | Required                |
+| lastName  | string  | User's last name                         | Required                |
+| nickname  | string  | User's nickname                          | Optional                |
+| password  | string  | Hashed password                          | Not returned in queries |
+| isActive  | boolean | Whether the user account is active       | Default: true           |
+| createdAt | Date    | Timestamp when the user was created      | Auto-generated          |
+| updatedAt | Date    | Timestamp when the user was last updated | Auto-updated            |
+
+## DTOs (Data Transfer Objects)
+
+### CreateUserDto
+
+Used when creating a new user.
+
+```typescript
+export class CreateUserDto {
+  @IsEmail()
+  @IsNotEmpty()
+  email: string;
+
+  @IsString()
+  @IsNotEmpty()
+  firstName: string;
+
+  @IsString()
+  @IsNotEmpty()
+  lastName: string;
+
+  @IsString()
+  @IsOptional()
+  nickname?: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @MinLength(8)
+  password: string;
+}
+```
+
+### UpdateUserDto
+
+Used when updating an existing user. All fields are optional.
+
+```typescript
+export class UpdateUserDto extends PartialType(CreateUserDto) {
+  @IsBoolean()
+  @IsOptional()
+  isActive?: boolean;
+}
+```
+
+## User Service
+
+The `UsersService` provides methods for working with user data:
+
+- `create(createUserDto)`: Create a new user
+- `findAll()`: Get all users
+- `findOne(id)`: Get a user by ID
+- `findByEmail(email)`: Get a user by email address
+- `findByEmailWithPassword(email)`: Get a user by email with password (for authentication)
+- `update(id, updateUserDto)`: Update a user
+- `remove(id)`: Delete a user
+
+## API Endpoints
+
+| Method | Endpoint   | Description               | Authentication |
+| ------ | ---------- | ------------------------- | -------------- |
+| POST   | /users     | Create a new user         | Required       |
+| GET    | /users     | Get all users             | Required       |
+| GET    | /users/me  | Get current user profile  | Required       |
+| GET    | /users/:id | Get a specific user by ID | Required       |
+| PATCH  | /users/:id | Update a user             | Required       |
+| DELETE | /users/:id | Delete a user             | Required       |
+
+Note: All user endpoints require authentication via JWT. See the [Authentication](/docs/backend/auth) section for details.

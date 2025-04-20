@@ -1,0 +1,206 @@
+---
+title: Authentication
+description: Documentation for authentication logic and JWT implementation
+---
+
+# Authentication
+
+Kovyra uses JWT (JSON Web Tokens) for authentication, integrated with NestJS Passport.
+
+## Authentication Flow
+
+1. User registers or logs in through the authentication endpoints
+2. The server validates credentials and issues a JWT token
+3. The client includes this token in the `Authorization` header (`Bearer TOKEN`) for subsequent requests
+4. Protected routes verify the token using JwtAuthGuard
+
+## Key Components
+
+### AuthModule
+
+The `AuthModule` is responsible for configuring JWT and Passport:
+
+```typescript
+@Module({
+  imports: [
+    UsersModule,
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        secret: configService.get<string>('JWT_SECRET'),
+        signOptions: {
+          expiresIn: configService.get<string>('JWT_EXPIRES_IN'),
+        },
+      }),
+    }),
+  ],
+  controllers: [AuthController],
+  providers: [AuthService, JwtStrategy],
+  exports: [AuthService],
+})
+export class AuthModule {}
+```
+
+### JWT Strategy
+
+The JWT strategy validates tokens and extracts user information:
+
+```typescript
+@Injectable()
+export class JwtStrategy extends PassportStrategy(Strategy) {
+  constructor(
+    private readonly configService: ConfigService,
+    private readonly authService: AuthService,
+  ) {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      ignoreExpiration: false,
+      secretOrKey: configService.get<string>('JWT_SECRET')!,
+    });
+  }
+
+  async validate(payload: JwtPayload) {
+    try {
+      return await this.authService.validateJwtPayload(payload);
+    } catch (error) {
+      throw new UnauthorizedException('Invalid token');
+    }
+  }
+}
+```
+
+### AuthService
+
+The `AuthService` provides methods for:
+
+- User registration
+- User login
+- Token generation
+- Token validation
+
+### JWT Payload
+
+```typescript
+export interface JwtPayload {
+  sub: string; // User ID
+  email: string; // User email
+  iat?: number; // Issued at timestamp
+  exp?: number; // Expiration timestamp
+}
+```
+
+## Authentication DTOs
+
+### RegisterDto
+
+Used when registering a new user. Extends the CreateUserDto:
+
+```typescript
+export class RegisterDto extends CreateUserDto {}
+```
+
+### LoginDto
+
+Used when logging in:
+
+```typescript
+export class LoginDto {
+  @IsEmail()
+  @IsNotEmpty()
+  email: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @MinLength(8)
+  password: string;
+}
+```
+
+## API Endpoints
+
+| Method | Endpoint       | Description            | Authentication |
+| ------ | -------------- | ---------------------- | -------------- |
+| POST   | /auth/register | Register a new user    | Not required   |
+| POST   | /auth/login    | Log in and get a token | Not required   |
+
+## Example Requests
+
+### Register a new user
+
+```bash
+curl -X POST http://localhost:4001/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "nickname": "johndoe",
+    "password": "password123"
+  }'
+```
+
+Response:
+
+```json
+{
+  "user": {
+    "id": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
+    "email": "user@example.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "nickname": "johndoe",
+    "isActive": true,
+    "createdAt": "2023-08-23T12:34:56.789Z",
+    "updatedAt": "2023-08-23T12:34:56.789Z"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+### Login
+
+```bash
+curl -X POST http://localhost:4001/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "password123"
+  }'
+```
+
+Response:
+
+```json
+{
+  "user": {
+    "id": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
+    "email": "user@example.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "nickname": "johndoe",
+    "isActive": true,
+    "createdAt": "2023-08-23T12:34:56.789Z",
+    "updatedAt": "2023-08-23T12:34:56.789Z"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+## Using the JWT Token
+
+After obtaining a token from registration or login, include it in subsequent requests:
+
+```bash
+curl -X GET http://localhost:4001/users/me \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+```
+
+## Security Considerations
+
+- JWT tokens are signed but not encrypted. Don't include sensitive information in the payload.
+- The token expiration time is set in the `.env` file (`JWT_EXPIRES_IN`).
+- If a token is compromised, there's no direct way to invalidate it before expiration.
+- For increased security, consider implementing token refresh mechanism or token blacklisting.
+- The JWT secret key (`JWT_SECRET`) should be kept secure and rotated periodically.
