@@ -1,11 +1,7 @@
 'use client';
 
-import { UiStack, UiButton } from '@kovyra/ui';
+import { Home } from '@kovyra/app';
 
-export default function Home() {
-  return (
-    <UiStack>
-      <UiButton>Hello</UiButton>
-    </UiStack>
-  );
+export default function HomePage() {
+  return <Home />;
 }
