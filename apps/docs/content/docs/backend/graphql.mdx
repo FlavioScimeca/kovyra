@@ -1,0 +1,197 @@
+---
+title: GraphQL API
+description: Documentation for the Kovyra GraphQL API
+---
+
+# GraphQL API
+
+This section describes how to use the GraphQL API for the Kovyra application.
+
+## Overview
+
+Our application uses GraphQL alongside REST to provide a flexible API. GraphQL allows clients to request exactly the data they need, reducing over-fetching and under-fetching of data.
+
+## Authentication
+
+### Register a New User
+
+```graphql
+mutation Register {
+  register(
+    registerInput: {
+      email: "user@example.com"
+      firstName: "John"
+      lastName: "Doe"
+      nickname: "johndoe"
+      password: "password123"
+    }
+  ) {
+    user {
+      id
+      email
+      firstName
+      lastName
+      nickname
+      isActive
+      createdAt
+    }
+    token
+  }
+}
+```
+
+This mutation:
+
+1. Creates a new user with the provided information
+2. Securely hashes the password before storing it in the database
+3. Returns the user object and a JWT token for authentication
+
+### Login
+
+```graphql
+mutation Login {
+  login(loginInput: { email: "user@example.com", password: "password123" }) {
+    user {
+      id
+      email
+      firstName
+      lastName
+    }
+    token
+  }
+}
+```
+
+The login mutation:
+
+1. Validates user credentials
+2. Returns user information and a JWT token upon successful authentication
+
+## Using the JWT Token
+
+For all queries and mutations below, you need to include the JWT token in your request headers:
+
+```
+{
+  "Authorization": "Bearer your_jwt_token"
+}
+```
+
+## User Operations
+
+### Queries
+
+#### Get Current User
+
+```graphql
+query GetMe {
+  me {
+    id
+    email
+    firstName
+    lastName
+    nickname
+    isActive
+    createdAt
+    updatedAt
+  }
+}
+```
+
+#### Get All Users
+
+```graphql
+query GetAllUsers {
+  users {
+    id
+    email
+    firstName
+    lastName
+    nickname
+    isActive
+    createdAt
+    updatedAt
+  }
+}
+```
+
+#### Get User by ID
+
+```graphql
+query GetUser($id: ID!) {
+  user(id: $id) {
+    id
+    email
+    firstName
+    lastName
+    nickname
+    isActive
+    createdAt
+    updatedAt
+  }
+}
+```
+
+### Mutations
+
+#### Update Current User
+
+```graphql
+mutation UpdateMe($input: UpdateUserInput!) {
+  updateMe(updateUserInput: $input) {
+    id
+    firstName
+    lastName
+    nickname
+    updatedAt
+  }
+}
+```
+
+Variables:
+
+```json
+{
+  "input": {
+    "firstName": "Updated Name",
+    "nickname": "updated_nick"
+  }
+}
+```
+
+## Error Handling
+
+GraphQL errors are returned in the following format:
+
+```json
+{
+  "errors": [
+    {
+      "message": "Error message",
+      "locations": [
+        {
+          "line": 2,
+          "column": 3
+        }
+      ],
+      "path": ["fieldName"],
+      "extensions": {
+        "code": "ERROR_CODE",
+        "exception": {
+          "stacktrace": ["..."]
+        }
+      }
+    }
+  ]
+}
+```
+
+## Testing with GraphQL Playground
+
+Once your server is running, you can access the GraphQL Playground at:
+
+```
+http://localhost:4001/graphql
+```
+
+This interactive environment allows you to test queries and mutations with auto-completion and documentation.

@@ -18,9 +18,18 @@ const getEnvFilePath = () => {
 // Carica le variabili d'ambiente
 dotenv.config({ path: getEnvFilePath() });
 
+// Determine if we're running inside Docker
+const isRunningInDocker = fs.existsSync('/.dockerenv');
+
+// If running in Docker, use the service name ('postgres') as host
+// Otherwise use localhost for local development
+const dbHost = isRunningInDocker
+  ? 'postgres'
+  : process.env.DB_HOST || 'localhost';
+
 export default new DataSource({
   type: 'postgres',
-  host: 'localhost', // Usa localhost per CLI migration
+  host: dbHost,
   port: parseInt(process.env.DB_PORT || '5432'),
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,

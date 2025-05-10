@@ -1,5 +1,6 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import * as passport from 'passport';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -14,7 +15,11 @@ async function bootstrap() {
     }),
   );
 
+  // Initialize Passport
+  app.use(passport.initialize());
+
   await app.listen(process.env.PORT ?? 4001);
   console.log(`Application is running on: ${await app.getUrl()}`);
+  console.log(`GraphQL Playground: ${await app.getUrl()}/graphql`);
 }
 bootstrap();
