@@ -32,7 +32,8 @@
     "migration:run": "typeorm-ts-node-commonjs migration:run -d server/config/typeorm.config.ts",
     "migration:revert": "typeorm-ts-node-commonjs migration:revert -d server/config/typeorm.config.ts",
     "graphql:generate": "ts-node server/scripts/generate-schema.ts",
-    "seed:users": "ts-node server/scripts/seed/create-test-users.ts"
+    "seed:users": "ts-node server/scripts/seed/create-test-users.ts",
+    "voyager": "cd voyager && tsx voyager.controller.ts"
   },
   "dependencies": {
     "@apollo/server": "^4.12.0",
@@ -52,6 +53,7 @@
     "class-validator": "^0.14.1",
     "dotenv": "^16.5.0",
     "graphql": "^16.11.0",
+    "graphql-voyager": "^2.1.0",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "pg": "^8.14.1",
@@ -88,6 +90,7 @@
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.19.4",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.24.1"
   },

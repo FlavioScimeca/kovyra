@@ -6,6 +6,13 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // Enable CORS with specific allowed origins
+  app.enableCors({
+    origin: ['http://localhost:4002', 'http://localhost:3000'], // Allow Voyager and frontend
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+  });
+
   // Global validation pipe for DTOs
   app.useGlobalPipes(
     new ValidationPipe({
