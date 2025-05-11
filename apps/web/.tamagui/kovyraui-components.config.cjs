@@ -4936,12 +4936,12 @@ var require_preprocess = __commonJS({
     var createTextShadowValue = /* @__PURE__ */ __name((style) => {
       var textShadowColor = style.textShadowColor, textShadowOffset = style.textShadowOffset, textShadowRadius = style.textShadowRadius;
       var _ref2 = textShadowOffset || defaultOffset, height = _ref2.height, width = _ref2.width;
-      var radius2 = textShadowRadius || 0;
+      var radius3 = textShadowRadius || 0;
       var offsetX = (0, _normalizeValueWithProperty.default)(width);
       var offsetY = (0, _normalizeValueWithProperty.default)(height);
-      var blurRadius = (0, _normalizeValueWithProperty.default)(radius2);
+      var blurRadius = (0, _normalizeValueWithProperty.default)(radius3);
       var color = (0, _normalizeValueWithProperty.default)(textShadowColor, "textShadowColor");
-      if (color && (height !== 0 || width !== 0 || radius2 !== 0) && offsetX != null && offsetY != null && blurRadius != null) {
+      if (color && (height !== 0 || width !== 0 || radius3 !== 0) && offsetX != null && offsetY != null && blurRadius != null) {
         return offsetX + " " + offsetY + " " + blurRadius + " " + color;
       }
     }, "createTextShadowValue");
@@ -8469,7 +8469,7 @@ var require_RefreshControl = __commonJS({
     var _react = _interopRequireDefault(require("react"));
     var _excluded = ["colors", "enabled", "onRefresh", "progressBackgroundColor", "progressViewOffset", "refreshing", "size", "tintColor", "title", "titleColor"];
     function RefreshControl(props) {
-      var colors2 = props.colors, enabled = props.enabled, onRefresh = props.onRefresh, progressBackgroundColor = props.progressBackgroundColor, progressViewOffset = props.progressViewOffset, refreshing = props.refreshing, size5 = props.size, tintColor = props.tintColor, title = props.title, titleColor = props.titleColor, rest = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
+      var colors2 = props.colors, enabled = props.enabled, onRefresh = props.onRefresh, progressBackgroundColor = props.progressBackgroundColor, progressViewOffset = props.progressViewOffset, refreshing = props.refreshing, size6 = props.size, tintColor = props.tintColor, title = props.title, titleColor = props.titleColor, rest = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
       return /* @__PURE__ */ _react.default.createElement(_View.default, rest);
     }
     __name(RefreshControl, "RefreshControl");
@@ -19154,7 +19154,7 @@ var require_ActivityIndicator = __commonJS({
       style
     }), "createSvgCircle");
     var ActivityIndicator2 = /* @__PURE__ */ React86.forwardRef((props, forwardedRef) => {
-      var _props$animating = props.animating, animating = _props$animating === void 0 ? true : _props$animating, _props$color = props.color, color = _props$color === void 0 ? "#1976D2" : _props$color, _props$hidesWhenStopp = props.hidesWhenStopped, hidesWhenStopped = _props$hidesWhenStopp === void 0 ? true : _props$hidesWhenStopp, _props$size = props.size, size5 = _props$size === void 0 ? "small" : _props$size, style = props.style, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
+      var _props$animating = props.animating, animating = _props$animating === void 0 ? true : _props$animating, _props$color = props.color, color = _props$color === void 0 ? "#1976D2" : _props$color, _props$hidesWhenStopp = props.hidesWhenStopped, hidesWhenStopped = _props$hidesWhenStopp === void 0 ? true : _props$hidesWhenStopp, _props$size = props.size, size6 = _props$size === void 0 ? "small" : _props$size, style = props.style, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
       var svg = /* @__PURE__ */ React86.createElement("svg", {
         height: "100%",
         viewBox: "0 0 32 32",
@@ -19175,10 +19175,10 @@ var require_ActivityIndicator = __commonJS({
         style: [styles.container, style]
       }), /* @__PURE__ */ React86.createElement(_View.default, {
         children: svg,
-        style: [typeof size5 === "number" ? {
-          height: size5,
-          width: size5
-        } : indicatorSizes[size5], styles.animation, !animating && styles.animationPause, !animating && hidesWhenStopped && styles.hidesWhenStopped]
+        style: [typeof size6 === "number" ? {
+          height: size6,
+          width: size6
+        } : indicatorSizes[size6], styles.animation, !animating && styles.animationPause, !animating && hidesWhenStopped && styles.hidesWhenStopped]
       }));
     });
     ActivityIndicator2.displayName = "ActivityIndicator";
@@ -23338,6 +23338,7 @@ __export(src_exports, {
   ListItemText: () => ListItemText,
   ListItemTitle: () => ListItemTitle,
   Main: () => Main,
+  NativeToast: () => NativeToast,
   Nav: () => Nav,
   Overlay: () => Overlay,
   Paragraph: () => Paragraph,
@@ -23433,8 +23434,17 @@ __export(src_exports, {
   TooltipSimple: () => TooltipSimple,
   Track: () => Track,
   USE_NATIVE_PORTAL: () => USE_NATIVE_PORTAL,
+  UiAvatar: () => UiAvatar,
   UiButton: () => UiButton,
+  UiCard: () => UiCard,
+  UiCheckbox: () => UiCheckbox,
+  UiCheckboxIndicator: () => UiCheckboxIndicator,
+  UiInput: () => UiInput,
   UiStack: () => UiStack,
+  UiTabs: () => UiTabs,
+  UiTabsContent: () => UiTabsContent,
+  UiTabsList: () => UiTabsList,
+  UiTabsTrigger: () => UiTabsTrigger,
   Unspaced: () => import_core59.Unspaced,
   View: () => import_core59.View,
   VisuallyHidden: () => VisuallyHidden,
@@ -25130,16 +25140,16 @@ var animationsCSS = createAnimations({
 var import_core = require("@tamagui/core");
 var createSystemFont = /* @__PURE__ */ __name(({
   font = {},
-  sizeLineHeight = /* @__PURE__ */ __name((size5) => size5 + 10, "sizeLineHeight"),
-  sizeSize = /* @__PURE__ */ __name((size5) => size5 * 1, "sizeSize")
+  sizeLineHeight = /* @__PURE__ */ __name((size6) => size6 + 10, "sizeLineHeight"),
+  sizeSize = /* @__PURE__ */ __name((size6) => size6 * 1, "sizeSize")
 } = {}) => {
-  const size5 = Object.fromEntries(Object.entries({
+  const size6 = Object.fromEntries(Object.entries({
     ...defaultSizes,
     ...font.size
   }).map(([k, v]) => [k, sizeSize(+v)]));
   return (0, import_core.createFont)({
     family: import_core.isWeb ? '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' : "System",
-    lineHeight: Object.fromEntries(Object.entries(size5).map(([k, v]) => [k, sizeLineHeight((0, import_core.getVariableValue)(v))])),
+    lineHeight: Object.fromEntries(Object.entries(size6).map(([k, v]) => [k, sizeLineHeight((0, import_core.getVariableValue)(v))])),
     weight: {
       4: "300"
     },
@@ -25147,7 +25157,7 @@ var createSystemFont = /* @__PURE__ */ __name(({
       4: 0
     },
     ...font,
-    size: size5
+    size: size6
   });
 }, "createSystemFont");
 var defaultSizes = {
@@ -26154,11 +26164,11 @@ var import_core4 = require("@tamagui/core");
 
 // ../../node_modules/@tamagui/stacks/dist/esm/getElevation.mjs
 var import_core3 = require("@tamagui/core");
-var getElevation = /* @__PURE__ */ __name((size5, extras) => {
-  if (!size5) return;
+var getElevation = /* @__PURE__ */ __name((size6, extras) => {
+  if (!size6) return;
   const {
     tokens: tokens2
-  } = extras, token = tokens2.size[size5], sizeNum = (0, import_core3.isVariable)(token) ? +token.val : size5;
+  } = extras, token = tokens2.size[size6], sizeNum = (0, import_core3.isVariable)(token) ? +token.val : size6;
   return getSizedElevation(sizeNum, extras);
 }, "getElevation");
 var getSizedElevation = /* @__PURE__ */ __name((val, {
@@ -26236,7 +26246,7 @@ var defaultOptions = {
   shift: 0,
   bounds: [0]
 };
-var getSize = /* @__PURE__ */ __name((size5, options) => getTokenRelative("size", size5, options), "getSize");
+var getSize = /* @__PURE__ */ __name((size6, options) => getTokenRelative("size", size6, options), "getSize");
 var getSpace = /* @__PURE__ */ __name((space2, options) => getTokenRelative("space", space2, options), "getSpace");
 var cacheVariables = {};
 var cacheWholeVariables = {};
@@ -26338,15 +26348,15 @@ var circular = {
     tokens: tokens2
   }) => {
     if (!("size" in props)) return circularStyle;
-    const size5 = typeof props.size == "number" ? props.size : tokens2.size[props.size];
+    const size6 = typeof props.size == "number" ? props.size : tokens2.size[props.size];
     return {
       ...circularStyle,
-      width: size5,
-      height: size5,
-      maxWidth: size5,
-      maxHeight: size5,
-      minWidth: size5,
-      minHeight: size5
+      width: size6,
+      height: size6,
+      maxWidth: size6,
+      maxHeight: size6,
+      minWidth: size6,
+      minHeight: size6
     };
   }, "true")
 };
@@ -26461,8 +26471,8 @@ var getFontSized = /* @__PURE__ */ __name((sizeTokenIn = "$true", {
   if (!font) return {
     fontSize: sizeTokenIn
   };
-  const sizeToken = sizeTokenIn === "$true" ? getDefaultSizeToken(font) : sizeTokenIn, style = {}, fontSize = font.size[sizeToken], lineHeight = font.lineHeight?.[sizeToken], fontWeight = font.weight?.[sizeToken], letterSpacing = font.letterSpacing?.[sizeToken], textTransform = font.transform?.[sizeToken], fontStyle = props.fontStyle ?? font.style?.[sizeToken], color = props.color ?? font.color?.[sizeToken];
-  return fontStyle && (style.fontStyle = fontStyle), textTransform && (style.textTransform = textTransform), fontFamily && (style.fontFamily = fontFamily), fontWeight && (style.fontWeight = fontWeight), letterSpacing && (style.letterSpacing = letterSpacing), fontSize && (style.fontSize = fontSize), lineHeight && (style.lineHeight = lineHeight), color && (style.color = color), process.env.NODE_ENV === "development" && props.debug && props.debug === "verbose" && (console.groupCollapsed("  \u{1F539} getFontSized", sizeTokenIn, sizeToken), isClient && console.info({
+  const sizeToken = sizeTokenIn === "$true" ? getDefaultSizeToken(font) : sizeTokenIn, style = {}, fontSize2 = font.size[sizeToken], lineHeight = font.lineHeight?.[sizeToken], fontWeight2 = font.weight?.[sizeToken], letterSpacing2 = font.letterSpacing?.[sizeToken], textTransform = font.transform?.[sizeToken], fontStyle = props.fontStyle ?? font.style?.[sizeToken], color = props.color ?? font.color?.[sizeToken];
+  return fontStyle && (style.fontStyle = fontStyle), textTransform && (style.textTransform = textTransform), fontFamily && (style.fontFamily = fontFamily), fontWeight2 && (style.fontWeight = fontWeight2), letterSpacing2 && (style.letterSpacing = letterSpacing2), fontSize2 && (style.fontSize = fontSize2), lineHeight && (style.lineHeight = lineHeight), color && (style.color = color), process.env.NODE_ENV === "development" && props.debug && props.debug === "verbose" && (console.groupCollapsed("  \u{1F539} getFontSized", sizeTokenIn, sizeToken), isClient && console.info({
     style,
     props,
     font
@@ -26499,8 +26509,8 @@ var SizableText = (0, import_web4.styled)(import_web4.Text, {
 });
 SizableText.staticConfig.variants.fontFamily = {
   "...": /* @__PURE__ */ __name((_val, extras) => {
-    const sizeProp = extras.props.size, fontSizeProp = extras.props.fontSize, size5 = sizeProp === "$true" && fontSizeProp ? fontSizeProp : extras.props.size || "$true";
-    return getFontSized(size5, extras);
+    const sizeProp = extras.props.size, fontSizeProp = extras.props.fontSize, size6 = sizeProp === "$true" && fontSizeProp ? fontSizeProp : extras.props.size || "$true";
+    return getFontSized(size6, extras);
   }, "...")
 };
 
@@ -26617,13 +26627,13 @@ function wrapChildrenInText(TextComponent, propsIn, extraProps) {
   const {
     children,
     textProps,
-    size: size5,
+    size: size6,
     noTextWrap,
     color,
     fontFamily,
-    fontSize,
-    fontWeight,
-    letterSpacing,
+    fontSize: fontSize2,
+    fontWeight: fontWeight2,
+    letterSpacing: letterSpacing2,
     textAlign,
     fontStyle,
     maxFontSizeMultiplier
@@ -26632,7 +26642,7 @@ function wrapChildrenInText(TextComponent, propsIn, extraProps) {
   const props = {
     ...extraProps
   };
-  return color && (props.color = color), fontFamily && (props.fontFamily = fontFamily), fontSize && (props.fontSize = fontSize), fontWeight && (props.fontWeight = fontWeight), letterSpacing && (props.letterSpacing = letterSpacing), textAlign && (props.textAlign = textAlign), size5 && (props.size = size5), fontStyle && (props.fontStyle = fontStyle), maxFontSizeMultiplier && (props.maxFontSizeMultiplier = maxFontSizeMultiplier), import_react11.default.Children.toArray(children).map((child, index3) => typeof child == "string" ? (
+  return color && (props.color = color), fontFamily && (props.fontFamily = fontFamily), fontSize2 && (props.fontSize = fontSize2), fontWeight2 && (props.fontWeight = fontWeight2), letterSpacing2 && (props.letterSpacing = letterSpacing2), textAlign && (props.textAlign = textAlign), size6 && (props.size = size6), fontStyle && (props.fontStyle = fontStyle), maxFontSizeMultiplier && (props.maxFontSizeMultiplier = maxFontSizeMultiplier), import_react11.default.Children.toArray(children).map((child, index3) => typeof child == "string" ? (
     // so "data-disable-theme" is a hack to fix themeInverse, don't ask me why
     /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TextComponent, {
       ...props,
@@ -26975,7 +26985,7 @@ var useStackedZIndex = /* @__PURE__ */ __name((props) => {
     const {
       stackZIndex,
       zIndex: zIndexProp = 1e3
-    } = props, id = (0, import_react13.useId)(), zIndex2 = (0, import_react13.useMemo)(() => {
+    } = props, id = (0, import_react13.useId)(), zIndex3 = (0, import_react13.useMemo)(() => {
       if (stackZIndex && stackZIndex !== "global") {
         const highest = Object.values(CurrentPortalZIndices).reduce((acc, cur) => Math.max(acc, cur), 0);
         return Math.max(stackZIndex === true ? 1 : stackZIndex, highest + 1);
@@ -26986,14 +26996,14 @@ var useStackedZIndex = /* @__PURE__ */ __name((props) => {
       if (typeof stackZIndex == "number") return CurrentPortalZIndices[id] = stackZIndex, () => {
         delete CurrentPortalZIndices[id];
       };
-    }, [stackZIndex]), zIndex2;
+    }, [stackZIndex]), zIndex3;
   } else {
     const {
       stackZIndex,
       zIndex: zIndexProp
     } = props, id = (0, import_react13.useId)(), stackingContextLevel = (0, import_react13.useContext)(ZIndexStackContext), stackLayer = stackZIndex === "global" ? 0 : stackingContextLevel, hardcoded = (0, import_react13.useContext)(ZIndexHardcodedContext);
     ZIndicesByContext[stackLayer] ||= {};
-    const stackContext = ZIndicesByContext[stackLayer], zIndex2 = (0, import_react13.useMemo)(() => {
+    const stackContext = ZIndicesByContext[stackLayer], zIndex3 = (0, import_react13.useMemo)(() => {
       if (typeof zIndexProp == "number") return zIndexProp;
       if (stackZIndex) {
         if (hardcoded) return hardcoded + 1;
@@ -27003,10 +27013,10 @@ var useStackedZIndex = /* @__PURE__ */ __name((props) => {
       return 1;
     }, [stackLayer, zIndexProp, stackZIndex]);
     return (0, import_react13.useEffect)(() => {
-      if (stackZIndex) return stackContext[id] = zIndex2, () => {
+      if (stackZIndex) return stackContext[id] = zIndex3, () => {
         delete stackContext[id];
       };
-    }, [zIndex2]), zIndex2;
+    }, [zIndex3]), zIndex3;
   }
 }, "useStackedZIndex");
 
@@ -27015,15 +27025,15 @@ var import_react14 = require("react");
 var import_jsx_runtime9 = require("react/jsx-runtime");
 var StackZIndexContext = /* @__PURE__ */ __name(({
   children,
-  zIndex: zIndex2
+  zIndex: zIndex3
 }) => {
   const existing = (0, import_react14.useContext)(ZIndexStackContext);
   let content = /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(ZIndexStackContext.Provider, {
     value: existing + 1,
     children
   });
-  return typeof zIndex2 < "u" && (content = /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(ZIndexHardcodedContext.Provider, {
-    value: zIndex2,
+  return typeof zIndex3 < "u" && (content = /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(ZIndexHardcodedContext.Provider, {
+    value: zIndex3,
     children: content
   })), content;
 }, "StackZIndexContext");
@@ -27046,7 +27056,7 @@ var getStackedZIndexProps = /* @__PURE__ */ __name((propsIn) => ({
   stackZIndex: propsIn.stackZIndex,
   zIndex: resolveViewZIndex(propsIn.zIndex)
 }), "getStackedZIndexProps");
-var resolveViewZIndex = /* @__PURE__ */ __name((zIndex2) => typeof zIndex2 > "u" || zIndex2 === "unset" ? void 0 : typeof zIndex2 == "number" ? zIndex2 : (0, import_web8.getTokenValue)(zIndex2, "zIndex"), "resolveViewZIndex");
+var resolveViewZIndex = /* @__PURE__ */ __name((zIndex3) => typeof zIndex3 > "u" || zIndex3 === "unset" ? void 0 : typeof zIndex3 == "number" ? zIndex3 : (0, import_web8.getTokenValue)(zIndex3, "zIndex"), "resolveViewZIndex");
 
 // ../../node_modules/@tamagui/portal/dist/esm/Portal.mjs
 var import_jsx_runtime10 = require("react/jsx-runtime");
@@ -27057,7 +27067,7 @@ var Portal = React18.memo((propsIn) => {
     stackZIndex,
     children,
     ...props
-  } = propsIn, zIndex2 = useStackedZIndex(getStackedZIndexProps(propsIn));
+  } = propsIn, zIndex3 = useStackedZIndex(getStackedZIndexProps(propsIn));
   return (0, import_react_dom.createPortal)(/* @__PURE__ */ (0, import_jsx_runtime10.jsx)(YStack, {
     contain: "strict",
     fullscreen: true,
@@ -27066,7 +27076,7 @@ var Portal = React18.memo((propsIn) => {
     maxHeight: "100vh",
     pointerEvents: "none",
     ...props,
-    zIndex: zIndex2,
+    zIndex: zIndex3,
     children
   }), host);
 });
@@ -28033,7 +28043,7 @@ var SheetImplementationCustom = import_react23.default.forwardRef(function(props
     animation,
     animationConfig: animationConfigProp,
     modal = false,
-    zIndex: zIndex2 = parentSheet.zIndex + 1,
+    zIndex: zIndex3 = parentSheet.zIndex + 1,
     moveOnKeyboardChange = false,
     unmountChildrenWhenHidden = false,
     portalProps,
@@ -28079,8 +28089,8 @@ var SheetImplementationCustom = import_react23.default.forwardRef(function(props
     };
   }, [sheetInsideSheet, open]);
   const nextParentContext = import_react23.default.useMemo(() => ({
-    zIndex: zIndex2
-  }), [zIndex2]), startPosition = (0, import_core10.useDidFinishSSR)() && screenSize ? screenSize : hiddenSize, animatedNumber = useAnimatedNumber2(startPosition), at = import_react23.default.useRef(startPosition), hasntMeasured = at.current === hiddenSize, [disableAnimation, setDisableAnimation] = (0, import_react23.useState)(hasntMeasured), hasScrollView = import_react23.default.useRef(false);
+    zIndex: zIndex3
+  }), [zIndex3]), startPosition = (0, import_core10.useDidFinishSSR)() && screenSize ? screenSize : hiddenSize, animatedNumber = useAnimatedNumber2(startPosition), at = import_react23.default.useRef(startPosition), hasntMeasured = at.current === hiddenSize, [disableAnimation, setDisableAnimation] = (0, import_react23.useState)(hasntMeasured), hasScrollView = import_react23.default.useRef(false);
   useAnimatedNumberReaction2({
     value: animatedNumber,
     hostRef: sheetRef
@@ -28252,7 +28262,7 @@ var SheetImplementationCustom = import_react23.default.forwardRef(function(props
         disableClassName: true,
         style: [{
           position: "absolute",
-          zIndex: zIndex2,
+          zIndex: zIndex3,
           width: "100%",
           height: forcedContentHeight,
           minHeight: forcedContentHeight,
@@ -28268,7 +28278,7 @@ var SheetImplementationCustom = import_react23.default.forwardRef(function(props
   const shouldMountChildren = unmountChildrenWhenHidden ? !!opacity : true;
   if (modal) {
     const modalContents = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Portal, {
-      stackZIndex: zIndex2,
+      stackZIndex: zIndex3,
       ...portalProps,
       children: shouldMountChildren && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ContainerComponent, {
         children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_core10.Theme, {
@@ -28783,8 +28793,8 @@ var DialogPortal = /* @__PURE__ */ __name((props) => {
   isShowing && isFullyHidden && setIsFullyHidden(false);
   const handleExitComplete = React34.useCallback(() => {
     setIsFullyHidden(true);
-  }, []), zIndex2 = (0, import_core14.getExpandedShorthand)("zIndex", props), contents = /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(StackZIndexContext, {
-    zIndex: resolveViewZIndex(zIndex2),
+  }, []), zIndex3 = (0, import_core14.getExpandedShorthand)("zIndex", props), contents = /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(StackZIndexContext, {
+    zIndex: resolveViewZIndex(zIndex3),
     children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(AnimatePresence, {
       onExitComplete: handleExitComplete,
       children: isShowing || isAdapted ? children : null
@@ -28801,7 +28811,7 @@ var DialogPortal = /* @__PURE__ */ __name((props) => {
     })
   });
   return isWeb ? /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Portal, {
-    zIndex: zIndex2,
+    zIndex: zIndex3,
     stackZIndex: 1e3,
     children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(PassthroughTheme, {
       children: framedContents
@@ -29417,10 +29427,10 @@ Image.queryCache = import_react_native_web5.Image.queryCache;
 var import_web10 = require("@tamagui/core");
 
 // ../../node_modules/@tamagui/shapes/dist/esm/getShapeSize.mjs
-var getShapeSize = /* @__PURE__ */ __name((size5, {
+var getShapeSize = /* @__PURE__ */ __name((size6, {
   tokens: tokens2
 }) => {
-  const width = tokens2.size[size5] ?? size5, height = tokens2.size[size5] ?? size5;
+  const width = tokens2.size[size6] ?? size6, height = tokens2.size[size6] ?? size6;
   return {
     width,
     height,
@@ -29530,16 +29540,16 @@ var AvatarFrame = (0, import_core17.styled)(Square, {
 var Avatar = withStaticProperties(React37.forwardRef((props, forwardedRef) => {
   const {
     __scopeAvatar,
-    size: size5 = "$true",
+    size: size6 = "$true",
     ...avatarProps
   } = props, [imageLoadingStatus, setImageLoadingStatus] = React37.useState("idle");
   return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(AvatarProvider, {
-    size: size5,
+    size: size6,
     scope: __scopeAvatar,
     imageLoadingStatus,
     onImageLoadingStatusChange: setImageLoadingStatus,
     children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(AvatarFrame, {
-      size: size5,
+      size: size6,
       ...avatarProps,
       ref: forwardedRef
     })
@@ -29564,12 +29574,12 @@ var getFontSizeVariable = /* @__PURE__ */ __name((inSize, opts) => {
 }, "getFontSizeVariable");
 var getFontSizeToken = /* @__PURE__ */ __name((inSize, opts) => {
   if (typeof inSize == "number") return null;
-  const relativeSize = opts?.relativeSize || 0, conf = (0, import_core18.getConfig)(), fontSize = conf.fontsParsed[opts?.font || conf.defaultFontToken]?.size || // fallback to size tokens
-  conf.tokensParsed.size, size5 = (inSize === "$true" && !("$true" in fontSize) ? "$4" : inSize) ?? ("$true" in fontSize ? "$true" : "$4"), sizeTokens = Object.keys(fontSize);
-  let foundIndex = sizeTokens.indexOf(size5);
-  foundIndex === -1 && size5.endsWith(".5") && (foundIndex = sizeTokens.indexOf(size5.replace(".5", ""))), process.env.NODE_ENV === "development" && foundIndex === -1 && console.warn("No font size found", size5, opts, "in size tokens", sizeTokens);
+  const relativeSize = opts?.relativeSize || 0, conf = (0, import_core18.getConfig)(), fontSize2 = conf.fontsParsed[opts?.font || conf.defaultFontToken]?.size || // fallback to size tokens
+  conf.tokensParsed.size, size6 = (inSize === "$true" && !("$true" in fontSize2) ? "$4" : inSize) ?? ("$true" in fontSize2 ? "$true" : "$4"), sizeTokens = Object.keys(fontSize2);
+  let foundIndex = sizeTokens.indexOf(size6);
+  foundIndex === -1 && size6.endsWith(".5") && (foundIndex = sizeTokens.indexOf(size6.replace(".5", ""))), process.env.NODE_ENV === "development" && foundIndex === -1 && console.warn("No font size found", size6, opts, "in size tokens", sizeTokens);
   const tokenIndex = Math.min(Math.max(0, foundIndex + relativeSize), sizeTokens.length - 1);
-  return sizeTokens[tokenIndex] ?? size5;
+  return sizeTokens[tokenIndex] ?? size6;
 }, "getFontSizeToken");
 
 // ../../node_modules/@tamagui/helpers-tamagui/dist/esm/prevent.mjs
@@ -29698,9 +29708,9 @@ var ButtonIcon = /* @__PURE__ */ __name((props) => {
     children,
     scaleIcon = 1
   } = props, {
-    size: size5,
+    size: size6,
     color
-  } = (0, import_react30.useContext)(ButtonContext), iconSize = (typeof size5 == "number" ? size5 * 0.5 : getFontSize(size5)) * scaleIcon;
+  } = (0, import_react30.useContext)(ButtonContext), iconSize = (typeof size6 == "number" ? size6 * 0.5 : getFontSize(size6)) * scaleIcon;
   return useGetThemedIcon({
     size: iconSize,
     color
@@ -29741,15 +29751,15 @@ function useButton({
     separator,
     noTextWrap,
     fontFamily,
-    fontSize,
-    fontWeight,
+    fontSize: fontSize2,
+    fontWeight: fontWeight2,
     fontStyle,
-    letterSpacing,
+    letterSpacing: letterSpacing2,
     tag,
     ellipse,
     maxFontSizeMultiplier,
     ...restProps
-  } = propsActive, size5 = propsActive.size || (propsActive.unstyled ? void 0 : "$true"), color = propsActive.color, iconSize = (typeof size5 == "number" ? size5 * 0.5 : getFontSize(size5, {
+  } = propsActive, size6 = propsActive.size || (propsActive.unstyled ? void 0 : "$true"), color = propsActive.color, iconSize = (typeof size6 == "number" ? size6 * 0.5 : getFontSize(size6, {
     font: fontFamily?.[0] === "$" ? fontFamily : void 0
   })) * scaleIcon, getThemedIcon = useGetThemedIcon({
     size: iconSize,
@@ -29757,16 +29767,16 @@ function useButton({
   }), [themedIcon, themedIconAfter] = [icon, iconAfter].map(getThemedIcon), spaceSize = space2 ?? (0, import_web13.getVariableValue)(iconSize) * scaleSpace, contents = noTextWrap ? [propsIn.children] : wrapChildrenInText(Text6, {
     children: propsIn.children,
     fontFamily,
-    fontSize,
+    fontSize: fontSize2,
     textProps,
-    fontWeight,
+    fontWeight: fontWeight2,
     fontStyle,
-    letterSpacing,
+    letterSpacing: letterSpacing2,
     ellipse,
     maxFontSizeMultiplier
   }, Text6 === ButtonText && propsActive.unstyled !== true ? {
     unstyled: process.env.TAMAGUI_HEADLESS === "1",
-    size: size5
+    size: size6
   } : void 0), inner2 = (0, import_web13.spacedChildren)({
     // a bit arbitrary but scaling to font size is necessary so long as button does
     space: spaceSize === false ? 0 : spaceSize == true ? "$true" : spaceSize,
@@ -29778,7 +29788,7 @@ function useButton({
     // so even if icons are undefined we still pass them
     children: [themedIcon, ...contents, themedIconAfter]
   }), props = {
-    size: size5,
+    size: size6,
     ...propsIn.disabled && {
       // in rnw - false still has keyboard tabIndex, undefined = not actually focusable
       focusable: void 0,
@@ -30266,10 +30276,10 @@ function createCheckbox(createProps) {
       unstyled = false,
       ...props
     } = _props, propsActive = (0, import_core21.useProps)(props), styledContext = import_react33.default.useContext(CheckboxStyledContext);
-    let adjustedSize = 0, size5 = 0;
+    let adjustedSize = 0, size6 = 0;
     unstyled || (adjustedSize = (0, import_core21.getVariableValue)(getSize(propsActive.size ?? styledContext?.size ?? "$true", {
       shift: sizeAdjust
-    })), size5 = scaleSize ? Math.round(adjustedSize * scaleSize) : adjustedSize);
+    })), size6 = scaleSize ? Math.round(adjustedSize * scaleSize) : adjustedSize);
     const [checked = false, setChecked] = useControllableState({
       prop: checkedProp,
       defaultProp: defaultChecked,
@@ -30308,14 +30318,14 @@ function createCheckbox(createProps) {
         scaleIcon: scaleIcon ?? styledContext?.scaleIcon ?? 1,
         children: [/* @__PURE__ */ (0, import_jsx_runtime30.jsx)(Frame2, {
           ...!unstyled && {
-            width: size5,
-            height: size5
+            width: size6,
+            height: size6
           },
           tag: "button",
           ref: checkboxRef,
           unstyled,
           ...unstyled === false && {
-            size: size5,
+            size: size6,
             theme: checked ? "active" : null
           },
           checked,
@@ -30483,7 +30493,7 @@ function createGroup(verticalDefault) {
       __scopeGroup,
       children: childrenProp,
       space: space2,
-      size: size5 = "$true",
+      size: size6 = "$true",
       spaceDirection,
       separator,
       scrollable,
@@ -30496,12 +30506,12 @@ function createGroup(verticalDefault) {
       ...restProps
     } = activeProps, vertical = orientation === "vertical", [itemChildrenCount, setItemChildrenCount] = useControllableState({
       defaultProp: forceUseItem ? 1 : 0
-    }), isUsingItems = itemChildrenCount > 0, radius2 = borderRadius ?? (size5 ? (0, import_core23.getVariableValue)((0, import_core23.getTokens)().radius[size5]) - 1 : void 0), disablePassBorderRadius = disablePassBorderRadiusProp ?? !(radius2 !== void 0), childrenArray = import_react34.default.Children.toArray(childrenProp), children = isUsingItems ? import_react34.default.Children.toArray(childrenProp).filter(import_react34.default.isValidElement) : childrenArray.map((child, i) => {
+    }), isUsingItems = itemChildrenCount > 0, radius3 = borderRadius ?? (size6 ? (0, import_core23.getVariableValue)((0, import_core23.getTokens)().radius[size6]) - 1 : void 0), disablePassBorderRadius = disablePassBorderRadiusProp ?? !(radius3 !== void 0), childrenArray = import_react34.default.Children.toArray(childrenProp), children = isUsingItems ? import_react34.default.Children.toArray(childrenProp).filter(import_react34.default.isValidElement) : childrenArray.map((child, i) => {
       if (!import_react34.default.isValidElement(child) || child.type === import_react34.default.Fragment) return child;
       const disabled = child.props.disabled ?? disabledProp, isFirst = i === 0, isLast = i === childrenArray.length - 1, radiusStyles = disablePassBorderRadius === true ? null : getBorderRadius({
         isFirst,
         isLast,
-        radius: radius2,
+        radius: radius3,
         vertical,
         disable: disablePassBorderRadius
       }), props2 = {
@@ -30518,14 +30528,14 @@ function createGroup(verticalDefault) {
     return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(GroupProvider, {
       disablePassBorderRadius,
       vertical: orientation === "vertical",
-      radius: radius2,
+      radius: radius3,
       disabled: disabledProp,
       onItemMount,
       onItemUnmount,
       scope: __scopeGroup,
       children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(GroupFrame, {
         ref,
-        size: size5,
+        size: size6,
         flexDirection: orientation === "horizontal" ? "row" : "column",
         borderRadius,
         ...restProps,
@@ -30594,14 +30604,14 @@ var wrapScroll = /* @__PURE__ */ __name(({
 var getBorderRadius = /* @__PURE__ */ __name(({
   isFirst,
   isLast,
-  radius: radius2,
+  radius: radius3,
   vertical,
   disable
 }) => ({
-  borderTopLeftRadius: isFirst && disable !== "top" && disable !== "start" ? radius2 : 0,
-  borderTopRightRadius: disable !== "top" && disable !== "end" && (vertical && isFirst || !vertical && isLast) ? radius2 : 0,
-  borderBottomLeftRadius: disable !== "bottom" && disable !== "start" && (vertical && isLast || !vertical && isFirst) ? radius2 : 0,
-  borderBottomRightRadius: isLast && disable !== "bottom" && disable !== "end" ? radius2 : 0
+  borderTopLeftRadius: isFirst && disable !== "top" && disable !== "start" ? radius3 : 0,
+  borderTopRightRadius: disable !== "top" && disable !== "end" && (vertical && isFirst || !vertical && isLast) ? radius3 : 0,
+  borderBottomLeftRadius: disable !== "bottom" && disable !== "start" && (vertical && isLast || !vertical && isFirst) ? radius3 : 0,
+  borderBottomRightRadius: isLast && disable !== "bottom" && disable !== "end" ? radius3 : 0
 }), "getBorderRadius");
 var cloneElementWithPropOrder = /* @__PURE__ */ __name((child, props) => import_react34.default.cloneElement({
   ...child,
@@ -30790,23 +30800,23 @@ var useListItem = /* @__PURE__ */ __name((propsIn, {
     title,
     // text props
     color,
-    fontWeight,
-    fontSize,
+    fontWeight: fontWeight2,
+    fontSize: fontSize2,
     fontFamily,
-    letterSpacing,
+    letterSpacing: letterSpacing2,
     textAlign,
     ellipse,
     ...rest
   } = props, textProps = {
     color,
-    fontWeight,
-    fontSize,
+    fontWeight: fontWeight2,
+    fontSize: fontSize2,
     fontFamily,
-    letterSpacing,
+    letterSpacing: letterSpacing2,
     textAlign,
     ellipse,
     children
-  }, size5 = props.size || "$true", iconSize = getFontSize(size5) * scaleIcon, getThemedIcon = useGetThemedIcon({
+  }, size6 = props.size || "$true", iconSize = getFontSize(size6) * scaleIcon, getThemedIcon = useGetThemedIcon({
     size: iconSize,
     color
   }), [themedIcon, themedIconAfter] = [icon, iconAfter].map(getThemedIcon), sizeToken = (0, import_web18.getTokens)().space[props.space] ?? iconSize, spaceSize = (0, import_web18.getVariableValue)(sizeToken) * scaleSpace, contents = wrapChildrenInText(Text6, textProps);
@@ -30821,7 +30831,7 @@ var useListItem = /* @__PURE__ */ __name((propsIn, {
         }) : null, title || subTitle ? /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(YStack, {
           flex: 1,
           children: [noTextWrap === "all" ? title : /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Title, {
-            size: size5,
+            size: size6,
             children: title
           }), subTitle ? /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(import_jsx_runtime34.Fragment, {
             children: typeof subTitle == "string" && noTextWrap !== "all" ? (
@@ -30829,7 +30839,7 @@ var useListItem = /* @__PURE__ */ __name((propsIn, {
               // or standardize on subtle colors in themes
               /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Subtitle, {
                 unstyled,
-                size: size5,
+                size: size6,
                 children: subTitle
               })
             ) : subTitle
@@ -32721,7 +32731,7 @@ __name(setupPopper, "setupPopper");
 function Popper(props) {
   const {
     children,
-    size: size5,
+    size: size6,
     strategy = "absolute",
     placement = "bottom",
     stayInFrame,
@@ -32773,7 +32783,7 @@ function Popper(props) {
   const {
     middlewareData
   } = floating, popperContext = {
-    size: size5,
+    size: size6,
     arrowRef: setArrow,
     arrowStyle: middlewareData.arrow,
     onArrowSize: setArrowSize,
@@ -32843,7 +32853,7 @@ var PopperContent = React49.forwardRef(function(props, forwardedRef) {
     x,
     y,
     getFloatingProps,
-    size: size5
+    size: size6
   } = usePopperContext(__scopePopper), contentRefs = useComposedRefs(refs.setFloating, forwardedRef), [needsMeasure, setNeedsMeasure] = React49.useState(enableAnimationForPositionChange);
   useIsomorphicLayoutEffect(() => {
     x && y && setNeedsMeasure(false);
@@ -32876,7 +32886,7 @@ var PopperContent = React49.forwardRef(function(props, forwardedRef) {
       "data-placement": placement,
       "data-strategy": strategy,
       contain: "layout",
-      size: size5,
+      size: size6,
       ...style,
       ...rest
     }, "popper-content-frame")
@@ -32933,27 +32943,27 @@ var PopperArrow = PopperArrowFrame.styleable(function(propsIn, forwardedRef) {
   } = props, context2 = usePopperContext(__scopePopper), sizeVal = typeof sizeProp == "number" ? sizeProp : (0, import_core26.getVariableValue)(getSpace(sizeProp ?? context2.size, {
     shift: -2,
     bounds: [2]
-  })), size5 = Math.max(0, +sizeVal), {
+  })), size6 = Math.max(0, +sizeVal), {
     placement
   } = context2, refs = useComposedRefs(context2.arrowRef, forwardedRef), x = context2.arrowStyle?.x || 0, y = context2.arrowStyle?.y || 0, primaryPlacement = placement ? placement.split("-")[0] : "top", arrowStyle = {
     x,
     y,
-    width: size5,
-    height: size5
+    width: size6,
+    height: size6
   }, innerArrowStyle = {}, isVertical = primaryPlacement === "bottom" || primaryPlacement === "top";
   if (primaryPlacement) {
-    arrowStyle[isVertical ? "width" : "height"] = size5 * 2;
+    arrowStyle[isVertical ? "width" : "height"] = size6 * 2;
     const oppSide = opposites[primaryPlacement];
-    oppSide && (arrowStyle[oppSide] = -size5, innerArrowStyle[oppSide] = size5 / 2), (oppSide === "top" || oppSide === "bottom") && (arrowStyle.left = 0), (oppSide === "left" || oppSide === "right") && (arrowStyle.top = 0), useIsomorphicLayoutEffect(() => {
-      context2.onArrowSize?.(size5);
-    }, [size5, context2.onArrowSize]);
+    oppSide && (arrowStyle[oppSide] = -size6, innerArrowStyle[oppSide] = size6 / 2), (oppSide === "top" || oppSide === "bottom") && (arrowStyle.left = 0), (oppSide === "left" || oppSide === "right") && (arrowStyle.top = 0), useIsomorphicLayoutEffect(() => {
+      context2.onArrowSize?.(size6);
+    }, [size6, context2.onArrowSize]);
   }
   return /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(PopperArrowOuterFrame, {
     ref: refs,
     ...arrowStyle,
     children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(PopperArrowFrame, {
-      width: size5,
-      height: size5,
+      width: size6,
+      height: size6,
       ...arrowProps,
       ...innerArrowStyle,
       rotate: "45deg",
@@ -36900,7 +36910,7 @@ var PopoverContent = PopperContentFrame.extractable(React53.forwardRef(function(
     allowPinchZoom,
     trapFocus,
     disableRemoveScroll = true,
-    zIndex: zIndex2,
+    zIndex: zIndex3,
     __scopePopover,
     ...contentImplProps
   } = props, context2 = usePopoverContext(__scopePopover), contentRef = React53.useRef(null), composedRefs = useComposedRefs(forwardedRef, contentRef), isRightClickOutsideRef = React53.useRef(false), [isFullyHidden, setIsFullyHidden] = React53.useState(!context2.open);
@@ -36910,7 +36920,7 @@ var PopoverContent = PopperContentFrame.extractable(React53.forwardRef(function(
     if (content) return hideOthers(content);
   }, [context2.open]), !context2.keepChildrenMounted && isFullyHidden ? null : /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(PopoverContentPortal, {
     __scopePopover,
-    zIndex: zIndex2,
+    zIndex: zIndex3,
     children: /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(import_core27.Stack, {
       pointerEvents: context2.open ? contentImplProps.pointerEvents ?? "auto" : "none",
       children: /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(PopoverContentImpl, {
@@ -36954,7 +36964,7 @@ __name(PopoverRepropagateContext, "PopoverRepropagateContext");
 function PopoverContentPortal(props) {
   const {
     __scopePopover
-  } = props, zIndex2 = props.zIndex, context2 = usePopoverContext(__scopePopover), popperContext = usePopperContext(__scopePopover || POPOVER_SCOPE), themeName = (0, import_core27.useThemeName)(), adaptContext = useAdaptContext();
+  } = props, zIndex3 = props.zIndex, context2 = usePopoverContext(__scopePopover), popperContext = usePopperContext(__scopePopover || POPOVER_SCOPE), themeName = (0, import_core27.useThemeName)(), adaptContext = useAdaptContext();
   let contents = props.children;
   return (import_react_native_web7.Platform.OS === "android" || import_react_native_web7.Platform.OS === "ios") && (contents = /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(PopoverRepropagateContext, {
     scope: __scopePopover || POPOVER_SCOPE,
@@ -36964,7 +36974,7 @@ function PopoverContentPortal(props) {
     children: props.children
   })), /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(Portal, {
     stackZIndex: true,
-    zIndex: zIndex2,
+    zIndex: zIndex3,
     children: /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)(import_core27.Theme, {
       forceClassName: true,
       name: themeName,
@@ -36972,7 +36982,7 @@ function PopoverContentPortal(props) {
         fullscreen: true,
         onPress: composeEventHandlers(props.onPress, context2.onOpenToggle)
       }), /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(StackZIndexContext, {
-        zIndex: resolveViewZIndex(zIndex2),
+        zIndex: resolveViewZIndex(zIndex3),
         children: contents
       })]
     })
@@ -37263,10 +37273,10 @@ var ProgressFrame = (0, import_core28.styled)(ThemeableStack, {
     },
     size: {
       "...size": /* @__PURE__ */ __name((val) => {
-        const size5 = Math.round((0, import_core28.getVariableValue)(getSize(val)) * 0.25);
+        const size6 = Math.round((0, import_core28.getVariableValue)(getSize(val)) * 0.25);
         return {
-          height: size5,
-          minWidth: (0, import_core28.getVariableValue)(size5) * 20,
+          height: size6,
+          minWidth: (0, import_core28.getVariableValue)(size6) * 20,
           width: "100%"
         };
       }, "...size")
@@ -37283,7 +37293,7 @@ var Progress = withStaticProperties(ProgressFrame.styleable(function(props, forw
     value: valueProp,
     max: maxProp,
     getValueLabel = defaultGetValueLabel,
-    size: size5 = "$true",
+    size: size6 = "$true",
     ...progressProps
   } = props, max2 = isValidMaxNumber(maxProp) ? maxProp : DEFAULT_MAX, value = isValidValueNumber(valueProp, max2) ? valueProp : null, valueLabel = isNumber(value) ? getValueLabel(value, max2) : void 0, [width, setWidth] = React54.useState(0);
   return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(ProgressProvider, {
@@ -37301,7 +37311,7 @@ var Progress = withStaticProperties(ProgressFrame.styleable(function(props, forw
       "data-value": value ?? void 0,
       "data-max": max2,
       ...progressProps.unstyled !== true && {
-        size: size5
+        size: size6
       },
       ...progressProps,
       onLayout: /* @__PURE__ */ __name((e) => {
@@ -37372,10 +37382,10 @@ var RadioGroupItemFrame = (0, import_core29.styled)(ThemeableStack, {
       "...size": /* @__PURE__ */ __name((value, {
         props
       }) => {
-        const size5 = Math.floor((0, import_core29.getVariableValue)(getSize(value)) * (props.scaleSize ?? 0.5));
+        const size6 = Math.floor((0, import_core29.getVariableValue)(getSize(value)) * (props.scaleSize ?? 0.5));
         return {
-          width: size5,
-          height: size5
+          width: size6,
+          height: size6
         };
       }, "...size")
     }
@@ -38045,7 +38055,7 @@ var CONTENT_NAME4 = "SelectContent";
 var SelectContent = /* @__PURE__ */ __name(({
   children,
   __scopeSelect,
-  zIndex: zIndex2 = 1e3,
+  zIndex: zIndex3 = 1e3,
   ...focusScopeProps
 }) => {
   const context2 = useSelectContext(CONTENT_NAME4, __scopeSelect), itemParentContext = useSelectItemParentContext(CONTENT_NAME4, __scopeSelect), themeName = (0, import_core34.useThemeName)(), showSheet = useShowSelectSheet(context2), contents = /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(import_core34.Theme, {
@@ -38053,7 +38063,7 @@ var SelectContent = /* @__PURE__ */ __name(({
     name: themeName,
     children
   }), touch = (0, import_core34.useIsTouchDevice)(), overlayStyle = import_react43.default.useMemo(() => ({
-    zIndex: zIndex2,
+    zIndex: zIndex3,
     pointerEvents: context2.open ? "auto" : "none"
   }), [context2.open]);
   return itemParentContext.shouldRenderWebNative ? /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(import_jsx_runtime45.Fragment, {
@@ -38319,7 +38329,7 @@ var SelectItem = ListItemFrame.styleable(function(props, forwardedRef) {
     dataRef,
     interactions,
     shouldRenderWebNative,
-    size: size5,
+    size: size6,
     onActiveChange,
     initialValue: initialValue2
   } = context2, [isSelected, setSelected] = React61.useState(initialValue2 === value);
@@ -38383,7 +38393,7 @@ var SelectItem = ListItemFrame.styleable(function(props, forwardedRef) {
         hoverTheme: true,
         focusTheme: true,
         cursor: "default",
-        size: size5,
+        size: size6,
         outlineOffset: -0.5,
         focusVisibleStyle: {
           outlineColor: "$outlineColor",
@@ -38793,16 +38803,16 @@ var SelectGroup = React65.forwardRef((props, forwardedRef) => {
   const {
     __scopeSelect,
     ...groupProps
-  } = props, groupId = React65.useId(), context2 = useSelectContext(GROUP_NAME3, __scopeSelect), itemParentContext = useSelectItemParentContext(GROUP_NAME3, __scopeSelect), size5 = itemParentContext.size ?? "$true", nativeSelectRef = React65.useRef(null), content = itemParentContext.shouldRenderWebNative ? /* @__PURE__ */ (0, import_jsx_runtime52.jsx)(NativeSelectFrame, {
+  } = props, groupId = React65.useId(), context2 = useSelectContext(GROUP_NAME3, __scopeSelect), itemParentContext = useSelectItemParentContext(GROUP_NAME3, __scopeSelect), size6 = itemParentContext.size ?? "$true", nativeSelectRef = React65.useRef(null), content = itemParentContext.shouldRenderWebNative ? /* @__PURE__ */ (0, import_jsx_runtime52.jsx)(NativeSelectFrame, {
     asChild: true,
-    size: size5,
+    size: size6,
     value: context2.value,
     id: itemParentContext.id,
     children: /* @__PURE__ */ (0, import_jsx_runtime52.jsx)(NativeSelectTextFrame, {
       onChange: /* @__PURE__ */ __name((event) => {
         itemParentContext.onChange(event.currentTarget.value);
       }, "onChange"),
-      size: size5,
+      size: size6,
       ref: nativeSelectRef,
       style: {
         color: "var(--color)",
@@ -39091,14 +39101,14 @@ var SliderFrame = (0, import_core41.styled)(YStack, {
     },
     size: /* @__PURE__ */ __name((val, extras) => {
       if (!val) return;
-      const orientation = extras.props.orientation, size5 = Math.round((0, import_core41.getVariableValue)(getSize(val)) / 6);
+      const orientation = extras.props.orientation, size6 = Math.round((0, import_core41.getVariableValue)(getSize(val)) / 6);
       return orientation === "horizontal" ? {
-        height: size5,
-        borderRadius: size5,
+        height: size6,
+        borderRadius: size6,
         justifyContent: "center"
       } : {
-        width: size5,
-        borderRadius: size5,
+        width: size6,
+        borderRadius: size6,
         alignItems: "center"
       };
     }, "size")
@@ -39373,14 +39383,14 @@ var SliderTrackActive = React67.forwardRef((props, forwardedRef) => {
 });
 SliderTrackActive.displayName = RANGE_NAME;
 var getThumbSize = /* @__PURE__ */ __name((val) => {
-  const tokens2 = (0, import_core42.getTokens)(), size5 = typeof val == "number" ? val : getSize(tokens2.size[val], {
+  const tokens2 = (0, import_core42.getTokens)(), size6 = typeof val == "number" ? val : getSize(tokens2.size[val], {
     shift: -1
   });
   return {
-    width: size5,
-    height: size5,
-    minWidth: size5,
-    minHeight: size5
+    width: size6,
+    height: size6,
+    minWidth: size6,
+    minHeight: size6
   };
 }, "getThumbSize");
 var SliderThumbFrame = (0, import_core42.styled)(ThemeableStack, {
@@ -39412,25 +39422,25 @@ var SliderThumb = SliderThumbFrame.styleable(function(props, forwardedRef) {
     circular: circular2,
     size: sizeProp,
     ...thumbProps
-  } = props, context2 = useSliderContext(__scopeSlider), orientation = useSliderOrientationContext(__scopeSlider), [thumb, setThumb] = React67.useState(null), composedRefs = useComposedRefs(forwardedRef, setThumb), value = context2.values[index3], percent = value === void 0 ? 0 : convertValueToPercentage(value, context2.min, context2.max), label = getLabel(index3, context2.values.length), sizeIn = sizeProp ?? context2.size ?? "$true", [size5, setSize] = React67.useState(() => (0, import_core42.getVariableValue)(getThumbSize(sizeIn).width)), thumbInBoundsOffset = size5 ? getThumbInBoundsOffset(size5, percent, orientation.direction) : 0;
+  } = props, context2 = useSliderContext(__scopeSlider), orientation = useSliderOrientationContext(__scopeSlider), [thumb, setThumb] = React67.useState(null), composedRefs = useComposedRefs(forwardedRef, setThumb), value = context2.values[index3], percent = value === void 0 ? 0 : convertValueToPercentage(value, context2.min, context2.max), label = getLabel(index3, context2.values.length), sizeIn = sizeProp ?? context2.size ?? "$true", [size6, setSize] = React67.useState(() => (0, import_core42.getVariableValue)(getThumbSize(sizeIn).width)), thumbInBoundsOffset = size6 ? getThumbInBoundsOffset(size6, percent, orientation.direction) : 0;
   React67.useEffect(() => {
     if (thumb) return context2.thumbs.set(thumb, index3), () => {
       context2.thumbs.delete(thumb);
     };
   }, [thumb, context2.thumbs, index3]);
   const positionalStyles = context2.orientation === "horizontal" ? {
-    x: thumbInBoundsOffset - size5 / 2,
-    y: -size5 / 2,
+    x: thumbInBoundsOffset - size6 / 2,
+    y: -size6 / 2,
     top: "50%",
-    ...size5 === 0 && {
+    ...size6 === 0 && {
       top: "auto",
       bottom: "auto"
     }
   } : {
-    x: -size5 / 2,
-    y: size5 / 2,
+    x: -size6 / 2,
+    y: size6 / 2,
     left: "50%",
-    ...size5 === 0 && {
+    ...size6 === 0 && {
       left: "auto",
       right: "auto"
     }
@@ -39686,10 +39696,10 @@ var SwitchThumb = (0, import_core44.styled)(ThemeableStack, {
     },
     size: {
       "...size": /* @__PURE__ */ __name((val) => {
-        const size5 = getSwitchHeight(val);
+        const size6 = getSwitchHeight(val);
         return {
-          height: size5,
-          width: size5
+          height: size6,
+          width: size6
         };
       }, "...size")
     }
@@ -39764,12 +39774,12 @@ function createSwitch(createProps) {
     } = context2, styledContext = SwitchStyledContext.useStyledContext(), {
       unstyled: unstyledContext,
       size: sizeContext
-    } = styledContext, unstyled = process.env.TAMAGUI_HEADLESS === "1" ? true : unstyledProp ?? unstyledContext ?? false, size5 = sizeProp ?? sizeContext ?? "$true", initialChecked = React69.useRef(checked).current, initialWidth = (0, import_core45.getVariableValue)(props.width, "size"), [thumbWidth, setThumbWidth] = React69.useState(typeof initialWidth == "number" ? initialWidth : 0), distance = frameWidth - thumbWidth, x = initialChecked ? checked ? 0 : -distance : checked ? distance : 0;
+    } = styledContext, unstyled = process.env.TAMAGUI_HEADLESS === "1" ? true : unstyledProp ?? unstyledContext ?? false, size6 = sizeProp ?? sizeContext ?? "$true", initialChecked = React69.useRef(checked).current, initialWidth = (0, import_core45.getVariableValue)(props.width, "size"), [thumbWidth, setThumbWidth] = React69.useState(typeof initialWidth == "number" ? initialWidth : 0), distance = frameWidth - thumbWidth, x = initialChecked ? checked ? 0 : -distance : checked ? distance : 0;
     return /* @__PURE__ */ (0, import_jsx_runtime56.jsx)(Thumb2, {
       ref: forwardedRef,
       unstyled,
       ...unstyled === false && {
-        size: size5,
+        size: size6,
         ...!disableActiveTheme && !unstyled && {
           theme: checked ? "active" : null
         }
@@ -40089,7 +40099,7 @@ function createTabs(createProps) {
       orientation = "horizontal",
       dir,
       activationMode = "automatic",
-      size: size5 = "$true",
+      size: size6 = "$true",
       ...tabsProps
     } = props, direction = useDirection(dir), [value, setValue] = useControllableState({
       prop: valueProp,
@@ -40104,7 +40114,7 @@ function createTabs(createProps) {
       orientation,
       dir: direction,
       activationMode,
-      size: size5,
+      size: size6,
       registerTrigger,
       triggersCount,
       unregisterTrigger,
@@ -40408,11 +40418,11 @@ var ToggleGroupItem = ToggleFrame.extractable(import_react48.default.forwardRef(
     ...rest
   } = props, valueContext = useToggleGroupValueContext(props.__scopeToggleGroup), context2 = useToggleGroupContext(props.__scopeToggleGroup), pressed = valueContext?.value.includes(props.value), disabled = context2.disabled || props.disabled || false, groupItemProps = useGroupItem({
     disabled
-  }), size5 = props.size ?? context2.size, sizeProps = props.unstyled ? {} : {
+  }), size6 = props.size ?? context2.size, sizeProps = props.unstyled ? {} : {
     width: void 0,
     height: void 0,
-    padding: (0, import_web22.getVariableValue)(size5) * 0.6
-  }, iconSize = (typeof size5 == "number" ? size5 * 0.7 : getFontSize(size5)) * 1.2, theme = (0, import_web22.useTheme)(), getThemedIcon = useGetThemedIcon({
+    padding: (0, import_web22.getVariableValue)(size6) * 0.6
+  }, iconSize = (typeof size6 == "number" ? size6 * 0.7 : getFontSize(size6)) * 1.2, theme = (0, import_web22.useTheme)(), getThemedIcon = useGetThemedIcon({
     size: iconSize,
     color: color ?? theme.color
   }), children = import_react48.default.Children.toArray(props.children).map((child) => props.disablePassStyles || !import_react48.default.isValidElement(child) ? child : getThemedIcon(child)), commonProps = {
@@ -40580,12 +40590,12 @@ var ToggleGroupImpl = ToggleGroupImplElementFrame.extractable(import_react48.def
     ...toggleGroupProps
   }, adjustedSize = (0, import_web22.getVariableValue)(getSize(sizeProp, {
     shift: sizeAdjust
-  })), size5 = Math.round(adjustedSize * 0.45);
+  })), size6 = Math.round(adjustedSize * 0.45);
   return /* @__PURE__ */ (0, import_jsx_runtime59.jsx)(ToggleGroupContext, {
     scope: __scopeToggleGroup,
     rovingFocus,
     disabled,
-    size: size5,
+    size: size6,
     children: rovingFocus ? /* @__PURE__ */ (0, import_jsx_runtime59.jsx)(RovingFocusGroup, {
       asChild: "except-style",
       __scopeRovingFocusGroup: __scopeToggleGroup || TOGGLE_GROUP_CONTEXT,
@@ -41148,7 +41158,7 @@ var import_react_native_web12 = __toESM(require_cjs(), 1);
 var import_jsx_runtime65 = require("react/jsx-runtime");
 var Spinner = YStack.extractable((0, import_core56.themeable)(React77.forwardRef((props, ref) => {
   const {
-    size: size5,
+    size: size6,
     color: colorProp,
     ...stackProps
   } = props, theme = (0, import_core56.useTheme)();
@@ -41157,7 +41167,7 @@ var Spinner = YStack.extractable((0, import_core56.themeable)(React77.forwardRef
     ref,
     ...stackProps,
     children: /* @__PURE__ */ (0, import_jsx_runtime65.jsx)(import_react_native_web12.ActivityIndicator, {
-      size: size5,
+      size: size6,
       color
     })
   });
@@ -41487,7 +41497,7 @@ function getValue2(input, isColor = false) {
 }
 __name(getValue2, "getValue");
 
-// ../../packages/theme/src/animations.ts
+// ../../packages/theme/src/const/animations.ts
 var animations = createAnimations2({
   "100ms": {
     type: "timing",
@@ -41523,19 +41533,31 @@ var animations = createAnimations2({
   }
 });
 
+// ../../packages/theme/src/const/colors/dark.ts
+var dark_colors = {
+  background: "#000000",
+  text: "#FFFFFF"
+};
+
+// ../../packages/theme/src/const/colors/light.ts
+var light_colors = {
+  background: "#FFFFFF",
+  text: "#000000"
+};
+
 // ../../node_modules/@tamagui/font-inter/dist/esm/index.mjs
 var import_core60 = require("@tamagui/core");
 var createInterFont = /* @__PURE__ */ __name((font = {}, {
-  sizeLineHeight = /* @__PURE__ */ __name((size5) => size5 + 10, "sizeLineHeight"),
-  sizeSize = /* @__PURE__ */ __name((size5) => size5 * 1, "sizeSize")
+  sizeLineHeight = /* @__PURE__ */ __name((size6) => size6 + 10, "sizeLineHeight"),
+  sizeSize = /* @__PURE__ */ __name((size6) => size6 * 1, "sizeSize")
 } = {}) => {
-  const size5 = Object.fromEntries(Object.entries({
+  const size6 = Object.fromEntries(Object.entries({
     ...defaultSizes2,
     ...font.size
   }).map(([k, v]) => [k, sizeSize(+v)]));
   return (0, import_core60.createFont)({
     family: import_core60.isWeb ? 'Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' : "Inter",
-    lineHeight: Object.fromEntries(Object.entries(size5).map(([k, v]) => [k, sizeLineHeight((0, import_core60.getVariableValue)(v))])),
+    lineHeight: Object.fromEntries(Object.entries(size6).map(([k, v]) => [k, sizeLineHeight((0, import_core60.getVariableValue)(v))])),
     weight: {
       4: "300"
     },
@@ -41543,7 +41565,7 @@ var createInterFont = /* @__PURE__ */ __name((font = {}, {
       4: 0
     },
     ...font,
-    size: size5
+    size: size6
   });
 }, "createInterFont");
 var defaultSizes2 = {
@@ -41566,59 +41588,229 @@ var defaultSizes2 = {
   16: 134
 };
 
-// ../../packages/theme/src/fonts.ts
-var headingFont = createInterFont({
-  size: {
-    6: 15
-  },
-  transform: {
-    6: "uppercase",
-    7: "none"
-  },
-  weight: {
-    6: "400",
-    7: "700"
-  },
-  color: {
-    6: "$colorFocus",
-    7: "$color"
-  },
-  letterSpacing: {
-    5: 2,
-    6: 1,
-    7: 0,
-    8: -1,
-    9: -2,
-    10: -3,
-    12: -4,
-    14: -5,
-    15: -6
-  },
+// ../../packages/theme/src/const/fonts/fontSize.ts
+var fontSize = {
+  xs: 12,
+  sm: 14,
+  md: 16,
+  lg: 18,
+  xl: 20,
+  "2xl": 24,
+  "3xl": 30,
+  "4xl": 36,
+  "5xl": 48,
+  "6xl": 60,
+  true: 16
+  // Default font size (md)
+};
+
+// ../../packages/theme/src/const/fonts/fontWeight.ts
+var fontWeight = {
+  thin: "100",
+  extralight: "200",
+  light: "300",
+  normal: "400",
+  medium: "500",
+  semibold: "600",
+  bold: "700",
+  extrabold: "800",
+  black: "900",
+  true: "400"
+  // Default font weight (normal)
+};
+
+// ../../packages/theme/src/const/fonts/letterSpacing.ts
+var letterSpacing = {
+  5: 2,
+  6: 1,
+  7: 0,
+  8: -1,
+  9: -2,
+  10: -3,
+  12: -4,
+  14: -5,
+  15: -6
+};
+
+// ../../packages/theme/src/const/fonts/fonts.ts
+var custom_headingFont = createInterFont({
+  size: fontSize,
+  weight: fontWeight,
+  letterSpacing,
   face: {
-    700: { normal: "InterBold" }
+    700: { normal: "InterBold" },
+    400: { normal: "InterRegular" },
+    500: { normal: "InterMedium" },
+    600: { normal: "InterSemiBold" },
+    800: { normal: "InterExtraBold" },
+    900: { normal: "InterBlack" }
   }
 });
-var bodyFont = createInterFont(
-  {
-    face: {
-      700: { normal: "InterBold" }
-    }
-  },
-  {
-    sizeSize: /* @__PURE__ */ __name((size5) => Math.round(size5 * 1.1), "sizeSize"),
-    sizeLineHeight: /* @__PURE__ */ __name((size5) => Math.round(size5 * 1.1 + (size5 > 20 ? 10 : 10)), "sizeLineHeight")
+var custom_bodyFont = createInterFont({
+  size: fontSize,
+  weight: fontWeight,
+  letterSpacing,
+  face: {
+    700: { normal: "InterBold" },
+    400: { normal: "InterRegular" },
+    500: { normal: "InterMedium" },
+    600: { normal: "InterSemiBold" },
+    800: { normal: "InterExtraBold" },
+    900: { normal: "InterBlack" }
   }
+});
+
+// ../../packages/theme/src/const/shorthands.ts
+var shorthands2 = {
+  bg: "backgroundColor",
+  minH: "minHeight",
+  minW: "minWidth",
+  m: "margin",
+  ml: "marginLeft",
+  mr: "marginRight",
+  mb: "marginBottom",
+  mt: "marginTop",
+  mx: "marginHorizontal",
+  my: "marginVertical",
+  p: "padding",
+  pb: "paddingBottom",
+  pl: "paddingLeft",
+  pr: "paddingRight",
+  pt: "paddingTop",
+  px: "paddingHorizontal",
+  py: "paddingVertical"
+};
+
+// ../../packages/theme/src/const/colors/app.ts
+var app_colors = {
+  brand_primary: "#007AFF",
+  brand_secondary: "#5856D6",
+  brand_tertiary: "#FF2D55",
+  brand_quaternary: "#FF2D55",
+  brand_quinary: "#FF2D55",
+  brand_senary: "#FF2D55",
+  brand_septenary: "#FF2D55",
+  brand_octonary: "#FF2D55",
+  brand_nonary: "#FF2D55"
+};
+
+// ../../packages/theme/src/const/radius.ts
+var radius2 = {
+  $0: 0,
+  $1: 1,
+  $2: 2,
+  $3: 3,
+  $4: 4,
+  $5: 5,
+  $6: 6,
+  $7: 7,
+  $8: 8,
+  $9: 9,
+  $10: 10,
+  $11: 11,
+  $12: 12
+};
+
+// ../../packages/theme/src/const/size.ts
+var size5 = {
+  $0: 0,
+  "$0.25": 2,
+  "$0.5": 4,
+  "$0.75": 8,
+  $1: 20,
+  "$1.5": 24,
+  $2: 28,
+  "$2.5": 32,
+  $3: 36,
+  "$3.5": 40,
+  $4: 44,
+  $true: 44,
+  "$4.5": 48,
+  $5: 52,
+  $6: 64,
+  $7: 74,
+  $8: 84,
+  $9: 94,
+  $10: 104,
+  $11: 124,
+  $12: 144,
+  $13: 164,
+  $14: 184,
+  $15: 204,
+  $16: 224,
+  $17: 224,
+  $18: 244,
+  $19: 264,
+  $20: 284
+};
+
+// ../../packages/theme/src/utils/index.ts
+function sizeToSpace2(v) {
+  if (v === 0) return 0;
+  if (v === 2) return 0.5;
+  if (v === 4) return 1;
+  if (v === 8) return 1.5;
+  if (v <= 16) return Math.round(v * 0.333);
+  return Math.floor(v * 0.7 - 12);
+}
+__name(sizeToSpace2, "sizeToSpace");
+
+// ../../packages/theme/src/const/space.ts
+var spaces2 = Object.entries(size5).reduce(
+  (acc, [k, v]) => {
+    acc[k] = sizeToSpace2(v);
+    return acc;
+  },
+  {}
 );
+spaces2.true = spaces2.$true || 16;
+
+// ../../packages/theme/src/const/zIndex.ts
+var zIndex2 = {
+  0: 0,
+  10: 10,
+  20: 20,
+  30: 30,
+  40: 40,
+  50: 50,
+  auto: "auto",
+  dropdown: 1e3,
+  sticky: 1100,
+  fixed: 1200,
+  drawer: 1300,
+  modal: 1400,
+  popover: 1500,
+  toast: 1600,
+  tooltip: 1700
+};
+
+// ../../packages/theme/src/tokens.ts
+var custom_tokens = (0, import_core59.createTokens)({
+  color: app_colors,
+  radius: radius2,
+  size: size5,
+  space: { ...spaces2 },
+  zIndex: zIndex2
+});
 
 // ../../packages/theme/src/tamagui.config.ts
-var config = createTamagui({
+var wip_config = createTamagui({
   ...defaultConfig,
   animations,
-  shorthands,
+  shorthands: shorthands2,
   fonts: {
-    body: bodyFont,
-    heading: headingFont
+    body: custom_bodyFont,
+    heading: custom_headingFont
+  },
+  tokens: custom_tokens,
+  themes: {
+    light: { ...light_colors },
+    dark: { ...dark_colors }
   }
+});
+var config = createTamagui({
+  ...defaultConfig,
+  tokens: { ...defaultConfig.tokens }
 });
 
 // ../../node_modules/@tamagui/toast/dist/esm/Toast.mjs
@@ -41868,14 +42060,14 @@ var import_react_native_web15 = __toESM(require_cjs(), 1);
 var import_jsx_runtime70 = require("react/jsx-runtime");
 function ToastPortal({
   children,
-  zIndex: zIndex2
+  zIndex: zIndex3
 }) {
   let content = children;
   return (import_react_native_web15.Platform.OS === "android" || import_react_native_web15.Platform.OS === "ios") && (content = /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(ReprogapateToastProvider, {
     context: useToastProviderContext(),
     children
   })), /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(Portal, {
-    zIndex: zIndex2 || Number.MAX_SAFE_INTEGER,
+    zIndex: zIndex3 || Number.MAX_SAFE_INTEGER,
     children: content
   });
 }
@@ -41930,7 +42122,7 @@ var ToastViewport = React83.memo(React83.forwardRef((props, forwardedRef) => {
     label = "Notifications ({hotkey})",
     name: name2 = "default",
     multipleToasts,
-    zIndex: zIndex2,
+    zIndex: zIndex3,
     portalToRoot,
     ...viewportProps
   } = props, context2 = useToastProviderContext(__scopeToast), getItems = useCollection3(__scopeToast || TOAST_CONTEXT), headFocusProxyRef = React83.useRef(null), tailFocusProxyRef = React83.useRef(null), wrapperRef = React83.useRef(null), ref = React83.useRef(null), onViewportChange = React83.useCallback((el) => {
@@ -42046,8 +42238,8 @@ var ToastViewport = React83.memo(React83.forwardRef((props, forwardedRef) => {
     })]
   });
   return portalToRoot ? /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(ToastPortal, {
-    ...typeof zIndex2 == "number" ? {
-      zIndex: zIndex2
+    ...typeof zIndex3 == "number" ? {
+      zIndex: zIndex3
     } : {},
     children: contents
   }) : contents;
@@ -42418,16 +42610,230 @@ var Toast = withStaticProperties(ToastComponent, {
   Close: ToastClose
 });
 
+// ../../packages/ui/src/base/Avatar.tsx
+var UiAvatar = (0, import_core59.styled)(Avatar, {
+  name: "UiAvatar",
+  background: "aqua",
+  variants: {
+    size: {
+      xs: {
+        width: 24,
+        height: 24
+      },
+      sm: {
+        width: 32,
+        height: 32
+      },
+      md: {
+        width: 40,
+        height: 40
+      },
+      lg: {
+        width: 48,
+        height: 48
+      },
+      xl: {
+        width: 64,
+        height: 64
+      },
+      "2xl": {
+        width: 80,
+        height: 80
+      }
+    },
+    variant: {
+      circle: {
+        borderRadius: 9999
+      },
+      rounded: {
+        borderRadius: 8
+      },
+      square: {
+        borderRadius: 0
+      }
+    }
+  },
+  defaultVariants: {
+    size: "md",
+    variant: "circle"
+  }
+});
+
 // ../../packages/ui/src/base/Button.tsx
 var UiButton = (0, import_core59.styled)(Button2, {
   name: "UiButton",
-  background: "$background",
   variants: {
     variant: {
       primary: {
-        background: "$primary"
+        background: "AppWorkspace"
+      }
+    },
+    size: {
+      sm: {
+        py: 4,
+        px: 8,
+        fontSize: 14
+      },
+      md: {
+        py: 8,
+        px: 12,
+        fontSize: 16
+      },
+      lg: {
+        py: 12,
+        px: 16,
+        fontSize: 18
       }
     }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md"
+  }
+});
+
+// ../../packages/ui/src/base/Card.tsx
+var UiCard = (0, import_core59.styled)(Card, {
+  name: "UiCard",
+  background: "$surface",
+  p: 16,
+  variants: {
+    variant: {
+      elevated: {
+        shadowColor: "rgba(0, 0, 0, 0.1)",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 8,
+        elevation: 2
+      },
+      outlined: {
+        borderWidth: 1,
+        border: "$border"
+      },
+      filled: {
+        background: "$surfaceSubtle"
+      }
+    },
+    size: {
+      sm: {
+        p: 12
+      },
+      md: {
+        p: 16
+      },
+      lg: {
+        p: 24
+      }
+    },
+    rounded: {
+      none: {
+        borderRadius: "$none"
+      },
+      sm: {
+        borderRadius: "$sm"
+      },
+      md: {
+        borderRadius: "$md"
+      },
+      lg: {
+        borderRadius: "$lg"
+      },
+      full: {
+        borderRadius: "$full"
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "elevated",
+    size: "md",
+    rounded: "md"
+  }
+});
+
+// ../../packages/ui/src/base/Checkbox.tsx
+var UiCheckbox = (0, import_core59.styled)(Checkbox, {
+  name: "UiCheckbox",
+  variants: {
+    size: {
+      sm: {
+        size: 16
+      },
+      md: {
+        size: 20
+      },
+      lg: {
+        size: 24
+      }
+    },
+    variant: {
+      default: {
+        bg: "transparent",
+        borderWidth: 1,
+        borderColor: "#E5E7EB"
+      },
+      filled: {
+        bg: "#3B82F6",
+        borderWidth: 0
+      }
+    }
+  },
+  defaultVariants: {
+    size: "md",
+    variant: "default"
+  }
+});
+var UiCheckboxIndicator = (0, import_core59.styled)(Checkbox.Indicator, {
+  name: "UiCheckboxIndicator",
+  borderColor: "$accent2"
+});
+
+// ../../packages/ui/src/base/Input.tsx
+var UiInput = (0, import_core59.styled)(Input, {
+  name: "UiInput",
+  borderWidth: 1,
+  p: 12,
+  fontSize: 16,
+  outlineWidth: 0,
+  variants: {
+    variant: {
+      outline: {
+        background: "transparent"
+      },
+      filled: {
+        borderColor: "transparent",
+        background: "$backgroundSubtle"
+      },
+      underlined: {
+        borderWidth: 0,
+        borderBottomWidth: 1,
+        paddingEnd: 0,
+        paddingStart: 0,
+        background: "transparent"
+      }
+    },
+    state: {
+      disabled: {
+        opacity: 0.5
+      }
+    },
+    size: {
+      sm: {
+        padding: 8,
+        fontSize: 14
+      },
+      md: {
+        padding: 12,
+        fontSize: 16
+      },
+      lg: {
+        padding: 16,
+        fontSize: 18
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "outline",
+    size: "md"
   }
 });
 
@@ -42443,6 +42849,90 @@ var UiStack = (0, import_core59.styled)(YStack, {
     }
   }
 });
+
+// ../../packages/ui/src/base/Tabs.tsx
+var UiTabs = (0, import_core59.styled)(Tabs, {
+  name: "UiTabs"
+});
+var UiTabsList = (0, import_core59.styled)(Tabs.List, {
+  name: "UiTabsList",
+  gap: 10
+});
+var UiTabsTrigger = (0, import_core59.styled)(Tabs.Trigger, {
+  name: "UiTabsTrigger",
+  bg: "transparent",
+  px: 12,
+  py: 8,
+  outlineWidth: 0,
+  hoverStyle: {
+    bg: "#F3F4F6"
+  },
+  focusStyle: {
+    outlineWidth: 0
+  },
+  variants: {
+    state: {
+      active: {
+        color: "#3B82F6",
+        fontWeight: "600",
+        borderBottomWidth: 2,
+        borderBottomColor: "#3B82F6"
+      },
+      disabled: {
+        opacity: 0.5,
+        pointerEvents: "none"
+      }
+    },
+    variant: {
+      underlined: {
+        borderBottomWidth: 2,
+        borderBottomColor: "transparent"
+      },
+      filled: {
+        borderRadius: 6
+      },
+      outline: {
+        borderWidth: 1,
+        borderColor: "#E5E7EB",
+        borderRadius: 6
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "underlined"
+  }
+});
+var UiTabsContent = (0, import_core59.styled)(Tabs.Content, {
+  name: "UiTabsContent",
+  p: 16
+});
+
+// ../../packages/ui/src/toast/NativeToast.tsx
+var import_jsx_runtime74 = require("react/jsx-runtime");
+var NativeToast = /* @__PURE__ */ __name(() => {
+  const currentToast = useToastState();
+  if (!currentToast || currentToast.isHandledNatively) {
+    return null;
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
+    Toast,
+    {
+      duration: currentToast.duration,
+      viewportName: currentToast.viewportName,
+      enterStyle: { opacity: 0, scale: 0.5, y: -25 },
+      exitStyle: { opacity: 0, scale: 1, y: -20 },
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      animation: "quick",
+      children: /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)(YStack, { py: "$1.5", px: "$2", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Toast.Title, { lineHeight: "$1", children: currentToast.title }),
+        !!currentToast.message && /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Toast.Description, { children: currentToast.message })
+      ] })
+    },
+    currentToast.id
+  );
+}, "NativeToast");
 
 // ../../node_modules/expo-modules-core/src/errors/CodedError.ts
 var CodedError = class extends Error {
@@ -42750,33 +43240,6 @@ function getManifest(suppressWarning = false) {
 __name(getManifest, "getManifest");
 var Constants_default = constants;
 
-// ../../packages/ui/src/toast/NativeToast.tsx
-var import_jsx_runtime74 = require("react/jsx-runtime");
-var NativeToast = /* @__PURE__ */ __name(() => {
-  const currentToast = useToastState();
-  if (!currentToast || currentToast.isHandledNatively) {
-    return null;
-  }
-  return /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
-    Toast,
-    {
-      duration: currentToast.duration,
-      viewportName: currentToast.viewportName,
-      enterStyle: { opacity: 0, scale: 0.5, y: -25 },
-      exitStyle: { opacity: 0, scale: 1, y: -20 },
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      animation: "quick",
-      children: /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)(YStack, { paddingVertical: "$1.5", paddingHorizontal: "$2", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Toast.Title, { lineHeight: "$1", children: currentToast.title }),
-        !!currentToast.message && /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Toast.Description, { children: currentToast.message })
-      ] })
-    },
-    currentToast.id
-  );
-}, "NativeToast");
-
 // ../../packages/ui/src/toast/Toast.tsx
 var import_jsx_runtime75 = require("react/jsx-runtime");
 var isExpo = Constants_default.executionEnvironment === ExecutionEnvironment.StoreClient;
@@ -42878,6 +43341,7 @@ var CustomToast = /* @__PURE__ */ __name(() => {
   ListItemText,
   ListItemTitle,
   Main,
+  NativeToast,
   Nav,
   Overlay,
   Paragraph,
@@ -42973,8 +43437,17 @@ var CustomToast = /* @__PURE__ */ __name(() => {
   TooltipSimple,
   Track,
   USE_NATIVE_PORTAL,
+  UiAvatar,
   UiButton,
+  UiCard,
+  UiCheckbox,
+  UiCheckboxIndicator,
+  UiInput,
   UiStack,
+  UiTabs,
+  UiTabsContent,
+  UiTabsList,
+  UiTabsTrigger,
   Unspaced,
   View,
   VisuallyHidden,

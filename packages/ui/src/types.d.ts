@@ -1,4 +1,4 @@
-import { config } from '@kovyra/theme';
+import type { config } from '@kovyra/theme';
 
 export type Conf = typeof config;
 

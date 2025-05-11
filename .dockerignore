@@ -51,6 +51,7 @@ docs
 apps/
 packages/
 scripts/
+voyager/
 
 # Storybook
 storybook-static

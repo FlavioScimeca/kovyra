@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { NextTamaguiProvider } from '../src/providers/WebTamaguiProvider';
 
 export const metadata: Metadata = {
-  title: 'Tamagui • App Router',
-  description: 'Tamagui, Solito, Expo & Next.js',
+  title: 'Kovyra',
+  description: 'Kovyra',
   icons: '/favicon.ico',
 };
 
@@ -13,7 +13,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // You can use `suppressHydrationWarning` to avoid the warning about mismatched content during hydration in dev mode
     <html lang="en" suppressHydrationWarning>
       <body>
         <NextTamaguiProvider>{children}</NextTamaguiProvider>

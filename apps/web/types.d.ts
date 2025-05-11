@@ -1,4 +1,6 @@
-import { config } from '@kovyra/theme';
+/* eslint-disable @typescript-eslint/no-empty-object-type*/
+
+import type { config } from '@kovyra/theme';
 
 export type Conf = typeof config;
 

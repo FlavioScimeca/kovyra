@@ -1,14 +1,28 @@
-import { defaultConfig, shorthands } from '@tamagui/config/v4';
+import { defaultConfig } from '@tamagui/config/v4';
 import { createTamagui } from 'tamagui';
-import { animations } from './animations';
-import { bodyFont, headingFont } from './fonts';
+import { animations } from './const/animations';
+import { dark_colors } from './const/colors/dark';
+import { light_colors } from './const/colors/light';
+import { custom_bodyFont, custom_headingFont } from './const/fonts/fonts';
+import { shorthands } from './const/shorthands';
+import { custom_tokens } from './tokens';
 
-export const config = createTamagui({
+const wip_config = createTamagui({
   ...defaultConfig,
   animations,
   shorthands,
   fonts: {
-    body: bodyFont,
-    heading: headingFont,
+    body: custom_bodyFont,
+    heading: custom_headingFont,
   },
+  tokens: custom_tokens,
+  themes: {
+    light: { ...light_colors },
+    dark: { ...dark_colors },
+  },
+});
+
+export const config = createTamagui({
+  ...defaultConfig,
+  tokens: { ...defaultConfig.tokens },
 });

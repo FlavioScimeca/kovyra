@@ -1,1 +1,2 @@
-export { CustomToast } from './Toast';
+export * from './NativeToast';
+export * from './Toast';
