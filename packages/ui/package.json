@@ -18,11 +18,11 @@
   },
   "dependencies": {
     "@kovyra/theme": "workspace:*",
-    "@tamagui/toast": "1.126.9",
-    "@tamagui/lucide-icons": "1.126.9",
-    "tamagui": "1.126.9"
+    "@tamagui/lucide-icons": "1.126.13",
+    "@tamagui/toast": "1.126.13",
+    "tamagui": "1.126.13"
   },
   "devDependencies": {
-    "@tamagui/build": "1.126.9"
+    "@tamagui/build": "1.126.13"
   }
 }

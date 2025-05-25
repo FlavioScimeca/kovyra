@@ -41590,18 +41590,17 @@ var defaultSizes2 = {
 
 // ../../packages/theme/src/const/fonts/fontSize.ts
 var fontSize = {
-  xs: 12,
-  sm: 14,
+  $true: 16,
+  $xs: 12,
+  $sm: 14,
   md: 16,
-  lg: 18,
-  xl: 20,
-  "2xl": 24,
-  "3xl": 30,
-  "4xl": 36,
-  "5xl": 48,
-  "6xl": 60,
-  true: 16
-  // Default font size (md)
+  $lg: 18,
+  $xl: 20,
+  $2xl: 24,
+  $3xl: 30,
+  $4xl: 36,
+  $5xl: 48,
+  $6xl: 60
 };
 
 // ../../packages/theme/src/const/fonts/fontWeight.ts
@@ -41711,6 +41710,17 @@ var radius2 = {
   $12: 12
 };
 
+// ../../packages/theme/src/utils/index.ts
+function sizeToSpace2(v) {
+  if (v === 0) return 0;
+  if (v === 2) return 0.5;
+  if (v === 4) return 1;
+  if (v === 8) return 1.5;
+  if (v <= 16) return Math.round(v * 0.333);
+  return Math.floor(v * 0.7 - 12);
+}
+__name(sizeToSpace2, "sizeToSpace");
+
 // ../../packages/theme/src/const/size.ts
 var size5 = {
   $0: 0,
@@ -41741,19 +41751,15 @@ var size5 = {
   $17: 224,
   $18: 244,
   $19: 264,
-  $20: 284
+  $20: 284,
+  $sm: 20,
+  $md: 24,
+  $lg: 28,
+  $xl: 32,
+  $2xl: 36,
+  $3xl: 40,
+  $4xl: 48
 };
-
-// ../../packages/theme/src/utils/index.ts
-function sizeToSpace2(v) {
-  if (v === 0) return 0;
-  if (v === 2) return 0.5;
-  if (v === 4) return 1;
-  if (v === 8) return 1.5;
-  if (v <= 16) return Math.round(v * 0.333);
-  return Math.floor(v * 0.7 - 12);
-}
-__name(sizeToSpace2, "sizeToSpace");
 
 // ../../packages/theme/src/const/space.ts
 var spaces2 = Object.entries(size5).reduce(
@@ -41788,13 +41794,13 @@ var zIndex2 = {
 var custom_tokens = (0, import_core59.createTokens)({
   color: app_colors,
   radius: radius2,
-  size: size5,
-  space: { ...spaces2 },
+  size: { ...defaultConfig.tokens.size },
+  space: spaces2,
   zIndex: zIndex2
 });
 
 // ../../packages/theme/src/tamagui.config.ts
-var wip_config = createTamagui({
+var config = createTamagui({
   ...defaultConfig,
   animations,
   shorthands: shorthands2,
@@ -41807,10 +41813,6 @@ var wip_config = createTamagui({
     light: { ...light_colors },
     dark: { ...dark_colors }
   }
-});
-var config = createTamagui({
-  ...defaultConfig,
-  tokens: { ...defaultConfig.tokens }
 });
 
 // ../../node_modules/@tamagui/toast/dist/esm/Toast.mjs

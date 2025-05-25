@@ -7,7 +7,7 @@ import { custom_bodyFont, custom_headingFont } from './const/fonts/fonts';
 import { shorthands } from './const/shorthands';
 import { custom_tokens } from './tokens';
 
-const wip_config = createTamagui({
+export const config = createTamagui({
   ...defaultConfig,
   animations,
   shorthands,
@@ -22,7 +22,7 @@ const wip_config = createTamagui({
   },
 });
 
-export const config = createTamagui({
-  ...defaultConfig,
-  tokens: { ...defaultConfig.tokens },
-});
+// const old_config = createTamagui({
+//   ...defaultConfig,
+//   tokens: { ...defaultConfig.tokens },
+// });
