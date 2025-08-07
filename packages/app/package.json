@@ -20,20 +20,20 @@
     "@kovyra/theme": "workspace:*",
     "@kovyra/ui": "workspace:*",
     "@react-navigation/native": "^7.0.14",
-    "@tamagui/animations-react-native": "1.126.13",
-    "@tamagui/colors": "1.126.13",
-    "@tamagui/font-inter": "1.126.13",
-    "@tamagui/lucide-icons": "1.126.13",
-    "@tamagui/shorthands": "1.126.13",
-    "@tamagui/themes": "1.126.13",
+    "@tamagui/animations-react-native": "1.132.16",
+    "@tamagui/colors": "1.132.16",
+    "@tamagui/font-inter": "1.132.16",
+    "@tamagui/lucide-icons": "1.132.16",
+    "@tamagui/shorthands": "1.132.16",
+    "@tamagui/themes": "1.132.16",
     "burnt": "^0.13.0",
-    "expo-constants": "~17.1.6",
-    "expo-linking": "~7.1.5",
-    "react-native": "0.79.2",
+    "expo-constants": "~17.1.7",
+    "expo-linking": "~7.1.7",
+    "react-native": "0.79.5",
     "react-native-safe-area-context": "5.4.0",
     "solito": "^4.4.1"
   },
   "devDependencies": {
-    "@tamagui/build": "1.126.13"
+    "@tamagui/build": "1.132.16"
   }
 }

@@ -6,13 +6,13 @@ export const UiCheckbox = styled(Checkbox, {
   variants: {
     size: {
       sm: {
-        size: 16,
+        size: '$1',
       },
       md: {
-        size: 20,
+        size: '$1',
       },
       lg: {
-        size: 24,
+        size: '$1',
       },
     },
     variant: {
@@ -36,7 +36,7 @@ export const UiCheckbox = styled(Checkbox, {
 
 export const UiCheckboxIndicator = styled(Checkbox.Indicator, {
   name: 'UiCheckboxIndicator',
-  borderColor: '$accent2',
+  borderColor: '$brand_primary',
 });
 
 export { Checkbox };

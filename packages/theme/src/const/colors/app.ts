@@ -1,5 +1,5 @@
 export const app_colors = {
-  brand_primary: '#007AFF',
+  brand_primary: 'pink',
   brand_secondary: '#5856D6',
   brand_tertiary: '#FF2D55',
   brand_quaternary: '#FF2D55',

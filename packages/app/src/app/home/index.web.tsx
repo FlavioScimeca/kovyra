@@ -1,14 +1,13 @@
-import { Text, UiButton, UiStack } from '@kovyra/ui';
-import { Link } from 'solito/link';
+import { Stack, UiButton } from '@kovyra/ui';
 
 export const Home = () => {
   return (
-    <UiStack>
+    <Stack bg={'red'}>
       <UiButton>ciao kovyra </UiButton>
       <UiButton>test button 1</UiButton>
-      <Link href="/about">
-        <Text>about what ?!!</Text>
-      </Link>
-    </UiStack>
+      {/* <Link href="/about">
+        <Text>about what ?!! 12 34</Text>
+      </Link> */}
+    </Stack>
   );
 };

@@ -32,8 +32,7 @@
     "migration:run": "typeorm-ts-node-commonjs migration:run -d server/config/typeorm.config.ts",
     "migration:revert": "typeorm-ts-node-commonjs migration:revert -d server/config/typeorm.config.ts",
     "graphql:generate": "ts-node server/scripts/generate-schema.ts",
-    "seed:users": "ts-node server/scripts/seed/create-test-users.ts",
-    "voyager": "cd voyager && tsx voyager.controller.ts"
+    "seed:users": "ts-node server/scripts/seed/create-test-users.ts"
   },
   "dependencies": {
     "@apollo/server": "^4.12.0",

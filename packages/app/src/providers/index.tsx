@@ -1,9 +1,9 @@
+import { config } from '@kovyra/theme';
 import {
   CustomToast,
   TamaguiProvider,
   type TamaguiProviderProps,
   ToastProvider,
-  config,
   isWeb,
 } from '@kovyra/ui';
 import { useColorScheme } from 'react-native';
@@ -23,7 +23,7 @@ export function Provider({
     >
       <ToastProvider
         swipeDirection="horizontal"
-        duration={6000}
+        duration={5000}
         native={isWeb ? [] : ['mobile']}
       >
         {children}

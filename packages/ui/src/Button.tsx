@@ -6,24 +6,22 @@ export const UiButton = styled(Button, {
   variants: {
     variant: {
       primary: {
-        background: 'AppWorkspace',
+        borderEndEndRadius: '$1',
       },
     },
     size: {
       sm: {
-        py: 4,
-        px: 8,
-        fontSize: 14,
+        py: '$1',
+        px: '$3',
+        bg: '$radius.true',
       },
       md: {
-        py: 8,
-        px: 12,
-        fontSize: 16,
+        py: '$3',
+        px: '$4',
       },
       lg: {
-        py: 12,
-        px: 16,
-        fontSize: 18,
+        py: '$4',
+        px: '$5',
       },
     },
   } as const,
