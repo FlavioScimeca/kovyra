@@ -36,7 +36,4 @@ export const UiCheckbox = styled(Checkbox, {
 
 export const UiCheckboxIndicator = styled(Checkbox.Indicator, {
   name: 'UiCheckboxIndicator',
-  borderColor: '$brand_primary',
 });
-
-export { Checkbox };

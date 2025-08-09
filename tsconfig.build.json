@@ -6,6 +6,7 @@
     "dist",
     "**/*spec.ts",
     "config/syncpack.config.cjs",
-    "apps"
+    "apps",
+    "packages"
   ]
 }

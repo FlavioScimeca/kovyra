@@ -8,31 +8,31 @@
   "scripts": {
     "docker": "node ./scripts/docker.mjs",
     "docker:exec": "node ./scripts/docker-exec.mjs",
-    "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "sync": "syncpack list-mismatches --config ./config/syncpack.config.js",
-    "fix": "syncpack fix-mismatches --config ./config/syncpack.config.js",
-    "test": "jest",
+    "build": "bun run nest build",
+    "format": "bun run prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "bun run nest start",
+    "start:dev": "bun run nest start --watch",
+    "start:debug": "bun run nest start --debug --watch",
+    "start:prod": "bun dist/main",
+    "lint": "bun run eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "sync": "bun run syncpack list-mismatches --config ./config/syncpack.config.js",
+    "fix": "bun run syncpack fix-mismatches --config ./config/syncpack.config.js",
+    "test": "bun test",
     "clean-nodemodules": "find . -name 'node_modules' -type d -not -path './node_modules/*' -exec rm -rf {} +",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
-    "upgrade-tamagui": "pnpm up -i --latest --recursive 'tamagui' '@tamagui/*'",
-    "web": "pnpm --filter @kovyra/web run dev",
-    "doc": "pnpm --filter @kovyra/docs run dev",
-    "android": "pnpm --filter @kovyra/mobile run android",
-    "ios": "pnpm --filter @kovyra/mobile run ios",
+    "test:watch": "bun test --watch",
+    "test:cov": "bun test --coverage",
+    "test:debug": "bun --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "bun test --config ./test/jest-e2e.json",
+    "upgrade-tamagui": "bun update --latest tamagui @tamagui/*",
+    "web": "cd apps/web && bun run dev",
+    "doc": "cd apps/docs && bun run dev",
+    "android": "cd apps/mobile && bun run android",
+    "ios": "cd apps/mobile && bun run ios",
     "migration:generate": "typeorm-ts-node-commonjs migration:generate -d server/config/typeorm.config.ts",
     "migration:run": "typeorm-ts-node-commonjs migration:run -d server/config/typeorm.config.ts",
     "migration:revert": "typeorm-ts-node-commonjs migration:revert -d server/config/typeorm.config.ts",
-    "graphql:generate": "ts-node server/scripts/generate-schema.ts",
-    "seed:users": "ts-node server/scripts/seed/create-test-users.ts"
+    "graphql:generate": "bun run server/scripts/generate-schema.ts",
+    "seed:users": "bun run server/scripts/seed/create-test-users.ts"
   },
   "dependencies": {
     "@apollo/server": "^4.12.0",
@@ -59,7 +59,10 @@
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "syncpack": "^13.0.3",
-    "typeorm": "^0.3.22"
+    "typeorm": "^0.3.22",
+    "expo": "~53.0.20",
+    "react": "19.0.0",
+    "react-native": "0.79.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -110,5 +113,9 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+  "packageManager": "bun@1.2.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

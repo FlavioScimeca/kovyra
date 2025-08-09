@@ -18,12 +18,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ios: {
     supportsTablet: true,
     bundleIdentifier: 'com.kovyra.mobile',
+    // deploymentTarget: '15.0',
   },
   android: {
     adaptiveIcon: {
       foregroundImage: './assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff',
     },
+    edgeToEdgeEnabled: true,
     package: 'com.kovyra.mobile',
   },
   web: {
@@ -34,6 +36,5 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   plugins: ['expo-router', 'expo-font', 'expo-web-browser'],
   experiments: {
     typedRoutes: true,
-    reactCanary: true,
   },
 });

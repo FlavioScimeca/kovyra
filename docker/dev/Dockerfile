@@ -1,36 +1,38 @@
 # syntax=docker/dockerfile:1.4
-FROM node:20-alpine
+# Use the official Bun image
+FROM oven/bun:1 AS base
+WORKDIR /usr/src/app
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Install development dependencies into temp directory
+# This will cache them and speed up future builds
+FROM base AS install
+RUN mkdir -p /temp/dev
+COPY package.json bun.lock bunfig.toml /temp/dev/
+RUN cd /temp/dev && bun install
 
-# Install development dependencies (if needed by NestJS dev)
-RUN apk add --no-cache git
+# Copy node_modules from temp directory
+# Then copy all (non-ignored) project files into the image
+FROM base AS prerelease
+COPY --from=install /temp/dev/node_modules node_modules
+COPY . .
 
-WORKDIR /app
+# Copy production dependencies and source code into final image
+FROM base AS release
+COPY --from=install /temp/dev/node_modules node_modules
+COPY --from=prerelease /usr/src/app/package.json .
+COPY --from=prerelease /usr/src/app/bunfig.toml .
+COPY --from=prerelease /usr/src/app/tsconfig*.json ./
+COPY --from=prerelease /usr/src/app/nest-cli.json .
+COPY --from=prerelease /usr/src/app/server ./server
 
-# Set PNPM_HOME for subsequent RUN commands
-ENV PNPM_HOME=/home/node/.local/share/pnpm
-ENV PATH=$PNPM_HOME:$PATH
-# Ensure pnpm is activated in the PATH for RUN commands
-RUN corepack enable
-
-# Copy necessary package manager files and root source files
-# Note: .dockerignore prevents apps/ and packages/ from being copied
-COPY --chown=node:node package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc* tsconfig*.json nest-cli.json ./ ./ 
-COPY --chown=node:node server/ ./server/
-
-# Install root dependencies including TypeORM and other required packages
-RUN pnpm install --filter . 
-
-# Ensure the node user owns the entire application directory after installs
-RUN chown -R node:node /app
+# Create dist directory with proper permissions and ensure bun user owns the entire workspace
+RUN mkdir -p dist && chown -R bun:bun /usr/src/app
 
 # Expose the port NestJS runs on
 EXPOSE 4001
 
-# Set user to non-root
-USER node
+# Switch to bun user
+USER bun
 
-# Start the NestJS application in watch mode
-CMD ["pnpm", "run", "start:dev"] 
+# Run the app
+ENTRYPOINT ["bun", "run", "start:dev"] 

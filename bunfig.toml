@@ -1,0 +1,42 @@
+# Bun configuration file
+
+[install]
+# Production install settings
+production = false
+
+# Enable auto install for missing packages
+auto = "auto"
+
+# Froze lockfile in CI
+frozenLockfile = false
+
+# Registry settings
+registry = "https://registry.npmjs.org/"
+
+# Dev dependencies settings
+dev = true
+
+# Optional dependencies
+optional = true
+
+# Peer dependencies handling
+peer = true
+
+# Link workspace packages
+linkWorkspacePackages = true
+
+[install.cache]
+# Cache directory for packages
+dir = ".bun/install/cache"
+disable = false
+
+[install.scopes]
+# You can configure scoped registries here if needed
+# "@myorg" = "https://registry.example.com"
+
+[run]
+# Enable bun shell for scripts
+shell = "bun"
+
+# Silent mode for scripts
+silent = false

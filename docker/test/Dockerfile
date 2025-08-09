@@ -1,18 +1,17 @@
 FROM node:20-alpine
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
-
-# Install development dependencies
-RUN apk add --no-cache git
+# Install bun and development dependencies
+RUN curl -fsSL https://bun.sh/install | bash && \
+    apk add --no-cache git
+ENV PATH="/root/.bun/bin:$PATH"
 
 WORKDIR /app
 
 # Copy package files
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
+COPY package.json bun.lockb bunfig.toml ./
 
 # Install dependencies including dev dependencies
-RUN pnpm install
+RUN bun install
 
 # Copy the rest of the application
 COPY . .
@@ -21,4 +20,4 @@ COPY . .
 ENV NODE_ENV=test
 
 # Run tests
-CMD ["pnpm", "test"] 
+CMD ["bun", "test"] 

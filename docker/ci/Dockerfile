@@ -1,35 +1,37 @@
 # Build stage
 FROM node:20-alpine AS builder
 
-# Install pnpm and necessary tools
-RUN corepack enable && corepack prepare pnpm@latest --activate && \
+# Install bun and necessary tools
+RUN curl -fsSL https://bun.sh/install | bash && \
     apk add --no-cache git
+ENV PATH="/root/.bun/bin:$PATH"
 
 WORKDIR /app
 
 # Copy package files
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
+COPY package.json bun.lockb bunfig.toml ./
 
 # Install dependencies
-RUN pnpm install --frozen-lockfile
+RUN bun install --frozen-lockfile
 
 # Copy the rest of the application
 COPY . .
 
 # Build all applications
-RUN pnpm build
+RUN bun run build
 
 # Test stage
 FROM node:20-alpine AS test
 
-# Install pnpm and necessary tools
-RUN corepack enable && corepack prepare pnpm@latest --activate && \
+# Install bun and necessary tools
+RUN curl -fsSL https://bun.sh/install | bash && \
     apk add --no-cache git
+ENV PATH="/root/.bun/bin:$PATH"
 
 WORKDIR /app
 
 # Copy package files and dependencies
-COPY --from=builder /app/package.json /app/pnpm-lock.yaml /app/pnpm-workspace.yaml /app/.npmrc ./
+COPY --from=builder /app/package.json /app/bun.lockb /app/bunfig.toml ./
 COPY --from=builder /app/node_modules ./node_modules
 
 # Copy built applications
@@ -42,4 +44,4 @@ ENV NODE_ENV=ci
 ENV CI=true
 
 # Run all tests and checks
-CMD ["sh", "-c", "pnpm lint && pnpm test && pnpm test:cov"] 
+CMD ["sh", "-c", "bun run lint && bun run test && bun run test:cov"] 

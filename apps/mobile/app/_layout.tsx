@@ -1,5 +1,5 @@
 import { Provider } from '@kovyra/app/src/providers';
-import { NativeToast } from '@kovyra/ui/src/toast/NativeToast';
+// import { NativeToast } from '@kovyra/ui/src/toast/NativeToast';
 import {
   DarkTheme,
   DefaultTheme,
@@ -45,7 +45,7 @@ function RootLayoutNav() {
     <Provider>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack />
-        <NativeToast />
+        {/* <NativeToast /> */}
       </ThemeProvider>
     </Provider>
   );
