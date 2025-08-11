@@ -1,7 +1,7 @@
-import { createRoute } from '@tanstack/react-router'
-import { useQuery } from '@tanstack/react-query'
+import { createRoute } from '@tanstack/react-router';
+import { useQuery } from '@tanstack/react-query';
 
-import type { RootRoute } from '@tanstack/react-router'
+import type { RootRoute } from '@tanstack/react-router';
 
 function TanStackQueryDemo() {
   const { data } = useQuery({
@@ -13,7 +13,7 @@ function TanStackQueryDemo() {
         { id: 3, name: 'Charlie' },
       ]),
     initialData: [],
-  })
+  });
 
   return (
     <div
@@ -24,11 +24,9 @@ function TanStackQueryDemo() {
       }}
     >
       <div className="w-full max-w-2xl p-8 rounded-xl backdrop-blur-md bg-black/50 shadow-xl border-8 border-black/10">
-        <h1 className="text-2xl mb-4">
-          TanStack Query Simple Promise Handling
-        </h1>
+        <h1 className="text-2xl mb-4">TanStack Query Simple Promise Handling</h1>
         <ul className="mb-4 space-y-2">
-          {data.map((todo) => (
+          {data.map(todo => (
             <li
               key={todo.id}
               className="bg-white/10 border border-white/20 rounded-lg p-3 backdrop-blur-sm shadow-md"
@@ -39,7 +37,7 @@ function TanStackQueryDemo() {
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
 export default (parentRoute: RootRoute) =>
@@ -47,4 +45,4 @@ export default (parentRoute: RootRoute) =>
     path: '/demo/tanstack-query',
     component: TanStackQueryDemo,
     getParentRoute: () => parentRoute,
-  })
+  });

@@ -8,15 +8,18 @@
     "build": "vite build && tsc",
     "serve": "vite preview",
     "test": "vitest run",
-    "format": "biome format",
-    "lint": "biome lint",
-    "check": "biome check"
+    "format": "bun biome format --write .",
+    "lint": "bun biome lint --write .",
+    "check": "bun biome check --write ."
   },
   "dependencies": {
     "@faker-js/faker": "^9.6.0",
-    "@module-federation/vite": "^1.1.9",
+    "@kovyra/app": "workspace:*",
+    "@kovyra/theme": "workspace:*",
+    "@kovyra/ui": "workspace:*",
     "@t3-oss/env-core": "^0.12.0",
     "@tailwindcss/vite": "^4.0.6",
+    "@tamagui/vite-plugin": "1.132.16",
     "@tanstack/match-sorter-utils": "^8.19.4",
     "@tanstack/react-form": "^1.0.0",
     "@tanstack/react-query": "^5.66.5",
@@ -28,6 +31,7 @@
     "@tanstack/store": "^0.7.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-native-web": "~0.20.0",
     "tailwindcss": "^4.1.1",
     "zod": "^3.24.2"
   },
