@@ -1,4 +1,4 @@
-module.exports = function (api) {
+module.exports = (api) => {
   api.cache(true);
   return {
     presets: [
@@ -22,15 +22,7 @@ module.exports = function (api) {
             '@kovyra/theme': '../../packages/theme',
             '@kovyra/app': '../../packages/app',
           },
-          extensions: [
-            '.js',
-            '.jsx',
-            '.ts',
-            '.tsx',
-            '.ios.js',
-            '.android.js',
-            '.web.js',
-          ],
+          extensions: ['.js', '.jsx', '.ts', '.tsx', '.ios.js', '.android.js', '.web.js'],
         },
       ],
       // Tamagui plugin for optimization

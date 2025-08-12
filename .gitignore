@@ -63,3 +63,6 @@ dist
 .bun
 .bun/install/cache
 .bun/install/cache/*
+
+# tamagui
+.tamagui

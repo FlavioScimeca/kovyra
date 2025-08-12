@@ -6,7 +6,7 @@ export const spaces = Object.entries(size).reduce(
     acc[k] = sizeToSpace(v);
     return acc;
   },
-  {} as Record<string, number>,
+  {} as Record<string, number>
 );
 
 // Add required true key

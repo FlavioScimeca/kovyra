@@ -1,16 +1,14 @@
-import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+import { createParamDecorator, type ExecutionContext } from '@nestjs/common';
 import { GqlExecutionContext } from '@nestjs/graphql';
-import { User } from '../entities/user.entity';
+import type { User } from '../entities/user.entity';
 
-export const CurrentUser = createParamDecorator(
-  (data: unknown, ctx: ExecutionContext): User => {
-    if (ctx.getType() === 'http') {
-      // Handle REST API requests
-      return ctx.switchToHttp().getRequest().user;
-    } else {
-      // Handle GraphQL requests
-      const gqlCtx = GqlExecutionContext.create(ctx);
-      return gqlCtx.getContext().req.user;
-    }
-  },
-);
+export const CurrentUser = createParamDecorator((data: unknown, ctx: ExecutionContext): User => {
+  if (ctx.getType() === 'http') {
+    // Handle REST API requests
+    return ctx.switchToHttp().getRequest().user;
+  } else {
+    // Handle GraphQL requests
+    const gqlCtx = GqlExecutionContext.create(ctx);
+    return gqlCtx.getContext().req.user;
+  }
+});

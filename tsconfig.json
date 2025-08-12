@@ -16,6 +16,14 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@kovyra/theme": ["./packages/theme/src"],
+      "@kovyra/theme/*": ["./packages/theme/src/*"],
+      "@kovyra/ui": ["./packages/ui/src"],
+      "@kovyra/ui/*": ["./packages/ui/src/*"],
+      "@kovyra/app": ["./packages/app/src"],
+      "@kovyra/app/*": ["./packages/app/src/*"]
+    }
   }
 }

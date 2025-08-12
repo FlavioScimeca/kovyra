@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "bun biome lint --write .",
+    "format": "bun biome format --write .",
+    "check": "bun biome check --write .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -16,8 +18,8 @@
     "react-dom": "19.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@chromatic-com/storybook": "^3",
-    "@eslint/js": "^9.18.0",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
@@ -30,21 +32,10 @@
     "@vitejs/plugin-react": "^4.3.4",
     "@vitest/browser": "^3.1.1",
     "@vitest/coverage-v8": "^3.1.1",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "eslint-plugin-storybook": "^0.12.0",
-    "globals": "^15.14.0",
     "playwright": "^1.51.1",
     "storybook": "^8.6.12",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.24.1",
     "vite": "^6.3.5",
     "vitest": "^3.1.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
   }
 }

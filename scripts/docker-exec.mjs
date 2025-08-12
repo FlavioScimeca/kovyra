@@ -64,17 +64,14 @@ function execCommand(command) {
 // Get list of running containers related to the project
 function getRunningContainers() {
   try {
-    const result = execSync(
-      'docker ps --format "{{.ID}}|{{.Names}}|{{.Image}}"',
-      { encoding: 'utf8' },
-    );
+    const result = execSync('docker ps --format "{{.ID}}|{{.Names}}|{{.Image}}"', {
+      encoding: 'utf8',
+    });
     const containers = result
       .trim()
       .split('\n')
-      .filter(
-        (line) => line.includes('kovyra') || line.toLowerCase().includes('app'),
-      )
-      .map((line) => {
+      .filter(line => line.includes('kovyra') || line.toLowerCase().includes('app'))
+      .map(line => {
         const [id, name, image] = line.split('|');
         return {
           id,
@@ -100,16 +97,14 @@ async function main() {
 
   if (containers.length === 0) {
     console.error(
-      chalk.red(
-        'No running containers found. Please start your Docker containers first.',
-      ),
+      chalk.red('No running containers found. Please start your Docker containers first.')
     );
     console.log(chalk.yellow('You can start containers with: pnpm run docker'));
     process.exit(1);
   }
 
   // Format the container choices with better display names
-  const containerChoices = containers.map((container) => ({
+  const containerChoices = containers.map(container => ({
     name: container.display,
     value: container.id,
     short: container.name,
@@ -126,7 +121,7 @@ async function main() {
   ]);
 
   // Find the selected container
-  const selectedContainer = containers.find((c) => c.id === containerId);
+  const selectedContainer = containers.find(c => c.id === containerId);
   console.log(chalk.blue(`Selected container: ${selectedContainer.name}`));
 
   // Ask what action to take
@@ -135,7 +130,7 @@ async function main() {
       type: 'list',
       name: 'action',
       message: 'What would you like to do?',
-      choices: predefinedCommands.map((cmd) => ({
+      choices: predefinedCommands.map(cmd => ({
         name: `${cmd.name} - ${cmd.description}`,
         value: cmd.value,
       })),
@@ -143,7 +138,7 @@ async function main() {
   ]);
 
   // Handle the selected action
-  const selectedAction = predefinedCommands.find((cmd) => cmd.value === action);
+  const selectedAction = predefinedCommands.find(cmd => cmd.value === action);
 
   if (action === 'custom') {
     // Handle custom command
@@ -152,8 +147,7 @@ async function main() {
         type: 'input',
         name: 'customCommand',
         message: 'Enter your custom command to run inside the container:',
-        validate: (input) =>
-          input.trim() !== '' ? true : 'Command cannot be empty',
+        validate: input => (input.trim() !== '' ? true : 'Command cannot be empty'),
       },
     ]);
 
@@ -165,7 +159,7 @@ async function main() {
         type: 'input',
         name: 'migrationName',
         message: 'Enter a name for the new migration:',
-        validate: (input) => {
+        validate: input => {
           if (input.trim() === '') return 'Migration name cannot be empty';
           if (!/^[a-zA-Z0-9_-]+$/.test(input))
             return 'Migration name should only contain letters, numbers, underscores and hyphens';
@@ -175,7 +169,7 @@ async function main() {
     ]);
 
     execCommand(
-      `docker exec -it ${containerId} sh -c "cd /app && pnpm run migration:generate server/migrations/${migrationName}"`,
+      `docker exec -it ${containerId} sh -c "cd /app && pnpm run migration:generate server/migrations/${migrationName}"`
     );
   } else if (action === 'shell') {
     // Special handling for shell to keep it interactive
@@ -183,19 +177,17 @@ async function main() {
       stdio: 'inherit',
     });
 
-    child.on('close', (code) => {
+    child.on('close', code => {
       console.log(chalk.green(`\nExited shell with code ${code}`));
     });
   } else if (selectedAction.command) {
     // Execute the predefined command
-    execCommand(
-      `docker exec -it ${containerId} sh -c "${selectedAction.command}"`,
-    );
+    execCommand(`docker exec -it ${containerId} sh -c "${selectedAction.command}"`);
   }
 }
 
 // Execute the script
-main().catch((error) => {
+main().catch(error => {
   console.error(chalk.red(`Error: ${error.message}`));
   process.exit(1);
 });

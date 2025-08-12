@@ -1,10 +1,10 @@
 import { UseGuards } from '@nestjs/common';
 import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { CurrentUser } from '../../../decorators/current-user.decorator';
-import { User } from '../../../entities/user.entity';
+import type { User } from '../../../entities/user.entity';
 import { JwtAuthGuard } from '../../../guards/jwt-auth.guard';
-import { UsersService } from '../users.service';
-import { UpdateUserInput } from './user.inputs';
+import type { UsersService } from '../users.service';
+import type { UpdateUserInput } from './user.inputs';
 import { UserType } from './user.types';
 
 @Resolver(() => UserType)
@@ -33,7 +33,7 @@ export class UsersResolver {
   @UseGuards(JwtAuthGuard)
   async updateCurrentUser(
     @CurrentUser() user: User,
-    @Args('updateUserInput') updateUserInput: UpdateUserInput,
+    @Args('updateUserInput') updateUserInput: UpdateUserInput
   ): Promise<UserType> {
     return this.usersService.update(user.id, updateUserInput);
   }

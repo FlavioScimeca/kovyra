@@ -1,4 +1,4 @@
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { ApolloDriver, type ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
@@ -14,11 +14,7 @@ import { UsersModule } from './modules/users/users.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: path.resolve(
-        process.cwd(),
-        'environment',
-        '.env.development',
-      ),
+      envFilePath: path.resolve(process.cwd(), 'environment', '.env.development'),
       isGlobal: true,
     }),
     TypeOrmModule.forRootAsync({
@@ -38,9 +34,7 @@ import { UsersModule } from './modules/users/users.module';
           req.passport = {};
         }
         if (!req.logIn) {
-          req.logIn = function () {
-            return new Promise((resolve) => resolve(true));
-          };
+          req.logIn = () => new Promise(resolve => resolve(true));
         }
 
         return { req };

@@ -19,7 +19,7 @@ async function bootstrap() {
       whitelist: true, // Strip properties not in DTO
       transform: true, // Transform payload to DTO instance
       forbidNonWhitelisted: true, // Throw error if non-whitelisted properties are present
-    }),
+    })
   );
 
   // Initialize Passport

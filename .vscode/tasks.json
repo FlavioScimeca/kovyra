@@ -1,0 +1,104 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "📚 Docs - Dev Mode",
+      "type": "shell",
+      "command": "bun",
+      "args": ["dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/apps/docs"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Start Next.js development server for docs app on port 3002"
+    },
+    {
+      "label": "📱 Mobile - Dev Mode",
+      "type": "shell",
+      "command": "bun",
+      "args": ["android"],
+      "options": {
+        "cwd": "${workspaceFolder}/apps/mobile"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Start Expo development server for mobile app"
+    },
+    {
+      "label": "📖 Storybook - Dev Mode",
+      "type": "shell",
+      "command": "bun",
+      "args": ["storybook"],
+      "options": {
+        "cwd": "${workspaceFolder}/apps/storybook"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Start Storybook development server on port 6006"
+    },
+    {
+      "label": "🌐 Web - Dev Mode",
+      "type": "shell",
+      "command": "bun",
+      "args": ["dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/apps/web"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Start Vite development server for web app on port 3000"
+    },
+    {
+      "label": "🚀 All Apps - Dev Mode",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "📚 Docs - Dev Mode",
+        "📱 Mobile - Dev Mode",
+        "📖 Storybook - Dev Mode",
+        "🌐 Web - Dev Mode"
+      ],
+      "group": "build",
+      "detail": "Start all development servers in parallel"
+    },
+    {
+      "label": "🖥️ Frontend Apps - Dev Mode",
+      "dependsOrder": "parallel",
+      "dependsOn": ["📚 Docs - Dev Mode", "📖 Storybook - Dev Mode", "🌐 Web - Dev Mode"],
+      "group": "build",
+      "detail": "Start all frontend development servers (excluding mobile)"
+    }
+  ]
+}

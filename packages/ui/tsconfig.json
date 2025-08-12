@@ -34,5 +34,13 @@
     "enable": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "references": []
+  "references": [],
+  "paths": {
+    "@kovyra/theme": ["../theme/src"],
+    "@kovyra/theme/*": ["../theme/src/*"],
+    "@kovyra/ui": ["../ui/src"],
+    "@kovyra/ui/*": ["../ui/src/*"],
+    "@kovyra/app": ["../app/src"],
+    "@kovyra/app/*": ["../app/src/*"]
+  }
 }

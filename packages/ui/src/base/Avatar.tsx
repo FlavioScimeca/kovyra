@@ -2,7 +2,6 @@ import { Avatar, styled } from 'tamagui';
 
 export const UiAvatar = styled(Avatar, {
   name: 'UiAvatar',
-  background: 'aqua',
 
   variants: {
     size: {

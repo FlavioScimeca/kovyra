@@ -1,10 +1,6 @@
 import { Provider } from '@kovyra/app/src/providers';
 // import { NativeToast } from '@kovyra/ui/src/toast/NativeToast';
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from '@react-navigation/native';
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';

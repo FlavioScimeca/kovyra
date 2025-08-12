@@ -19,9 +19,7 @@ async function generateSchema() {
   // Verify the schema was generated
   if (fs.existsSync(schemaPath)) {
     const stats = fs.statSync(schemaPath);
-    console.log(
-      `Schema generated successfully at ${schemaPath} (${stats.size} bytes)`,
-    );
+    console.log(`Schema generated successfully at ${schemaPath} (${stats.size} bytes)`);
 
     // Optional: Read and print the schema
     // const schema = fs.readFileSync(schemaPath, 'utf8');
@@ -41,7 +39,7 @@ generateSchema()
     console.log('Schema generation complete.');
     process.exit(0);
   })
-  .catch((error) => {
+  .catch(error => {
     console.error('Error generating schema:', error);
     process.exit(1);
   });

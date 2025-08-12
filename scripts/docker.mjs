@@ -64,9 +64,7 @@ function commandExists(command) {
 async function runCommand(command, args, cwd) {
   return new Promise((resolve, reject) => {
     const fullCommand = `${command} ${args.join(' ')}`;
-    console.log(
-      chalk.cyan(`> Running in ${cwd}: `) + chalk.yellow(fullCommand),
-    );
+    console.log(chalk.cyan(`> Running in ${cwd}: `) + chalk.yellow(fullCommand));
 
     const child = spawn(command, args, {
       cwd: cwd,
@@ -77,12 +75,12 @@ async function runCommand(command, args, cwd) {
       },
     });
 
-    child.on('error', (err) => {
+    child.on('error', err => {
       console.error(chalk.red(`\nError spawning command: ${err.message}`));
       reject(err);
     });
 
-    child.on('close', (code) => {
+    child.on('close', code => {
       if (code === 0) {
         console.log(chalk.green('\nCommand completed successfully.'));
         resolve();
@@ -99,8 +97,8 @@ async function main() {
   if (!commandExists(DOCKER_COMMAND)) {
     console.error(
       chalk.red(
-        `Error: '${DOCKER_COMMAND}' command not found. Please ensure Docker and Docker Compose are installed and in your PATH.`,
-      ),
+        `Error: '${DOCKER_COMMAND}' command not found. Please ensure Docker and Docker Compose are installed and in your PATH.`
+      )
     );
     process.exit(1);
   }
@@ -112,9 +110,7 @@ async function main() {
     disabled: env.disabled ? '(Disabled for local execution)' : false,
   }));
 
-  const defaultChoice = Object.keys(environments).find(
-    (key) => environments[key].default,
-  );
+  const defaultChoice = Object.keys(environments).find(key => environments[key].default);
 
   const { environment } = await inquirer.prompt([
     {
@@ -158,7 +154,7 @@ async function main() {
     },
   ]);
 
-  let commandArgs = [];
+  const commandArgs = [];
   let rebuild = false;
   let requiresEnvPath = true;
   let requiresConfirmation = false;
@@ -169,9 +165,7 @@ async function main() {
       {
         type: 'confirm',
         name: 'rebuild',
-        message: chalk.yellow(
-          'Force rebuild image? (Recommended on first run or after changes)',
-        ),
+        message: chalk.yellow('Force rebuild image? (Recommended on first run or after changes)'),
         default: false,
       },
     ]);
@@ -190,7 +184,7 @@ async function main() {
     commandArgs.push('system', 'prune', '-af', '--volumes');
     requiresConfirmation = true;
     confirmationMessage = chalk.red.bold(
-      'DANGER! This will remove ALL unused containers, networks, images (dangling and unreferenced), build cache, and volumes globally. Are you sure?',
+      'DANGER! This will remove ALL unused containers, networks, images (dangling and unreferenced), build cache, and volumes globally. Are you sure?'
     );
   } else if (action === 'logs') {
     commandArgs.push('logs', '-f');
@@ -211,15 +205,11 @@ async function main() {
     }
   }
 
-  const executionCwd = requiresEnvPath
-    ? path.join(projectRoot, selectedEnv.path)
-    : projectRoot;
+  const executionCwd = requiresEnvPath ? path.join(projectRoot, selectedEnv.path) : projectRoot;
 
   console.log(chalk.blue('\n-- Configuration --'));
   console.log(chalk.blue(`Environment: ${selectedEnv.name}`));
-  console.log(
-    chalk.blue(`Action:      ${action}${rebuild ? ' (with rebuild)' : ''}`),
-  );
+  console.log(chalk.blue(`Action:      ${action}${rebuild ? ' (with rebuild)' : ''}`));
   console.log(chalk.blue(`Directory:   ${executionCwd}`));
   console.log(chalk.blue('-------------------\n'));
 
@@ -248,7 +238,7 @@ async function main() {
   }
 }
 
-main().catch((err) => {
+main().catch(err => {
   console.error(chalk.red('\nAn unexpected error occurred:'), err);
   process.exit(1);
 });
