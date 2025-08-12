@@ -1,6 +1,0 @@
-{
-  "extends": ["../../biome.json"],
-  "files": {
-    "include": ["src/**/*", "index.html", "vite.config.ts"]
-  }
-}
