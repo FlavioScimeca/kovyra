@@ -1,6 +1,6 @@
 import { Avatar, styled } from 'tamagui';
 
-export const UiAvatar = styled(Avatar, {
+const UiAvatar = styled(Avatar, {
   name: 'UiAvatar',
 
   variants: {
@@ -48,3 +48,5 @@ export const UiAvatar = styled(Avatar, {
     variant: 'circle',
   },
 });
+
+export { UiAvatar };

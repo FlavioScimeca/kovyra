@@ -2,6 +2,6 @@
 
 import { Landing } from '@kovyra/app';
 
-export default function HomeScreen() {
+export default function LandingPage() {
   return <Landing />;
 }
