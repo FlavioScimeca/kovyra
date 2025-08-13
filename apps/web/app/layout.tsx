@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { NextTamaguiProvider } from '../providers/NextTamaguiProvider';
+import { NextTamaguiProvider } from '@/providers/NextTamaguiProvider';
 
 export const metadata: Metadata = {
   title: 'Kovyra',
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body cz-shortcut-listen="true">
         <NextTamaguiProvider>{children}</NextTamaguiProvider>
       </body>
     </html>

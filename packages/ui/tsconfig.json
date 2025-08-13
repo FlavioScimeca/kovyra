@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+
     "baseUrl": ".",
     "rootDir": ".",
     "importHelpers": true,
@@ -27,7 +28,15 @@
     "strictNullChecks": true,
     "target": "es2020",
     "types": ["node"],
-    "lib": ["dom", "esnext"]
+    "lib": ["dom", "esnext"],
+    "paths": {
+      "@kovyra/theme": ["../theme/src"],
+      "@kovyra/theme/*": ["../theme/src/*"],
+      "@kovyra/ui": ["../ui/src"],
+      "@kovyra/ui/*": ["../ui/src/*"],
+      "@kovyra/app": ["../app/src"],
+      "@kovyra/app/*": ["../app/src/*"]
+    }
   },
   "exclude": ["_"],
   "typeAcquisition": {
@@ -35,12 +44,5 @@
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "references": [],
-  "paths": {
-    "@kovyra/theme": ["../theme/src"],
-    "@kovyra/theme/*": ["../theme/src/*"],
-    "@kovyra/ui": ["../ui/src"],
-    "@kovyra/ui/*": ["../ui/src/*"],
-    "@kovyra/app": ["../app/src"],
-    "@kovyra/app/*": ["../app/src/*"]
-  }
+
 }

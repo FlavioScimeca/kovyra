@@ -4,7 +4,14 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
     "paths": {
-      "react-native": ["react-native-web"]
+      "@/*": ["./src/*"],
+      "react-native": ["react-native-web"],
+      "@kovyra/app": ["../../packages/app/src"],
+      "@kovyra/app/*": ["../../packages/app/src/*"],
+      "@kovyra/ui": ["../../packages/ui/src"],
+      "@kovyra/ui/*": ["../../packages/ui/src/*"],
+      "@kovyra/theme": ["../../packages/theme/src"],
+      "@kovyra/theme/*": ["../../packages/theme/src/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,

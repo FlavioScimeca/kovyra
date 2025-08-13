@@ -35,6 +35,9 @@ module.exports = () => {
     typescript: {
       ignoreBuildErrors: true,
     },
+    env: {
+      EXPO_OS: 'web',
+    },
     modularizeImports: {
       '@tamagui/lucide-icons': {
         // biome-ignore lint: noUnusedTemplateLiteral
