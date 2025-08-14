@@ -1,7 +1,7 @@
 'use client';
 
-import { Landing } from '@kovyra/app';
+import { LandingScreen } from '@kovyra/app';
 
 export default function HomeScreen() {
-  return <Landing />;
+  return <LandingScreen />;
 }

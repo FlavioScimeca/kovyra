@@ -1,6 +1,6 @@
 import { Stack, UiButton, UiCard, UiHeading, UiText } from '@kovyra/ui';
 
-export const Landing = () => {
+export const LandingScreen = () => {
   return (
     <Stack
       backgroundColor="$background"
@@ -103,6 +103,8 @@ export const Landing = () => {
           </UiButton>
         </Stack>
       </Stack>
+
+      {/* <UiBaseDatePicker /> */}
     </Stack>
   );
 };

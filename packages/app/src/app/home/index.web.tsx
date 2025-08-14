@@ -1,15 +1,9 @@
-import { Stack, UiButton } from '@kovyra/ui';
+import { Stack, UiText } from '@kovyra/ui';
 
-export const Home = () => {
-  const hey = 'Hola!';
-
+export const HomeScreen = () => {
   return (
     <Stack bg={'$brand_nonary'}>
-      <UiButton>ciao kovyra {hey}</UiButton>
-      <UiButton>test button 1 </UiButton>
-      {/* <Link href="/about">
-        <Text>about what ?!! 12 34</Text>
-      </Link> */}
+      <UiText>Homepage</UiText>
     </Stack>
   );
 };

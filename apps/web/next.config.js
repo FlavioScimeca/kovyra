@@ -38,13 +38,6 @@ module.exports = () => {
     env: {
       EXPO_OS: 'web',
     },
-    modularizeImports: {
-      '@tamagui/lucide-icons': {
-        // biome-ignore lint: noUnusedTemplateLiteral
-        transform: `@tamagui/lucide-icons/dist/esm/icons/{{kebabCase member}}`,
-        skipDefaultConversion: true,
-      },
-    },
     transpilePackages: [
       '@kovyra/app',
       '@kovyra/ui',

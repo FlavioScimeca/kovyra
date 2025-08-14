@@ -5,6 +5,9 @@ import { NextTamaguiProvider } from '@/providers/NextTamaguiProvider';
 export const metadata: Metadata = {
   title: 'Kovyra',
   description: 'Kovyra',
+  icons: {
+    icon: '../../shared/assets/icon.svg',
+  },
 };
 
 export default function RootLayout({

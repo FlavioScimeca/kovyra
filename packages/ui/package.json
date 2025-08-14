@@ -12,9 +12,12 @@
     "watch": "tamagui-build --skip-types --watch"
   },
   "dependencies": {
+    "@datepicker-react/hooks": "^2.8.4",
     "@kovyra/theme": "workspace:*",
+    "@rehookify/datepicker": "^6.6.8",
     "@tamagui/lucide-icons": "1.132.16",
     "@tamagui/toast": "1.132.16",
+    "react-native-svg": "15.11.2",
     "tamagui": "1.132.16"
   },
   "devDependencies": {

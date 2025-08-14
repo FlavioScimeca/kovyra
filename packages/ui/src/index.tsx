@@ -1,6 +1,7 @@
 export * from '@tamagui/toast';
 export * from 'tamagui';
 export * from './base';
+export * from './date';
 export * from './forms';
 export * from './organize';
 export * from './panels';

@@ -3,12 +3,13 @@
 import '@tamagui/core/reset.css';
 import '@tamagui/polyfill-dev';
 
+import { MainFooter, MainHeader, PreFooter, PreHeader, SubHeader } from '@kovyra/app';
 import { config as tamaguiConfig } from '@kovyra/theme';
 import { NextThemeProvider } from '@tamagui/next-theme';
 import { useServerInsertedHTML } from 'next/navigation';
 import type { ReactNode } from 'react';
 import { StyleSheet } from 'react-native';
-import { TamaguiProvider } from 'tamagui';
+import { PortalProvider, TamaguiProvider } from 'tamagui';
 
 export const NextTamaguiProvider = ({ children }: { children: ReactNode }) => {
   useServerInsertedHTML(() => {
@@ -36,7 +37,15 @@ export const NextTamaguiProvider = ({ children }: { children: ReactNode }) => {
   return (
     <NextThemeProvider skipNextHead>
       <TamaguiProvider config={tamaguiConfig} disableRootThemeClass>
-        {children}
+        <PortalProvider shouldAddRootHost>
+          <PreHeader />
+          <MainHeader />
+          <SubHeader />
+          {children}
+
+          <MainFooter />
+          <PreFooter />
+        </PortalProvider>
       </TamaguiProvider>
     </NextThemeProvider>
   );

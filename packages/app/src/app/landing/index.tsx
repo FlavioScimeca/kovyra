@@ -1,5 +1,5 @@
 import { UiText } from '@kovyra/ui';
 
-export const Landing = () => {
-  return <UiText>Landing for mobile</UiText>;
+export const LandingScreen = () => {
+  return <UiText>Mobile does not need landing page</UiText>;
 };
